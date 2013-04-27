@@ -1,0 +1,29 @@
+This derived work is based upon:
+
+================================
+The GeoJSON Format Specification
+================================
+
+:Abstract: 
+  GeoJSON is a geospatial data interchange format based on JavaScript Object
+  Notation (JSON).
+
+:Authors:
+  Howard Butler (Hobu Inc.),
+  Martin Daly (Cadcorp),
+  Allan Doyle (MIT),
+  Sean Gillies (UNC-Chapel Hill),
+  Tim Schaub (OpenGeo),
+  Christopher Schmidt (MetaCarta)
+
+:Revision: 1.0
+:Date: 16 June 2008
+
+:Copyright: Copyright |copy| 2008 by the Authors. This work is licensed under a `Creative Commons Attribution 3.0
+  United States License`__.
+
+.. |copy| unicode:: 0xA9 .. copyright sign
+.. __: http://creativecommons.org/licenses/by/3.0/us/
+
+
+For details on and links to the The GeoJSON Format Specification please see the README.md.
