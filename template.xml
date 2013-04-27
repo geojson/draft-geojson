@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<!DOCTYPE rfc SYSTEM 'rfc2629.dtd' [
+<!ENTITY pandocMiddle PUBLIC '' 'middle.xml'>
+<!ENTITY pandocBack   PUBLIC '' 'back.xml'>
+
+<!ENTITY pandocRef2119  PUBLIC '' 'bib/reference.RFC.2119.xml'>
+<!ENTITY pandocRef2616  PUBLIC '' 'bib/reference.RFC.2616.xml'>
+<!ENTITY pandocRef2818  PUBLIC '' 'bib/reference.RFC.2818.xml'>
+<!ENTITY pandocRef3986  PUBLIC '' 'bib/reference.RFC.3986.xml'>
+<!ENTITY pandocRef4627  PUBLIC '' 'bib/reference.RFC.4627.xml'>
+<!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
+]>
+
+<rfc ipr="trust200902" category="info" docName="draft-sdrees-geojson-format-spec-01">
+<?rfc toc="yes"?>         <!-- generate a table of contents -->
+<?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
+<?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
+<?rfc compact="yes" ?>    <!-- conserve vertical whitespace -->
+<?rfc subcompact="no" ?>  <!-- but keep a blank line between list items -->
+ <front>
+        <title abbrev="GeoJSON Format Specification">The Geospatial JavaScript Object Notation (GeoJSON) Format Specification</title>
+
+        <author initials="H." surname="Butler"
+                fullname="H. Butler">
+            <organization>Hobu Inc.</organization>
+        </author>
+        <author initials="M." surname="Daly"
+                fullname="M. Daly">
+            <organization>Cadcorp</organization>
+        </author>
+        <author initials="A." surname="Doyle"
+                fullname="A. Doyle">
+            <organization>MIT</organization>
+        </author>
+        <author initials="S." surname="Gillies"
+                fullname="S. Gillies">
+            <organization>UNC-Chapel Hill</organization>
+        </author>
+<!--        <author initials="T." surname="Schaub"
+                fullname="T. Schaub">
+            <organization>OpenGeo</organization>
+        </author>-->
+<!--        <author initials="C." surname="Schmidt"
+                fullname="C. Schmidt">
+            <organization>MetaCarta</organization>
+        </author>-->
+<!--        <author initials="S." surname="Drees"
+                fullname="S. Drees">
+            <organization>Editor</organization>
+
+            <address>
+                <postal>
+                    <street>Rheinaustr. 62</street>
+                    <street></street>
+                    <city>Bonn</city> <region></region>
+                    <code>53225</code>
+                    <country>DE</country>
+                </postal>
+
+                <phone></phone>
+                <email>stefan@drees.name</email>
+                <uri>http://sdre.es/</uri>
+            </address>
+        </author>
+-->
+        <date month="April" year="2013"/>
+
+        <area>General</area>
+        <workgroup>Independent</workgroup>
+        <keyword>RFC</keyword>
+        <keyword>Request for Comments</keyword>
+        <keyword>I-D</keyword>
+        <keyword>Internet-Draft</keyword>
+        <keyword>JSON</keyword>
+        <keyword>Geospatial</keyword>
+        <keyword>JavaScript Object Notation</keyword>
+        <abstract>
+            <t>
+            GeoJSON is a geospatial data interchange format based on
+            JavaScript Object Notation (JSON).
+            </t>
+        </abstract>
+</front>
+
+<middle>
+&pandocMiddle;
+   <section title="Security Considerations">
+       <t>This memo raises no security issues.</t>
+   </section>
+   <section title="IANA Considerations">
+       <t>This document has no actions for IANA.</t>
+   </section>
+</middle>
+
+<back>
+    <references title="Normative References">
+        &pandocRef2119;
+        &pandocRef2616;
+        &pandocRef2818;
+        &pandocRef3986;
+        &pandocRef4627;
+    </references>
+    <references title="Informative References">
+        &pandocRef5246;
+    </references>
+    &pandocBack;
+</back>
+</rfc>

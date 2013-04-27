@@ -1,0 +1,171 @@
+
+# Geometry Examples
+
+Each of the examples below represents a valid and complete GeoJSON
+object.
+
+## Point
+
+Point coordinates are in x, y order (easting, northing for projected
+coordinates, longitude, latitude for geographic coordinates):
+
+      {
+          "type": "Point",
+          "coordinates": [100.0, 0.0]
+      }
+
+## LineString
+
+Coordinates of LineString are an array of positions (see
+"2.1.1. Position"):
+
+      {
+          "type": "LineString",
+          "coordinates": [
+              [100.0, 0.0],
+              [101.0, 1.0]
+          ]
+      }
+
+## Polygon
+
+Coordinates of a Polygon are an array of LinearRing coordinate arrays.
+The first element in the array represents the exterior ring. Any
+subsequent elements represent interior rings (or holes).
+
+No holes:
+
+      {
+          "type": "Polygon",
+          "coordinates": [
+              [
+                  [100.0, 0.0],
+                  [101.0, 0.0],
+                  [101.0, 1.0],
+                  [100.0, 1.0],
+                  [100.0, 0.0]
+              ]
+          ]
+      }
+
+With holes:
+
+      {
+          "type": "Polygon",
+          "coordinates": [
+              [
+                  [100.0, 0.0],
+                  [101.0, 0.0],
+                  [101.0, 1.0],
+                  [100.0, 1.0],
+                  [100.0, 0.0]
+              ],
+              [
+                  [100.2, 0.2],
+                  [100.8, 0.2],
+                  [100.8, 0.8],
+                  [100.2, 0.8],
+                  [100.2, 0.2]
+              ]
+          ]
+      }
+
+## MultiPoint
+
+Coordinates of a MultiPoint are an array of positions::
+
+      {
+          "type": "MultiPoint",
+          "coordinates": [
+              [100.0, 0.0],
+              [101.0, 1.0]
+          ]
+      }
+
+## MultiLineString
+
+Coordinates of a MultiLineString are an array of LineString coordinate
+arrays:
+
+      {
+          "type": "MultiLineString",
+          "coordinates": [
+              [
+                  [100.0, 0.0],
+                  [101.0, 1.0]
+              ],
+              [
+                  [102.0, 2.0],
+                  [103.0, 3.0]
+              ]
+          ]
+      }
+
+## MultiPolygon
+
+Coordinates of a MultiPolygon are an array of Polygon coordinate
+arrays:
+
+      {
+          "type": "MultiPolygon",
+          "coordinates": [
+              [
+                  [
+                      [102.0, 2.0],
+                      [103.0, 2.0],
+                      [103.0, 3.0],
+                      [102.0, 3.0],
+                      [102.0, 2.0]
+                  ]
+              ],
+              [
+                  [
+                      [100.0, 0.0],
+                      [101.0, 0.0],
+                      [101.0, 1.0],
+                      [100.0, 1.0],
+                      [100.0, 0.0]
+                  ],
+                  [
+                      [100.2, 0.2],
+                      [100.8, 0.2],
+                      [100.8, 0.8],
+                      [100.2, 0.8],
+                      [100.2, 0.2]
+                  ]
+              ]
+          ]
+      }
+
+## GeometryCollection
+
+Each element in the geometries array of a GeometryCollection is one of
+the geometry objects described above:
+
+      {
+          "type": "GeometryCollection",
+          "geometries": [{
+              "type": "Point",
+              "coordinates": [100.0, 0.0]
+          }, {
+              "type": "LineString",
+              "coordinates": [
+                  [101.0, 0.0],
+                  [102.0, 1.0]
+              ]
+          }]
+      }
+
+# Contributors
+
+*  Howard Butler (Hobu Inc.),
+*  Martin Daly (Cadcorp),
+*  Allan Doyle (MIT),
+*  Sean Gillies (UNC-Chapel Hill),
+*  Tim Schaub (OpenGeo),
+*  Christopher Schmidt (MetaCarta)
+
+The GeoJSON format specification is the product of discussion on the
+GeoJSON list:
+
+http://lists.geojson.org/listinfo.cgi/geojson-geojson.org
