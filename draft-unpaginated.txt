@@ -5,12 +5,12 @@
 Independent                                                    H. Butler
 Internet-Draft                                                 Hobu Inc.
 Intended status: Informational                                   M. Daly
-Expires: October 29, 2013                                        Cadcorp
+Expires: October 30, 2013                                        Cadcorp
                                                                 A. Doyle
                                                                      MIT
                                                               S. Gillies
                                                          UNC-Chapel Hill
-                                                          April 27, 2013
+                                                          April 28, 2013
 
 
 The Geospatial JavaScript Object Notation (GeoJSON) Format Specification
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 29, 2013.
+   This Internet-Draft will expire on October 30, 2013.
 
 Copyright Notice
 
@@ -95,12 +95,12 @@ Table of Contents
 Independent                                                    H. Butler
 Internet-Draft                                                 Hobu Inc.
 Intended status: Informational                                   M. Daly
-Expires: October 29, 2013                                        Cadcorp
+Expires: October 30, 2013                                        Cadcorp
                                                                 A. Doyle
                                                                      MIT
                                                               S. Gillies
                                                          UNC-Chapel Hill
-                                                          April 27, 2013
+                                                          April 28, 2013
 
 
 The Geospatial JavaScript Object Notation (GeoJSON) Format Specification
@@ -126,7 +126,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 29, 2013.
+   This Internet-Draft will expire on October 30, 2013.
 
 Copyright Notice
 
@@ -267,19 +267,14 @@ Copyright Notice
    represents a geometry, feature, or collection of features and will be
    referred to as the GeoJSON object in this document.
 
-   o  The GeoJSON object MAY have one or more members (name/value
-      pairs).
-
-   o  The GeoJSON object MUST have a member with the name "type".  This
-      member's value is a string that determines the type of the GeoJSON
-      object.
-
-   o  The value of the type member must be one of: "Point",
-      "MultiPoint", "LineString", "MultiLineString", "Polygon",
-      "MultiPolygon", "GeometryCollection", "Feature", or
-      "FeatureCollection".  The case of the type member values must be
-      as shown here.  If - depending on this value additional rules
-      apply, these are stated in the sections below.
+   o  The GeoJSON object MUST have one or more members (name/value
+      pairs) including a member with the name "type".  This member's
+      value is a case-sensitive string that determines the type of the
+      GeoJSON object by being one of the names: "Point", "MultiPoint",
+      "LineString", "MultiLineString", "Polygon", "MultiPolygon",
+      "GeometryCollection", "Feature", or "FeatureCollection".  If -
+      depending on this value additional rules apply - these are stated
+      in the following sections further describing each type.
 
    o  A GeoJSON object MAY have an optional "crs" member.  If it is
       present, the value of it MUST be a valid coordinate reference

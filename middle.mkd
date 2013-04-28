@@ -7,11 +7,17 @@ represent a geometry, a feature, or a collection of features.
 GeoJSON supports the following seven geometry types:
 
 * Point
+
 * LineString
+
 * Polygon
+
 * MultiPoint
+
 * MultiLineString
+
 * MultiPolygon
+
 * GeometryCollection
 
 Features in GeoJSON contain a geometry object and additional
@@ -41,9 +47,13 @@ attempting to validate the corresponding JSON code example.
 * JavaScript Object Notation (JSON), and the terms object, name, value,
   array, number, true, false, and null are to be interpreted as
   defined in [RFC4627].
+
 * The Hypertext Transfer Protocol (http) is defined in [RFC2616].
+
 * Transport Layer Security (TLS) is defined in [RFC5246].
+
 * Hypertext Transfer Protocol Over TLS (https) is defined in [RFC2818].
+
 * The Uniform Resource Identifier (URI) is defined in [RFC3986].
 
 ## Example
@@ -110,17 +120,14 @@ data structure is always represented as a single JSON object that
 represents a geometry, feature, or collection of features and will be
 referred to as the GeoJSON object in this document.
 
-* The GeoJSON object MAY have one or more members (name/value pairs).
-
-* The GeoJSON object MUST have a member with the name "type". This
-  member's value is a string that determines the type of the GeoJSON
-  object.
-
-* The value of the type member must be one of: "Point", "MultiPoint",
-  "LineString", "MultiLineString", "Polygon", "MultiPolygon",
-  "GeometryCollection", "Feature", or "FeatureCollection". The case of
-  the type member values must be as shown here. If - depending on this
-  value additional rules apply, these are stated in the sections below.
+* The GeoJSON object MUST have one or more members (name/value pairs)
+  including a member with the name "type". This member's value is a
+  case-sensitive string that determines the type of the GeoJSON object
+  by being one of the names: "Point", "MultiPoint", "LineString",
+  "MultiLineString", "Polygon", "MultiPolygon", "GeometryCollection",
+  "Feature", or "FeatureCollection". If - depending on this
+  value additional rules apply - these are stated in the following
+  sections further describing each type.
 
 * A GeoJSON object MAY have an optional "crs" member. If it is present,
   the value of it MUST be a valid coordinate reference system reference
