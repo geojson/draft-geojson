@@ -9,6 +9,6 @@ $> mkdir bib_full && cd bib_full
 $> curl -O http://xml.resource.org/public/rfc/bibxml.tgz
 $> tar -xzf bibxml.tgz && rm -f bibxml.tgz
 $> $rfcs='2119 2616 2818 3986 4627 5246'
-$> for rfc in $rfcs; do cp -a reference.RFC.${i}.xml ../bib/; done
+$> for rfc in $rfcs; do cp -a reference.RFC.${rfc}.xml ../bib/; done
 $> cd .. && rm -fr bib_full
 
