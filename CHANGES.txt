@@ -1,0 +1,2 @@
+20130428 - correction of inconsistent may in GeoJSON Object first list item into MUST, merge with second listitem and provision of js and bib folders
+20130427 - initial draft
