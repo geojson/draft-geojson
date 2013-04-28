@@ -226,8 +226,8 @@ Copyright Notice
       "MultiLineString", "Polygon", "MultiPolygon", and
       "GeometryCollection".
 
-   o  As a another shorthand notation the term GeoJSON types refers to
-      the nine case-senisitve strings "Feature", "FeatureCollection" and
+   o  As another shorthand notation the term GeoJSON types refers to the
+      nine case-senisitve strings "Feature", "FeatureCollection" and
       those considered geometry types.
 
    o  A hole is considered - for the sake of illustration - as simply a
@@ -254,7 +254,7 @@ Copyright Notice
    o  The namespace member SHOULD be on the top-level GeoJSON object in
       the following canonical hierarchical ordering, i.e.  if present on
       a feature collection, else if present on a feature, else on a
-      geometry and and MUST NOT be repeated or overridden on children or
+      geometry and MUST NOT be repeated or overridden on children or
       grandchildren of the object.
 
    Motivation for above proposal: The benefit would be, that we a)
@@ -484,7 +484,7 @@ Copyright Notice
    o  The crsRef member SHOULD be on the top-level GeoJSON object in the
       following canonical hierarchical ordering, i.e.  if present on a
       feature collection, else if present on a feature, else on a
-      geometry and and MUST NOT be repeated or overridden on children or
+      geometry and MUST NOT be repeated or overridden on children or
       grandchildren of the object.
 
    o  The referenced CRS SHALL NOT change coordinate ordering (see

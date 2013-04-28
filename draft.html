@@ -549,7 +549,7 @@
   <li>Hypertext Transfer Protocol Over TLS (https) is defined in [RFC2818].  </li>
   <li>The Uniform Resource Identifier (URI) is defined in [RFC3986].  </li>
   <li>Inside this document the term geometry types refers to the seven case-sensitive strings: "Point", "MultiPoint", "LineString", "MultiLineString", "Polygon", "MultiPolygon", and "GeometryCollection".  </li>
-  <li>As a another shorthand notation the term GeoJSON types refers to the nine case-senisitve strings "Feature", "FeatureCollection" and those considered geometry types.  </li>
+  <li>As another shorthand notation the term GeoJSON types refers to the nine case-senisitve strings "Feature", "FeatureCollection" and those considered geometry types.  </li>
   <li>A hole is considered - for the sake of illustration - as simply a geometric shape, that is to be excluded from the geometric shape it appears in.  </li>
   <li>When using the term interior geometric shape it is assumed, that there exists an exterior shape so that the former is fully included inside the convex hull of the latter.  </li>
 </ul>
@@ -558,7 +558,7 @@
 <p/>
 
 <ul>
-  <li>The namespace member SHOULD be on the top-level GeoJSON object in the following canonical hierarchical ordering, i.e. if present on a feature collection, else if present on a feature, else on a geometry and and MUST NOT be repeated or overridden on children or grandchildren of the object.  </li>
+  <li>The namespace member SHOULD be on the top-level GeoJSON object in the following canonical hierarchical ordering, i.e. if present on a feature collection, else if present on a feature, else on a geometry and MUST NOT be repeated or overridden on children or grandchildren of the object.  </li>
 </ul>
 <p id="rfc.section.1.2.p.5">Motivation for above proposal: The benefit would be, that we a) remain backwards compatible, but b) avoid future clashes with JSON of unclear provenience when being consumed by the client.  Alternatively one might prefix all wonderful type names with say "geo" and a dot or so (not preferred) or even the names of the members (shiver).  </p>
 <h1 id="rfc.section.1.3"><a href="#rfc.section.1.3">1.3.</a> <a href="#example" id="example">Example</a></h1>
@@ -693,7 +693,7 @@
 <ul>
   <li>The default CRS is a geographic coordinate reference system, using the WGS84 datum, and with longitude and latitude units of decimal degrees. Note-sdrees: FIXME mail from Adrian Custer states as <strong>the two GeoJSON crs</strong> CRS84 (an axis-flipped WGS84) and CRSGoogle (EPGS:3857). So is this really WGS84 mentioned as default? </li>
   <li>The value of a member named "crsRef" must be a string (referred to as the CRS reference below) or JSON null. If the value of "crsRef" is null, no CRS can be assumed. Note-sdrees: FIXME or default CRS as when crsRef member is left out? It is optional anyway.  </li>
-  <li>The crsRef member SHOULD be on the top-level GeoJSON object in the following canonical hierarchical ordering, i.e. if present on a feature collection, else if present on a feature, else on a geometry and and MUST NOT be repeated or overridden on children or grandchildren of the object.  </li>
+  <li>The crsRef member SHOULD be on the top-level GeoJSON object in the following canonical hierarchical ordering, i.e. if present on a feature collection, else if present on a feature, else on a geometry and MUST NOT be repeated or overridden on children or grandchildren of the object.  </li>
   <li>The referenced CRS SHALL NOT change coordinate ordering (see "2.1.1 Position").  </li>
 </ul>
 <p id="rfc.section.3.p.3">Note-sdrees: The name has been changed from crs to crsRef to not irritate consumers that expect the crs object as of version 1.0 in the community spec.  </p>
