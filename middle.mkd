@@ -20,7 +20,13 @@ GeoJSON supports the following seven geometry types:
 
 * GeometryCollection
 
-Features in GeoJSON contain a geometry object and additional
+Two additional types are comprised by GeoJSON:
+
+* Feature
+
+* FeatureCollection
+
+Fetures in GeoJSON contain a geometry object and additional
 properties, and a feature collection represents a list of features.
 
 A complete GeoJSON data structure is always an object (in JSON terms).
@@ -36,11 +42,24 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in [RFC2119].
 
+The ordering of the members of any JSON object defined in this
+document MUST be considered irrelevant, as specified by [RFC4627].
+
+The ordering of the elements of any JSON array defined in this
+document MUST at least follow a stable ordering unless the specific
+object's type it is a member of defines an absolute ordering, which
+then takes precedence.
+
 Some examples use the combination of a JavaScript single line comment
 (//) followed by an ellipsis (...) as placeholder notation for
 content deemed irrelevant by the authors and at that point. These
 placeholders must of course be deleted or otherwise replaced, before
 attempting to validate the corresponding JSON code example.
+
+Note-sdrees: The second and third paragraph of this section have been
+added, to not forget to satisfy the need of issueing structural
+constraints with strong impact on interoperability (but not necessarily
+at this place or in this form).
 
 ## Definitions
 
@@ -55,6 +74,48 @@ attempting to validate the corresponding JSON code example.
 * Hypertext Transfer Protocol Over TLS (https) is defined in [RFC2818].
 
 * The Uniform Resource Identifier (URI) is defined in [RFC3986].
+
+* Inside this document the term geometry types refers to the seven
+  case-sensitive strings: "Point", "MultiPoint", "LineString",
+  "MultiLineString", "Polygon", "MultiPolygon", and
+  "GeometryCollection".
+
+* As a another shorthand notation the term GeoJSON types refers to the
+  nine case-senisitve strings "Feature", "FeatureCollection" and those
+  considered geometry types.
+
+* A hole is considered - for the sake of illustration - as simply a
+  geometric shape, that is to be excluded from the geometric shape
+  it appears in.
+
+* When using the term interior geometric shape it is assumed, that
+  there exists an exterior shape so that the former is fully included
+  inside the convex hull of the latter.
+
+Note-sdrees: The last four items in the list above are added, to not
+forget to satisfy the need of defining these terms (but not necessarily
+at this place or in this form).
+
+Note-sdrees: We should consider adding at least an optional member
+on the top-level GeoJSON object with name "namespace" and a value
+of say "http://geojson.org/ns/geojson" or maybe something (after
+acceptance by the IETF like "http://docs.ietf.org/ns/rfc9876"
+hypothetically assuming this ends up as RFC9876) but then we might have
+also to adapt the "no action needed from IANA section".
+Then we might somewhere have a section "Namespace" explaining it in
+general and amend its usage with:
+
+* The namespace member SHOULD be on the top-level GeoJSON object in the
+  following canonical hierarchical ordering, i.e. if present on a
+  feature collection, else if present on a feature, else on a geometry
+  and and MUST NOT be repeated or overridden on children or
+  grandchildren of the object.
+
+Motivation for above proposal: The benefit would be, that we a) remain
+backwards compatible, but b) avoid future clashes with JSON of unclear
+provenience when being consumed by the client. Alternatively one might
+prefix all wonderful type names with say "geo" and a dot or so (not
+preferred) or even the names of the members (shiver).
 
 ## Example
 
@@ -123,13 +184,11 @@ referred to as the GeoJSON object in this document.
 * The GeoJSON object MUST have one or more members (name/value pairs)
   including a member with the name "type". This member's value is a
   case-sensitive string that determines the type of the GeoJSON object
-  by being one of the names: "Point", "MultiPoint", "LineString",
-  "MultiLineString", "Polygon", "MultiPolygon", "GeometryCollection",
-  "Feature", or "FeatureCollection". If - depending on this
-  value additional rules apply - these are stated in the following
-  sections further describing each type.
+  by being one of GeoJSON types. If - depending on this
+  value - additional rules apply, then these are stated in the
+  following sections where each type is further defined.
 
-* A GeoJSON object MAY have an optional "crs" member. If it is present,
+* A GeoJSON object MAY have an optional "crsRef" member. If it is present,
   the value of it MUST be a valid coordinate reference system reference
   (see "[3. Coordinate Reference System (CRS) Reference](rfc.section.3)").
 
@@ -139,9 +198,8 @@ referred to as the GeoJSON object in this document.
 
 ## Geometry Object
 
-A geometry is a GeoJSON object where the type member's value is one of
-the following strings: "Point", "MultiPoint", "LineString",
-"MultiLineString", "Polygon", "MultiPolygon", or "GeometryCollection".
+A geometry is a GeoJSON object where the type member's value is a
+geometry type.
 
 A GeoJSON geometry object of any type other than "GeometryCollection"
 MUST have a member with the name "coordinates". The value of the
@@ -151,19 +209,29 @@ in this array is determined by the type of geometry.
 ### Position
 
 A position is the fundamental geometry construct. The "coordinates"
-member of a geometry object is composed of one position (in the case
-of a Point geometry), an array of positions (LineString or MultiPoint
-geometries), an array of arrays of positions (Polygons,
-MultiLineStrings), or a multidimensional array of positions
-(MultiPolygon).
+member of a geometry object is composed of either:
+
+* one position (in the case of a Point geometry),
+
+* an array of positions (LineString or MultiPoint geometries),
+
+* an array of arrays of positions (Polygons, MultiLineStrings),
+
+* or a multidimensional array of positions (MultiPolygon).
 
 A position is represented by an array of numbers. There MUST be two
-or more elements. The order of elements must follow
-x, y, z order (easting, northing, altitude for coordinates in a
-projected coordinate reference system, or longitude, latitude, altitude
-for coordinates in a geographic coordinate reference system). Any
-number of additional elements are allowed -- interpretation and meaning
-of additional elements is beyond the scope of this specification.
+or more elements. The order of elements must follow x, y, z order
+that is:
+
+* easting, northing, altitude for coordinates in a projected coordinate
+  reference system, or
+
+* longitude, latitude, altitude for coordinates in a geographic
+  coordinate reference system.
+
+Any number of additional elements are allowed -- interpretation and
+meaning of additional elements is beyond the scope of this
+specification.
 
 Examples of positions and geometries are provided in "Appendix A.
 Geometry Examples".
@@ -182,11 +250,6 @@ positions.
 For type "LineString", the "coordinates" member MUST be an array of two
 or more positions.
 
-A LinearRing is a closed LineString with 4 or more positions. The first
-and last positions are equivalent (they represent equivalent points).
-Though a LinearRing is not explicitly represented as a GeoJSON geometry
-type, it is referred to in the Polygon geometry type definition.
-
 ### MultiLineString
 
 For type "MultiLineString", the "coordinates" member MUST be an array
@@ -194,10 +257,23 @@ of LineString coordinate arrays.
 
 ### Polygon
 
-For type "Polygon", the "coordinates" member MUST be an array of
-LinearRing coordinate arrays. For Polygons with multiple rings, the
-first MUST be the exterior ring and any others MUST be interior rings
-or holes.
+To specify a constraint specific to polygons, it is useful to introduce
+the concept of a linear ring (LinearRing):
+
+* A LinearRing is a closed LineString with 4 or more positions.
+
+* The first and last positions are equivalent (they represent
+  equivalent points).
+
+Though a LinearRing is not explicitly represented as a GeoJSON geometry
+type, it leads to a canonical formulation of the Polygon geometry type
+definition as follows:
+
+* For type "Polygon", the "coordinates" member MUST be an array of
+  LinearRing coordinate arrays.
+
+* For Polygons with more than one of these rings, the first MUST be the
+  exterior ring and any others MUST be interior rings or holes.
 
 ### MultiPolygon
 
@@ -240,10 +316,10 @@ element in the array is a feature object as defined above.
 # Coordinate Reference System (CRS) Reference
 
 The coordinate reference system of a GeoJSON object is determined
-by its "crs" member (referred to as the CRS reference below). If an
-object has no crs member, then its parent or grandparent object's crs
-member may be acquired. If no crs member can be so acquired, the
-default CRS shall apply to the GeoJSON object.
+by its "crsRef" member (referred to as the CRS reference below). If an
+object has no crsRef member, then its parent or grandparent object's
+crsRef member may be acquired. If no crsRef member can be so acquired,
+the default CRS shall apply to the GeoJSON object.
 
 * The default CRS is a geographic coordinate reference system, using
   the WGS84 datum, and with longitude and latitude units of decimal
@@ -251,18 +327,27 @@ default CRS shall apply to the GeoJSON object.
   two GeoJSON crs**  CRS84 (an axis-flipped WGS84) and CRSGoogle
   (EPGS:3857). So is this really WGS84 mentioned as default?
 
-* The value of a member named "crs" must be a string (referred to
-  as the CRS reference below) or JSON null. If the value of CRS is
+* The value of a member named "crsRef" must be a string (referred to
+  as the CRS reference below) or JSON null. If the value of "crsRef" is
   null, no CRS can be assumed. Note-sdrees: FIXME or default CRS as
-  when crs member is left out?
+  when crsRef member is left out? It is optional anyway.
 
-* The crs member SHOULD be on the top-level GeoJSON object in a
-  hierarchy (in feature collection, feature, geometry order) and
-  not be repeated or overridden on children or grandchildren of the
-  object.
+* The crsRef member SHOULD be on the top-level GeoJSON object in the
+  following canonical hierarchical ordering, i.e. if present on a
+  feature collection, else if present on a feature, else on a geometry
+  and and MUST NOT be repeated or overridden on children or
+  grandchildren of the object.
 
 * The referenced CRS SHALL NOT change coordinate ordering (see
   "2.1.1 Position").
+
+Note-sdrees: The name has been changed from crs to crsRef to not
+irritate consumers that expect the crs object as of version 1.0 in the
+community spec.
+
+Note-sdrees: It might be beneficial to make the crsRef member's value
+an object with exactly two possible exclusive members: "id" xor "href"
+to help the consumer with the semantics of the values content.
 
 ## Named CRS Reference
 
@@ -271,7 +356,7 @@ this case, the value of it MUST be a string identifying a coordinate
 reference system. OGC CRS URNs such as "urn\:ogc:def:crs:OGC:1.3:CRS84"
 SHALL be preferred over legacy identifiers such as "EPSG:4326":
 
-    "crs": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    "crsRef": "urn:ogc:def:crs:OGC:1.3:CRS84"
 
 ## Linked CRS Reference
 
@@ -285,8 +370,8 @@ from a named CRS reference for the consumer of the object.
 
 A GeoJSON object MAY have a member named "bbox" to include information
 on the coordinate range for geometries, features, or feature
-collections. The value of the bbox member MUST be a array of length 2*n
-where n is the number of dimensions represented in the contained
+collections. The value of the bbox member MUST be an array of length
+2*n where n is the number of dimensions represented in the contained
 geometries, with the lowest values for all axes followed by the highest
 values. The axes order of a bbox follows the axes order of geometries.
 In addition, the coordinate reference system for the bbox is assumed to

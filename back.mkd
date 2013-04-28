@@ -29,7 +29,8 @@ Coordinates of LineString are an array of positions (see
 
 ## Polygon
 
-Coordinates of a Polygon are an array of LinearRing coordinate arrays.
+Coordinates of a Polygon are an array of LinearRing (cf.
+"2.1.6 Polygon") coordinate arrays.
 The first element in the array represents the exterior ring. Any
 subsequent elements represent interior rings (or holes).
 

@@ -1,2 +1,2 @@
-20130428 - correction of inconsistent may in GeoJSON Object first list item into MUST, merge with second listitem and provision of js and bib folders
+20130428 - editorial changes throughout the document and several notes partly explaining thes or requesting further changes or additions. Correction of inconsistent may in GeoJSON Object first list item into MUST, merge with second listitem and provision of js and bib folders
 20130427 - initial draft
