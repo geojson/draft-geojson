@@ -1,2 +1,3 @@
+20130430 - moved repo to GeoJSONWG organization at https://github.com/GeoJSONWG/draft-geojson
 20130428 - typos corrected, editorial changes throughout the document and several notes partly explaining thes or requesting further changes or additions. Correction of inconsistent may in GeoJSON Object first list item into MUST, merge with second listitem and provision of js and bib folders
 20130427 - initial draft
