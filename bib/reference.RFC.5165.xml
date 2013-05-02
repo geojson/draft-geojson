@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC5165'>
+
+<front>
+<title>A Uniform Resource Name (URN) Namespace for the Open Geospatial Consortium (OGC)</title>
+<author initials='C.' surname='Reed' fullname='C. Reed'>
+<organization /></author>
+<date year='2008' month='April' />
+<abstract>
+<t>This document describes a Uniform Resource Name (URN) namespace that is engineered by the Open Geospatial Consortium (OGC) for naming persistent resources published by the OGC.  The formal Namespace IDentifier (NID) is "ogc".  This memo provides information for the Internet community.</t></abstract></front>
+
+<seriesInfo name='RFC' value='5165' />
+<format type='TXT' octets='14681' target='http://www.rfc-editor.org/rfc/rfc5165.txt' />
+</reference>

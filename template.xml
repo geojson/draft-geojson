@@ -8,6 +8,7 @@
 <!ENTITY pandocRef2818  PUBLIC '' 'bib/reference.RFC.2818.xml'>
 <!ENTITY pandocRef3986  PUBLIC '' 'bib/reference.RFC.3986.xml'>
 <!ENTITY pandocRef4627  PUBLIC '' 'bib/reference.RFC.4627.xml'>
+<!ENTITY pandocRef5165  PUBLIC '' 'bib/reference.RFC.5165.xml'>
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
 ]>
 
@@ -99,6 +100,7 @@
         &pandocRef2818;
         &pandocRef3986;
         &pandocRef4627;
+        &pandocRef5165;
     </references>
     <references title="Informative References">
         &pandocRef5246;

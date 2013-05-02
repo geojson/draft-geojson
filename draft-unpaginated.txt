@@ -5,12 +5,12 @@
 Independent                                                    H. Butler
 Internet-Draft                                                 Hobu Inc.
 Intended status: Informational                                   M. Daly
-Expires: October 30, 2013                                        Cadcorp
+Expires: October 03, 2013                                        Cadcorp
                                                                 A. Doyle
                                                                      MIT
                                                               S. Gillies
                                                          UNC-Chapel Hill
-                                                          April 28, 2013
+                                                              April 2013
 
 
 The Geospatial JavaScript Object Notation (GeoJSON) Format Specification
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 30, 2013.
+   This Internet-Draft will expire on October 03, 2013.
 
 Copyright Notice
 
@@ -71,9 +71,7 @@ Table of Contents
        2.1.8.  Geometry Collection
      2.2.  Feature Object
      2.3.  Feature Collection Object
-   3.  Coordinate Reference System (CRS) Reference
-     3.1.  Named CRS Reference
-     3.2.  Linked CRS Reference
+   3.  Coordinate Reference System (CRS)
    4.  Bounding Box
    5.  Security Considerations
    6.  IANA Considerations
@@ -95,12 +93,12 @@ Table of Contents
 Independent                                                    H. Butler
 Internet-Draft                                                 Hobu Inc.
 Intended status: Informational                                   M. Daly
-Expires: October 30, 2013                                        Cadcorp
+Expires: October 03, 2013                                        Cadcorp
                                                                 A. Doyle
                                                                      MIT
                                                               S. Gillies
                                                          UNC-Chapel Hill
-                                                          April 28, 2013
+                                                              April 2013
 
 
 The Geospatial JavaScript Object Notation (GeoJSON) Format Specification
@@ -126,7 +124,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 30, 2013.
+   This Internet-Draft will expire on October 03, 2013.
 
 Copyright Notice
 
@@ -220,6 +218,8 @@ Copyright Notice
       [RFC2818].
 
    o  The Uniform Resource Identifier (URI) is defined in [RFC3986].
+
+   o  The Uniform Resource Name (URN) is defined in [RFC5165].
 
    o  Inside this document the term geometry types refers to the seven
       case-sensitive strings: "Point", "MultiPoint", "LineString",
@@ -335,7 +335,7 @@ Copyright Notice
       this value - additional rules apply, then these are stated in the
       following sections where each type is further defined.
 
-   o  A GeoJSON object MAY have an optional "crsRef" member.  If it is
+   o  A GeoJSON object MAY have an optional "crsURN" member.  If it is
       present, the value of it MUST be a valid coordinate reference
       system reference (see "3.  Coordinate Reference System (CRS)
       Reference [1]").
@@ -461,13 +461,14 @@ Copyright Notice
    name "features".  The value corresponding to "features" is an array.
    Each element in the array is a feature object as defined above.
 
-3.  Coordinate Reference System (CRS) Reference
+3.  Coordinate Reference System (CRS)
 
    The coordinate reference system of a GeoJSON object is determined by
-   its "crsRef" member (referred to as the CRS reference below).  If an
-   object has no crsRef member, then its parent or grandparent object's
-   crsRef member may be acquired.  If no crsRef member can be so
-   acquired, the default CRS shall apply to the GeoJSON object.
+   the value of its "crsURN" member (referred to as the CRS reference
+   below).  If an object has no crsURN member, then its parent or
+   grandparent object's crsURN member may be acquired.  If no crsURN
+   member can be so acquired, the default CRS shall apply to the GeoJSON
+   object.
 
    o  The default CRS is a geographic coordinate reference system, using
       the WGS84 datum, and with longitude and latitude units of decimal
@@ -475,13 +476,13 @@ Copyright Notice
       *the two GeoJSON crs* CRS84 (an axis-flipped WGS84) and CRSGoogle
       (EPGS:3857).  So is this really WGS84 mentioned as default?
 
-   o  The value of a member named "crsRef" must be a string (referred to
+   o  The value of a member named "crsURN" must be a string (referred to
       as the CRS reference below) or JSON null.  If the value of
-      "crsRef" is null, no CRS can be assumed.  Note-sdrees: FIXME or
-      default CRS as when crsRef member is left out?  It is optional
+      "crsURN" is null, no CRS can be assumed.  Note-sdrees: FIXME or
+      default CRS as when crsURN member is left out?  It is optional
       anyway.
 
-   o  The crsRef member SHOULD be on the top-level GeoJSON object in the
+   o  The crsURN member SHOULD be on the top-level GeoJSON object in the
       following canonical hierarchical ordering, i.e.  if present on a
       feature collection, else if present on a feature, else on a
       geometry and MUST NOT be repeated or overridden on children or
@@ -490,33 +491,20 @@ Copyright Notice
    o  The referenced CRS SHALL NOT change coordinate ordering (see
       "2.1.1 Position").
 
-   Note-sdrees: The name has been changed from crs to crsRef to not
+   Note-sdrees: The name has been changed from crs to crsURN to not
    irritate consumers that expect the crs object as of version 1.0 in
    the community spec.
 
-   Note-sdrees: It might be beneficial to make the crsRef member's value
-   an object with exactly two possible exclusive members: "id" xor
-   "href" to help the consumer with the semantics of the values content.
-
-3.1.  Named CRS Reference
-
-   A CRS reference MAY indicate a coordinate reference system by name.
-   In this case, the value of it MUST be a string identifying a
-   coordinate reference system.  OGC CRS URNs such as
+   If present the CRS reference MUST indicate a coordinate reference
+   system by name.  In this case, the value of it MUST be a string
+   identifying a coordinate reference system.  OGC CRS URNs such as
    "urn:ogc:def:crs:OGC:1.3:CRS84" SHALL be preferred over legacy
    identifiers such as "EPSG:4326":
 
-   "crsRef": "urn:ogc:def:crs:OGC:1.3:CRS84"
+   "crsURN": "urn:ogc:def:crs:OGC:1.3:CRS84"
 
 
-3.2.  Linked CRS Reference
-
-   A CRS reference may link to CRS parameters on the Web.  In this case,
-   its value MUST be a dereferenceable http or https URL and the
-   producer of a GeoJSON object SHOULD and is strongly encouraged to
-   prefer absolute URLs over relative URLs as value to ease the
-   disambiguation from a named CRS reference for the consumer of the
-   object.
+   For the format of a valid URN cf.  [RFC5165].
 
 4.  Bounding Box
 
@@ -588,6 +576,9 @@ Copyright Notice
 
    [RFC4627]  Crockford, D., "The application/json Media Type for
               JavaScript Object Notation (JSON)", RFC 4627, July 2006.
+
+   [RFC5165]  Reed, C., "A Uniform Resource Name (URN) Namespace for the
+              Open Geospatial Consortium (OGC)", RFC 5165, April 2008.
 
 7.2.  Informative References
 
