@@ -392,7 +392,7 @@
 
   <meta name="dct.creator" content="Butler, H., Daly, M., Doyle, A., and S. Gillies" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-sdrees-geojson-format-spec-01" />
-  <meta name="dct.issued" scheme="ISO8601" content="2013-4" />
+  <meta name="dct.issued" scheme="ISO8601" content="2013-5-11" />
   <meta name="dct.abstract" content="GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON).  " />
   <meta name="description" content="GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON).  " />
 
@@ -416,7 +416,7 @@
   <td class="right">M. Daly</td>
 </tr>
 <tr>
-  <td class="left">Expires: October 03, 2013</td>
+  <td class="left">Expires: November 12, 2013</td>
   <td class="right">Cadcorp</td>
 </tr>
 <tr>
@@ -437,7 +437,7 @@
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">April 2013</td>
+  <td class="right">May 11, 2013</td>
 </tr>
 
     	
@@ -457,7 +457,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on October 03, 2013.</p>
+<p>This Internet-Draft will expire on November 12, 2013.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -557,7 +557,7 @@
 <ul>
   <li>The namespace member SHOULD be on the top-level GeoJSON object in the following canonical hierarchical ordering, i.e. if present on a feature collection, else if present on a feature, else on a geometry and MUST NOT be repeated or overridden on children or grandchildren of the object.  </li>
 </ul>
-<p id="rfc.section.1.2.p.5">Motivation for above proposal: The benefit would be, that we a) remain backwards compatible, but b) avoid future clashes with JSON of unclear provenience when being consumed by the client.  Alternatively one might prefix all wonderful type names with say "geo" and a dot or so (not preferred) or even the names of the members (shiver).  </p>
+<p id="rfc.section.1.2.p.5">Motivation for above proposal: The benefit would be, that we a) remain backwards compatible, but b) avoid future clashes with JSON of unclear provenience when being consumed by the client.  Alternatively one might prefix all wonderful type names with say "geo" and a dot or so (not preferred) or even the names of the members (shiver). Ammendment-20130511-sdrees: I would not call it profile as I am used to profiles as changing the look of some core construct: adding something, removing some other thing.  But as we have no core concept published, but two wide used dialects GeoJSON vs. ArcGIS JSON a namespace should be the concept that fits more natrually.  </p>
 <h1 id="rfc.section.1.3"><a href="#rfc.section.1.3">1.3.</a> <a href="#example" id="example">Example</a></h1>
 <p id="rfc.section.1.3.p.1">A GeoJSON feature collection: </p>
 <pre>
@@ -735,6 +735,8 @@
 <p class="figure"></p>
 <h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> Security Considerations</h1>
 <p id="rfc.section.5.p.1">This memo raises no security issues.</p>
+<p id="rfc.section.5.p.2">As GeoJSON directly builds on JSON, security considerations of JSON also apply.</p>
+<p id="rfc.section.5.p.3">For JSON relevant security implications please cf. at least the relevant subsections of [RFC4627] (inside 6. IANA Considerations without separate sectionin number) as starting point.</p>
 <h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> IANA Considerations</h1>
 <p id="rfc.section.6.p.1">This document has no actions for IANA.</p>
 <h1 id="rfc.references"><a href="#rfc.references">7.</a> References</h1>

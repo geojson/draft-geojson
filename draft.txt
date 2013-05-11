@@ -5,12 +5,12 @@
 Independent                                                    H. Butler
 Internet-Draft                                                 Hobu Inc.
 Intended status: Informational                                   M. Daly
-Expires: October 03, 2013                                        Cadcorp
+Expires: November 12, 2013                                       Cadcorp
                                                                 A. Doyle
                                                                      MIT
                                                               S. Gillies
                                                          UNC-Chapel Hill
-                                                              April 2013
+                                                            May 11, 2013
 
 
 The Geospatial JavaScript Object Notation (GeoJSON) Format Specification
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 03, 2013.
+   This Internet-Draft will expire on November 12, 2013.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Butler, et al.          Expires October 03, 2013                [Page 1]
+Butler, et al.         Expires November 12, 2013                [Page 1]
 
-Internet-Draft        GeoJSON Format Specification            April 2013
+Internet-Draft        GeoJSON Format Specification              May 2013
 
 
    the Trust Legal Provisions and are provided without warranty as
@@ -70,14 +70,14 @@ Table of Contents
    2.  GeoJSON Object  . . . . . . . . . . . . . . . . . . . . . . .   6
      2.1.  Geometry Object . . . . . . . . . . . . . . . . . . . . .   7
        2.1.1.  Position  . . . . . . . . . . . . . . . . . . . . . .   7
-       2.1.2.  Point . . . . . . . . . . . . . . . . . . . . . . . .   7
-       2.1.3.  MultiPoint  . . . . . . . . . . . . . . . . . . . . .   7
+       2.1.2.  Point . . . . . . . . . . . . . . . . . . . . . . . .   8
+       2.1.3.  MultiPoint  . . . . . . . . . . . . . . . . . . . . .   8
        2.1.4.  LineString  . . . . . . . . . . . . . . . . . . . . .   8
        2.1.5.  MultiLineString . . . . . . . . . . . . . . . . . . .   8
        2.1.6.  Polygon . . . . . . . . . . . . . . . . . . . . . . .   8
        2.1.7.  MultiPolygon  . . . . . . . . . . . . . . . . . . . .   8
        2.1.8.  Geometry Collection . . . . . . . . . . . . . . . . .   8
-     2.2.  Feature Object  . . . . . . . . . . . . . . . . . . . . .   8
+     2.2.  Feature Object  . . . . . . . . . . . . . . . . . . . . .   9
      2.3.  Feature Collection Object . . . . . . . . . . . . . . . .   9
    3.  Coordinate Reference System (CRS) . . . . . . . . . . . . . .   9
    4.  Bounding Box  . . . . . . . . . . . . . . . . . . . . . . . .  10
@@ -90,7 +90,7 @@ Table of Contents
      A.1.  Point . . . . . . . . . . . . . . . . . . . . . . . . . .  12
      A.2.  LineString  . . . . . . . . . . . . . . . . . . . . . . .  12
      A.3.  Polygon . . . . . . . . . . . . . . . . . . . . . . . . .  13
-     A.4.  MultiPoint  . . . . . . . . . . . . . . . . . . . . . . .  13
+     A.4.  MultiPoint  . . . . . . . . . . . . . . . . . . . . . . .  14
      A.5.  MultiLineString . . . . . . . . . . . . . . . . . . . . .  14
      A.6.  MultiPolygon  . . . . . . . . . . . . . . . . . . . . . .  14
      A.7.  GeometryCollection  . . . . . . . . . . . . . . . . . . .  15
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Butler, et al.          Expires October 03, 2013                [Page 2]
+Butler, et al.         Expires November 12, 2013                [Page 2]
 
-Internet-Draft        GeoJSON Format Specification            April 2013
+Internet-Draft        GeoJSON Format Specification              May 2013
 
 
    o  LineString
@@ -165,9 +165,9 @@ Internet-Draft        GeoJSON Format Specification            April 2013
 
 
 
-Butler, et al.          Expires October 03, 2013                [Page 3]
+Butler, et al.         Expires November 12, 2013                [Page 3]
 
-Internet-Draft        GeoJSON Format Specification            April 2013
+Internet-Draft        GeoJSON Format Specification              May 2013
 
 
    Note-sdrees: The second and third paragraph of this section have been
@@ -221,9 +221,9 @@ Internet-Draft        GeoJSON Format Specification            April 2013
 
 
 
-Butler, et al.          Expires October 03, 2013                [Page 4]
+Butler, et al.         Expires November 12, 2013                [Page 4]
 
-Internet-Draft        GeoJSON Format Specification            April 2013
+Internet-Draft        GeoJSON Format Specification              May 2013
 
 
    adapt the "no action needed from IANA section".  Then we might
@@ -241,6 +241,11 @@ Internet-Draft        GeoJSON Format Specification            April 2013
    unclear provenience when being consumed by the client.  Alternatively
    one might prefix all wonderful type names with say "geo" and a dot or
    so (not preferred) or even the names of the members (shiver).
+   Ammendment-20130511-sdrees: I would not call it profile as I am used
+   to profiles as changing the look of some core construct: adding
+   something, removing some other thing.  But as we have no core concept
+   published, but two wide used dialects GeoJSON vs.  ArcGIS JSON a
+   namespace should be the concept that fits more natrually.
 
 1.3.  Example
 
@@ -269,19 +274,19 @@ Internet-Draft        GeoJSON Format Specification            April 2013
                ]
            },
            "properties": {
+
+
+
+Butler, et al.         Expires November 12, 2013                [Page 5]
+
+Internet-Draft        GeoJSON Format Specification              May 2013
+
+
                "prop0": "value0",
                "prop1": 0.0
            }
        }, {
            "type": "Feature",
-
-
-
-Butler, et al.          Expires October 03, 2013                [Page 5]
-
-Internet-Draft        GeoJSON Format Specification            April 2013
-
-
            "geometry": {
                "type": "Polygon",
                "coordinates": [
@@ -322,6 +327,17 @@ Internet-Draft        GeoJSON Format Specification            April 2013
       this value - additional rules apply, then these are stated in the
       following sections where each type is further defined.
 
+
+
+
+
+
+
+Butler, et al.         Expires November 12, 2013                [Page 6]
+
+Internet-Draft        GeoJSON Format Specification              May 2013
+
+
    o  A GeoJSON object MAY have an optional "crsURN" member.  If it is
       present, the value of it MUST be a valid coordinate reference
       system reference (see "3.  Coordinate Reference System (CRS)
@@ -329,14 +345,6 @@ Internet-Draft        GeoJSON Format Specification            April 2013
 
    o  A GeoJSON object MAY have a "bbox" member.  If it is present, the
       value of it MUST be a bounding box array (see "4.  Bounding Box").
-
-
-
-
-Butler, et al.          Expires October 03, 2013                [Page 6]
-
-Internet-Draft        GeoJSON Format Specification            April 2013
-
 
 2.1.  Geometry Object
 
@@ -378,6 +386,14 @@ Internet-Draft        GeoJSON Format Specification            April 2013
    Examples of positions and geometries are provided in "Appendix A.
    Geometry Examples".
 
+
+
+
+Butler, et al.         Expires November 12, 2013                [Page 7]
+
+Internet-Draft        GeoJSON Format Specification              May 2013
+
+
 2.1.2.  Point
 
    For type "Point", the "coordinates" member MUST be a single position.
@@ -386,13 +402,6 @@ Internet-Draft        GeoJSON Format Specification            April 2013
 
    For type "MultiPoint", the "coordinates" member MUST be an array of
    positions.
-
-
-
-Butler, et al.          Expires October 03, 2013                [Page 7]
-
-Internet-Draft        GeoJSON Format Specification            April 2013
-
 
 2.1.4.  LineString
 
@@ -434,6 +443,13 @@ Internet-Draft        GeoJSON Format Specification            April 2013
    A GeoJSON object with type "GeometryCollection" is a geometry object
    which represents a collection of geometry objects.
 
+
+
+Butler, et al.         Expires November 12, 2013                [Page 8]
+
+Internet-Draft        GeoJSON Format Specification              May 2013
+
+
    A geometry collection MUST have a member with the name "geometries".
    The value corresponding to "geometries" is an array.  Each element in
    this array is a GeoJSON geometry object.
@@ -441,14 +457,6 @@ Internet-Draft        GeoJSON Format Specification            April 2013
 2.2.  Feature Object
 
    A GeoJSON object with the type "Feature" is a feature object.
-
-
-
-
-Butler, et al.          Expires October 03, 2013                [Page 8]
-
-Internet-Draft        GeoJSON Format Specification            April 2013
-
 
    o  A feature object MUST have a member with the name "geometry".  The
       value of the geometry member is a geometry object as defined above
@@ -486,6 +494,18 @@ Internet-Draft        GeoJSON Format Specification            April 2013
       *the two GeoJSON crs* CRS84 (an axis-flipped WGS84) and CRSGoogle
       (EPGS:3857).  So is this really WGS84 mentioned as default?
 
+
+
+
+
+
+
+
+Butler, et al.         Expires November 12, 2013                [Page 9]
+
+Internet-Draft        GeoJSON Format Specification              May 2013
+
+
    o  The value of a member named "crsURN" must be a string (referred to
       as the CRS reference below) or JSON null.  If the value of
       "crsURN" is null, no CRS can be assumed.  Note-sdrees: FIXME or
@@ -497,14 +517,6 @@ Internet-Draft        GeoJSON Format Specification            April 2013
       feature collection, else if present on a feature, else on a
       geometry and MUST NOT be repeated or overridden on children or
       grandchildren of the object.
-
-
-
-
-Butler, et al.          Expires October 03, 2013                [Page 9]
-
-Internet-Draft        GeoJSON Format Specification            April 2013
-
 
    o  The referenced CRS SHALL NOT change coordinate ordering (see
       "2.1.1 Position").
@@ -538,34 +550,18 @@ Internet-Draft        GeoJSON Format Specification            April 2013
 
    Example of a bbox member on a feature:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Butler, et al.          Expires October 03, 2013               [Page 10]
-
-Internet-Draft        GeoJSON Format Specification            April 2013
-
-
    {
        "type": "Feature",
        "bbox": [-180.0, -90.0, 180.0, 90.0],
        "geometry": {
+
+
+
+Butler, et al.         Expires November 12, 2013               [Page 10]
+
+Internet-Draft        GeoJSON Format Specification              May 2013
+
+
            "type": "Polygon",
            "coordinates": [
                [
@@ -595,6 +591,13 @@ Internet-Draft        GeoJSON Format Specification            April 2013
 
    This memo raises no security issues.
 
+   As GeoJSON directly builds on JSON, security considerations of JSON
+   also apply.
+
+   For JSON relevant security implications please cf.  at least the
+   relevant subsections of [RFC4627] (inside 6.  IANA Considerations
+   without separate sectionin number) as starting point.
+
 6.  IANA Considerations
 
    This document has no actions for IANA.
@@ -606,17 +609,18 @@ Internet-Draft        GeoJSON Format Specification            April 2013
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
 
+
+
+
+
+Butler, et al.         Expires November 12, 2013               [Page 11]
+
+Internet-Draft        GeoJSON Format Specification              May 2013
+
+
    [RFC2616]  Fielding, R., Gettys, J., Mogul, J., Frystyk, H.,
               Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext
               Transfer Protocol -- HTTP/1.1", RFC 2616, June 1999.
-
-
-
-
-Butler, et al.          Expires October 03, 2013               [Page 11]
-
-Internet-Draft        GeoJSON Format Specification            April 2013
-
 
    [RFC2818]  Rescorla, E., "HTTP Over TLS", RFC 2818, May 2000.
 
@@ -662,16 +666,15 @@ A.2.  LineString
            [100.0, 0.0],
            [101.0, 1.0]
        ]
-   }
 
 
 
-
-
-
-Butler, et al.          Expires October 03, 2013               [Page 12]
+Butler, et al.         Expires November 12, 2013               [Page 12]
 
-Internet-Draft        GeoJSON Format Specification            April 2013
+Internet-Draft        GeoJSON Format Specification              May 2013
+
+
+   }
 
 
 A.3.  Polygon
@@ -720,15 +723,14 @@ A.3.  Polygon
    }
 
 
-A.4.  MultiPoint
 
 
-
-
-Butler, et al.          Expires October 03, 2013               [Page 13]
+Butler, et al.         Expires November 12, 2013               [Page 13]
 
-Internet-Draft        GeoJSON Format Specification            April 2013
+Internet-Draft        GeoJSON Format Specification              May 2013
 
+
+A.4.  MultiPoint
 
    Coordinates of a MultiPoint are an array of positions::
 
@@ -776,16 +778,16 @@ A.6.  MultiPolygon
                    [103.0, 3.0],
                    [102.0, 3.0],
                    [102.0, 2.0]
+
+
+
+Butler, et al.         Expires November 12, 2013               [Page 14]
+
+Internet-Draft        GeoJSON Format Specification              May 2013
+
+
                ]
            ],
-
-
-
-Butler, et al.          Expires October 03, 2013               [Page 14]
-
-Internet-Draft        GeoJSON Format Specification            April 2013
-
-
            [
                [
                    [100.0, 0.0],
@@ -832,15 +834,15 @@ Appendix B.  Contributors
 
    o  Martin Daly (Cadcorp),
 
-   o  Allan Doyle (MIT),
 
 
 
-
-Butler, et al.          Expires October 03, 2013               [Page 15]
+Butler, et al.         Expires November 12, 2013               [Page 15]
 
-Internet-Draft        GeoJSON Format Specification            April 2013
+Internet-Draft        GeoJSON Format Specification              May 2013
 
+
+   o  Allan Doyle (MIT),
 
    o  Sean Gillies (UNC-Chapel Hill),
 
@@ -890,6 +892,4 @@ Authors' Addresses
 
 
 
-
-
-Butler, et al.          Expires October 03, 2013               [Page 16]
+Butler, et al.         Expires November 12, 2013               [Page 16]

@@ -5,12 +5,12 @@
 Independent                                                    H. Butler
 Internet-Draft                                                 Hobu Inc.
 Intended status: Informational                                   M. Daly
-Expires: October 03, 2013                                        Cadcorp
+Expires: November 12, 2013                                       Cadcorp
                                                                 A. Doyle
                                                                      MIT
                                                               S. Gillies
                                                          UNC-Chapel Hill
-                                                              April 2013
+                                                            May 11, 2013
 
 
 The Geospatial JavaScript Object Notation (GeoJSON) Format Specification
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 03, 2013.
+   This Internet-Draft will expire on November 12, 2013.
 
 Copyright Notice
 
@@ -93,12 +93,12 @@ Table of Contents
 Independent                                                    H. Butler
 Internet-Draft                                                 Hobu Inc.
 Intended status: Informational                                   M. Daly
-Expires: October 03, 2013                                        Cadcorp
+Expires: November 12, 2013                                       Cadcorp
                                                                 A. Doyle
                                                                      MIT
                                                               S. Gillies
                                                          UNC-Chapel Hill
-                                                              April 2013
+                                                            May 11, 2013
 
 
 The Geospatial JavaScript Object Notation (GeoJSON) Format Specification
@@ -124,7 +124,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 03, 2013.
+   This Internet-Draft will expire on November 12, 2013.
 
 Copyright Notice
 
@@ -262,6 +262,11 @@ Copyright Notice
    unclear provenience when being consumed by the client.  Alternatively
    one might prefix all wonderful type names with say "geo" and a dot or
    so (not preferred) or even the names of the members (shiver).
+   Ammendment-20130511-sdrees: I would not call it profile as I am used
+   to profiles as changing the look of some core construct: adding
+   something, removing some other thing.  But as we have no core concept
+   published, but two wide used dialects GeoJSON vs.  ArcGIS JSON a
+   namespace should be the concept that fits more natrually.
 
 1.3.  Example
 
@@ -552,6 +557,13 @@ Copyright Notice
 5.  Security Considerations
 
    This memo raises no security issues.
+
+   As GeoJSON directly builds on JSON, security considerations of JSON
+   also apply.
+
+   For JSON relevant security implications please cf.  at least the
+   relevant subsections of [RFC4627] (inside 6.  IANA Considerations
+   without separate sectionin number) as starting point.
 
 6.  IANA Considerations
 

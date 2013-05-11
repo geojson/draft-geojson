@@ -118,6 +118,11 @@ backwards compatible, but b) avoid future clashes with JSON of unclear
 provenience when being consumed by the client. Alternatively one might
 prefix all wonderful type names with say "geo" and a dot or so (not
 preferred) or even the names of the members (shiver).
+Ammendment-20130511-sdrees: I would not call it profile as I am used to
+profiles as changing the look of some core construct: adding something,
+removing some other thing. But as we have no core concept published,
+but two wide used dialects GeoJSON vs. ArcGIS JSON a namespace should
+be the concept that fits more natrually.
 
 ## Example
 
