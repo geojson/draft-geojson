@@ -1,7 +1,7 @@
 # Introduction
 
 Geospatial JavaScript Object Notation (GeoJSON) is a format for
-encoding a variety of geographic data structures.  A GeoJSON object may
+encoding a variety of geographic data structures. A GeoJSON object may
 represent a geometry, a feature, or a collection of features.
 
 GeoJSON supports the following seven geometry types:
@@ -20,14 +20,14 @@ GeoJSON supports the following seven geometry types:
 
 * GeometryCollection
 
-Two additional types are comprised by GeoJSON:
+GeoJSON also comprises the types:
 
 * Feature
 
 * FeatureCollection
 
-Fetures in GeoJSON contain a geometry object and additional
-properties, and a feature collection represents a list of features.
+Features in GeoJSON contain a geometry object and additional
+properties, and a FeatureCollection contains an array of features.
 
 A complete GeoJSON data structure is always an object (in JSON terms).
 In GeoJSON, an object consists of a collection of name/value pairs --
@@ -67,11 +67,11 @@ at this place or in this form).
   array, number, true, false, and null are to be interpreted as
   defined in [RFC4627].
 
-* The Hypertext Transfer Protocol (http) is defined in [RFC2616].
+* The Hypertext Transfer Protocol (HTTP) is defined in [RFC2616].
 
 * Transport Layer Security (TLS) is defined in [RFC5246].
 
-* Hypertext Transfer Protocol Over TLS (https) is defined in [RFC2818].
+* Hypertext Transfer Protocol Over TLS (HTTPS) is defined in [RFC2818].
 
 * The Uniform Resource Identifier (URI) is defined in [RFC3986].
 
@@ -86,8 +86,8 @@ at this place or in this form).
   nine case-senisitve strings "Feature", "FeatureCollection" and those
   considered geometry types.
 
-* A hole is considered - for the sake of illustration - as simply a
-  geometric shape, that is to be excluded from the geometric shape
+* A hole is considered, for the sake of illustration, as simply a
+  geometric shape that is to be excluded from the geometric shape
   it appears in.
 
 * When using the term interior geometric shape it is assumed, that
@@ -221,19 +221,18 @@ member of a geometry object is composed of either:
 
 * or a multidimensional array of positions (MultiPolygon).
 
-A position is represented by an array of numbers. There MUST be two
-or more elements. The order of elements must follow x, y, z order
-that is:
-
-* easting, northing, altitude for coordinates in a projected coordinate
-  reference system, or
-
-* longitude, latitude, altitude for coordinates in a geographic
-  coordinate reference system.
+A position is represented by an array of numbers. There MUST be two or
+more elements. In general the first two elements will be World Geodetic
+System (WGS 84) longitude and latitude, precisely in that order, and
+a third (optionally) will be altitude in meters.
 
 Any number of additional elements are allowed -- interpretation and
 meaning of additional elements is beyond the scope of this
 specification.
+
+GeoJSON data producers MAY indicate a different sense of the position
+elements by including a "crsURN" object in the position's context. See
+the Coordinate Reference System section below for details. 
 
 Examples of positions and geometries are provided in "Appendix A.
 Geometry Examples".
@@ -317,17 +316,17 @@ element in the array is a feature object as defined above.
 
 # Coordinate Reference System (CRS)
 
-The coordinate reference system of a GeoJSON object is determined
-by the value of its "crsURN" member (referred to as the CRS reference
-below). If an object has no crsURN member, then its parent or
-grandparent object's crsURN member may be acquired. If no crsURN member
-can be so acquired, the default CRS shall apply to the GeoJSON object.
+The coordinate reference system of a GeoJSON object and the sense of
+coordinate order is determined by the value of its "crsURN" member
+(referred to as the CRS reference below). If an object has no crsURN
+member, then its parent or grandparent object's crsURN member may be
+acquired. If no crsURN member can be so acquired, the default CRS shall
+apply to the GeoJSON object.
 
 * The default CRS is a geographic coordinate reference system, using
   the WGS84 datum, and with longitude and latitude units of decimal
-  degrees. Note-sdrees: FIXME mail from Adrian Custer states as **the
-  two GeoJSON crs**  CRS84 (an axis-flipped WGS84) and CRSGoogle
-  (EPGS:3857). So is this really WGS84 mentioned as default?
+  degrees. In an array of coordinate values, longitude is first and is
+  followed by latitude. 
 
 * The value of a member named "crsURN" must be a string (referred to
   as the CRS reference below) or JSON null. If the value of "crsURN" is
@@ -340,9 +339,6 @@ can be so acquired, the default CRS shall apply to the GeoJSON object.
   and MUST NOT be repeated or overridden on children or
   grandchildren of the object.
 
-* The referenced CRS SHALL NOT change coordinate ordering (see
-  "2.1.1 Position").
-
 Note-sdrees: The name has been changed from crs to crsURN to not
 irritate consumers that expect the crs object as of version 1.0 in the
 community spec.
@@ -350,7 +346,7 @@ community spec.
 If present the CRS reference MUST indicate a coordinate reference
 system by name. In this case, the value of it MUST be a string
 identifying a coordinate reference system. OGC CRS URNs such as
-"urn\:ogc:def:crs:OGC:1.3:CRS84" SHALL be preferred over legacy
+"urn:ogc:def:crs:OGC:1.3:CRS84" SHALL be preferred over legacy
 identifiers such as "EPSG:4326":
 
     "crsURN": "urn:ogc:def:crs:OGC:1.3:CRS84"
