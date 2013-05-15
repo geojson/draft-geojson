@@ -10,6 +10,8 @@ Expires: November 16, 2013                                       Cadcorp
                                                                      MIT
                                                               S. Gillies
                                                      New York University
+                                                               T. Schaub
+                                                                 OpenGeo
                                                             May 15, 2013
 
 
@@ -72,12 +74,13 @@ Table of Contents
      2.2.  Feature Object
      2.3.  Feature Collection Object
    3.  Coordinate Reference System (CRS)
-   4.  Bounding Box
-   5.  Security Considerations
-   6.  IANA Considerations
-   7.  References
-     7.1.  Normative References
-     7.2.  Informative References
+   4.  For the format of a valid URN cf. [RFC5165].
+   5.  Bounding Box
+   6.  Security Considerations
+   7.  IANA Considerations
+   8.  References
+     8.1.  Normative References
+     8.2.  Informative References
    Appendix A.  Geometry Examples
      A.1.  Point
      A.2.  LineString
@@ -98,6 +101,8 @@ Expires: November 16, 2013                                       Cadcorp
                                                                      MIT
                                                               S. Gillies
                                                      New York University
+                                                               T. Schaub
+                                                                 OpenGeo
                                                             May 15, 2013
 
 
@@ -340,11 +345,6 @@ Copyright Notice
       this value - additional rules apply, then these are stated in the
       following sections where each type is further defined.
 
-   o  A GeoJSON object MAY have an optional "crsURN" member.  If it is
-      present, the value of it MUST be a valid coordinate reference
-      system reference (see "3.  Coordinate Reference System (CRS)
-      Reference [1]").
-
    o  A GeoJSON object MAY have a "bbox" member.  If it is present, the
       value of it MUST be a bounding box array (see "4.  Bounding Box").
 
@@ -371,10 +371,15 @@ Copyright Notice
 
    o  or a multidimensional array of positions (MultiPolygon).
 
-   A position is represented by an array of numbers.  There MUST be two
-   or more elements.  In general the first two elements will be World
-   Geodetic System (WGS 84) longitude and latitude, precisely in that
-   order, and a third (optionally) will be altitude in meters.
+   <<<<<<< HEAD A position is represented by an array of numbers.  There
+   MUST be two or more elements.  In general the first two elements will
+   be World Geodetic System (WGS 84) longitude and latitude, precisely
+   in that order, and a third (optionally) will be altitude in meters.
+   ======= A position is represented by an array of numbers.  There MUST
+   be two or more elements.  The first two elements will be World
+   Geodedic System (WGS 84) longitude and latitude.  The optional third
+   element will be altitude in meters.  >>>>>>>
+   3c77b1dc14538cfdd5d32474193271fff183cb33
 
    Any number of additional elements are allowed -- interpretation and
    meaning of additional elements is beyond the scope of this
@@ -467,12 +472,12 @@ Copyright Notice
 
 3.  Coordinate Reference System (CRS)
 
-   The coordinate reference system of a GeoJSON object and the sense of
-   coordinate order is determined by the value of its "crsURN" member
-   (referred to as the CRS reference below).  If an object has no crsURN
-   member, then its parent or grandparent object's crsURN member may be
-   acquired.  If no crsURN member can be so acquired, the default CRS
-   shall apply to the GeoJSON object.
+   <<<<<<< HEAD The coordinate reference system of a GeoJSON object and
+   the sense of coordinate order is determined by the value of its
+   "crsURN" member (referred to as the CRS reference below).  If an
+   object has no crsURN member, then its parent or grandparent object's
+   crsURN member may be acquired.  If no crsURN member can be so
+   acquired, the default CRS shall apply to the GeoJSON object.
 
    o  The default CRS is a geographic coordinate reference system, using
       the WGS84 datum, and with longitude and latitude units of decimal
@@ -504,9 +509,14 @@ Copyright Notice
    "crsURN": "urn:ogc:def:crs:OGC:1.3:CRS84"
 
 
-   For the format of a valid URN cf.  [RFC5165].
+4.  For the format of a valid URN cf.  [RFC5165].
 
-4.  Bounding Box
+   The coordinate reference system of a GeoJSON object is a geographic
+   coordinate reference system, using the World Geodedic System 1984
+   (WGS 84) datum, and with longitude and latitude units of decimal
+   degrees.  >>>>>>> 3c77b1dc14538cfdd5d32474193271fff183cb33
+
+5.  Bounding Box
 
    A GeoJSON object MAY have a member named "bbox" to include
    information on the coordinate range for geometries, features, or
@@ -514,9 +524,7 @@ Copyright Notice
    of length 2*n where n is the number of dimensions represented in the
    contained geometries, with the lowest values for all axes followed by
    the highest values.  The axes order of a bbox follows the axes order
-   of geometries.  In addition, the coordinate reference system for the
-   bbox is assumed to match the coordinate reference system of the
-   GeoJSON object of which it is a member.
+   of geometries (longitude, latitude).
 
    Example of a bbox member on a feature:
 
@@ -549,7 +557,7 @@ Copyright Notice
    }
 
 
-5.  Security Considerations
+6.  Security Considerations
 
    This memo raises no security issues.
 
@@ -560,13 +568,13 @@ Copyright Notice
    relevant subsections of [RFC4627] (inside 6.  IANA Considerations
    without separate sectionin number) as starting point.
 
-6.  IANA Considerations
+7.  IANA Considerations
 
    This document has no actions for IANA.
 
-7.  References
+8.  References
 
-7.1.  Normative References
+8.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
@@ -587,7 +595,7 @@ Copyright Notice
    [RFC5165]  Reed, C., "A Uniform Resource Name (URN) Namespace for the
               Open Geospatial Consortium (OGC)", RFC 5165, April 2008.
 
-7.2.  Informative References
+8.2.  Informative References
 
    [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
               (TLS) Protocol Version 1.2", RFC 5246, August 2008.
@@ -793,4 +801,8 @@ Authors' Addresses
 
    S. Gillies
    New York University
+
+
+   T. Schaub
+   OpenGeo
 
