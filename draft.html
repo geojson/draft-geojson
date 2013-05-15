@@ -392,7 +392,7 @@
 
   <meta name="dct.creator" content="Butler, H., Daly, M., Doyle, A., and S. Gillies" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-sdrees-geojson-format-spec-01" />
-  <meta name="dct.issued" scheme="ISO8601" content="2013-5-11" />
+  <meta name="dct.issued" scheme="ISO8601" content="2013-5-15" />
   <meta name="dct.abstract" content="GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON).  " />
   <meta name="description" content="GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON).  " />
 
@@ -416,7 +416,7 @@
   <td class="right">M. Daly</td>
 </tr>
 <tr>
-  <td class="left">Expires: November 12, 2013</td>
+  <td class="left">Expires: November 16, 2013</td>
   <td class="right">Cadcorp</td>
 </tr>
 <tr>
@@ -433,11 +433,11 @@
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">UNC-Chapel Hill</td>
+  <td class="right">New York University</td>
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">May 11, 2013</td>
+  <td class="right">May 15, 2013</td>
 </tr>
 
     	
@@ -457,7 +457,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on November 12, 2013.</p>
+<p>This Internet-Draft will expire on November 16, 2013.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -520,14 +520,14 @@
   <li>MultiPolygon </li>
   <li>GeometryCollection </li>
 </ul>
-<p id="rfc.section.1.p.4">Two additional types are comprised by GeoJSON: </p>
+<p id="rfc.section.1.p.4">GeoJSON also comprises the types: </p>
 <p/>
 
 <ul>
   <li>Feature </li>
   <li>FeatureCollection </li>
 </ul>
-<p id="rfc.section.1.p.6">Fetures in GeoJSON contain a geometry object and additional properties, and a feature collection represents a list of features.  </p>
+<p id="rfc.section.1.p.6">Features in GeoJSON contain a geometry object and additional properties, and a FeatureCollection contains an array of features.  </p>
 <p id="rfc.section.1.p.7">A complete GeoJSON data structure is always an object (in JSON terms). In GeoJSON, an object consists of a collection of name/value pairs -- also called members. For each member, the name is always a string. Member values are either a string, number, object, array or one of the JSON literals: true, false, and null.  An array consists of elements where each element is a value as described above.  </p>
 <h1 id="rfc.section.1.1"><a href="#rfc.section.1.1">1.1.</a> <a href="#conventions-used-in-this-document" id="conventions-used-in-this-document">Conventions Used in This Document</a></h1>
 <p id="rfc.section.1.1.p.1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119].  </p>
@@ -540,14 +540,14 @@
 
 <ul>
   <li>JavaScript Object Notation (JSON), and the terms object, name, value, array, number, true, false, and null are to be interpreted as defined in [RFC4627].  </li>
-  <li>The Hypertext Transfer Protocol (http) is defined in [RFC2616].  </li>
+  <li>The Hypertext Transfer Protocol (HTTP) is defined in [RFC2616].  </li>
   <li>Transport Layer Security (TLS) is defined in [RFC5246].  </li>
-  <li>Hypertext Transfer Protocol Over TLS (https) is defined in [RFC2818].  </li>
+  <li>Hypertext Transfer Protocol Over TLS (HTTPS) is defined in [RFC2818].  </li>
   <li>The Uniform Resource Identifier (URI) is defined in [RFC3986].  </li>
   <li>The Uniform Resource Name (URN) is defined in [RFC5165].  </li>
   <li>Inside this document the term geometry types refers to the seven case-sensitive strings: "Point", "MultiPoint", "LineString", "MultiLineString", "Polygon", "MultiPolygon", and "GeometryCollection".  </li>
   <li>As another shorthand notation the term GeoJSON types refers to the nine case-senisitve strings "Feature", "FeatureCollection" and those considered geometry types.  </li>
-  <li>A hole is considered - for the sake of illustration - as simply a geometric shape, that is to be excluded from the geometric shape it appears in.  </li>
+  <li>A hole is considered, for the sake of illustration, as simply a geometric shape that is to be excluded from the geometric shape it appears in.  </li>
   <li>When using the term interior geometric shape it is assumed, that there exists an exterior shape so that the former is fully included inside the convex hull of the latter.  </li>
 </ul>
 <p id="rfc.section.1.2.p.2">Note-sdrees: The last four items in the list above are added, to not forget to satisfy the need of defining these terms (but not necessarily at this place or in this form).  </p>
@@ -634,14 +634,9 @@
   <li>an array of arrays of positions (Polygons, MultiLineStrings), </li>
   <li>or a multidimensional array of positions (MultiPolygon).  </li>
 </ul>
-<p id="rfc.section.2.1.1.p.3">A position is represented by an array of numbers. There MUST be two or more elements. The order of elements must follow x, y, z order that is: </p>
-<p/>
-
-<ul>
-  <li>easting, northing, altitude for coordinates in a projected coordinate reference system, or </li>
-  <li>longitude, latitude, altitude for coordinates in a geographic coordinate reference system.  </li>
-</ul>
-<p id="rfc.section.2.1.1.p.5">Any number of additional elements are allowed -- interpretation and meaning of additional elements is beyond the scope of this specification.  </p>
+<p id="rfc.section.2.1.1.p.3">A position is represented by an array of numbers. There MUST be two or more elements. In general the first two elements will be World Geodetic System (WGS 84) longitude and latitude, precisely in that order, and a third (optionally) will be altitude in meters.  </p>
+<p id="rfc.section.2.1.1.p.4">Any number of additional elements are allowed -- interpretation and meaning of additional elements is beyond the scope of this specification.  </p>
+<p id="rfc.section.2.1.1.p.5">GeoJSON data producers MAY indicate a different sense of the position elements by including a "crsURN" object in the position's context. See the Coordinate Reference System section below for details.  </p>
 <p id="rfc.section.2.1.1.p.6">Examples of positions and geometries are provided in "Appendix A. Geometry Examples".  </p>
 <h1 id="rfc.section.2.1.2"><a href="#rfc.section.2.1.2">2.1.2.</a> <a href="#point" id="point">Point</a></h1>
 <p id="rfc.section.2.1.2.p.1">For type "Point", the "coordinates" member MUST be a single position.  </p>
@@ -684,14 +679,13 @@
 <p id="rfc.section.2.3.p.1">A GeoJSON object with the type "FeatureCollection" is a feature collection object.  </p>
 <p id="rfc.section.2.3.p.2">An object of type "FeatureCollection" MUST have a member with the name "features". The value corresponding to "features" is an array. Each element in the array is a feature object as defined above.  </p>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#coordinate-reference-system-crs" id="coordinate-reference-system-crs">Coordinate Reference System (CRS)</a></h1>
-<p id="rfc.section.3.p.1">The coordinate reference system of a GeoJSON object is determined by the value of its "crsURN" member (referred to as the CRS reference below). If an object has no crsURN member, then its parent or grandparent object's crsURN member may be acquired. If no crsURN member can be so acquired, the default CRS shall apply to the GeoJSON object.  </p>
+<p id="rfc.section.3.p.1">The coordinate reference system of a GeoJSON object and the sense of coordinate order is determined by the value of its "crsURN" member (referred to as the CRS reference below).  If an object has no crsURN member, then its parent or grandparent object's crsURN member may be acquired. If no crsURN member can be so acquired, the default CRS shall apply to the GeoJSON object.  </p>
 <p/>
 
 <ul>
-  <li>The default CRS is a geographic coordinate reference system, using the WGS84 datum, and with longitude and latitude units of decimal degrees. Note-sdrees: FIXME mail from Adrian Custer states as <strong>the two GeoJSON crs</strong> CRS84 (an axis-flipped WGS84) and CRSGoogle (EPGS:3857). So is this really WGS84 mentioned as default? </li>
+  <li>The default CRS is a geographic coordinate reference system, using the WGS84 datum, and with longitude and latitude units of decimal degrees. In an array of coordinate values, longitude is first and is followed by latitude.  </li>
   <li>The value of a member named "crsURN" must be a string (referred to as the CRS reference below) or JSON null. If the value of "crsURN" is null, no CRS can be assumed. Note-sdrees: FIXME or default CRS as when crsURN member is left out? It is optional anyway.  </li>
   <li>The crsURN member SHOULD be on the top-level GeoJSON object in the following canonical hierarchical ordering, i.e. if present on a feature collection, else if present on a feature, else on a geometry and MUST NOT be repeated or overridden on children or grandchildren of the object.  </li>
-  <li>The referenced CRS SHALL NOT change coordinate ordering (see "2.1.1 Position").  </li>
 </ul>
 <p id="rfc.section.3.p.3">Note-sdrees: The name has been changed from crs to crsURN to not irritate consumers that expect the crs object as of version 1.0 in the community spec.  </p>
 <p id="rfc.section.3.p.4">If present the CRS reference MUST indicate a coordinate reference system by name. In this case, the value of it MUST be a string identifying a coordinate reference system. OGC CRS URNs such as "urn:ogc:def:crs:OGC:1.3:CRS84" SHALL be preferred over legacy identifiers such as "EPSG:4326": </p>
@@ -1023,7 +1017,7 @@
 		<span class="family-name">Gillies</span>
 	  </span>
 	</span>
-	<span class="org vcardline">UNC-Chapel Hill</span>
+	<span class="org vcardline">New York University</span>
 	<span class="adr">
 	  
 	  <span class="vcardline">
