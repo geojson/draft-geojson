@@ -557,8 +557,8 @@
   <li>The Uniform Resource Name (URN) is defined in [RFC5165].  </li>
   <li>Inside this document the term geometry types refers to the seven case-sensitive strings: "Point", "MultiPoint", "LineString", "MultiLineString", "Polygon", "MultiPolygon", and "GeometryCollection".  </li>
   <li>As another shorthand notation the term GeoJSON types refers to the nine case-senisitve strings "Feature", "FeatureCollection" and those considered geometry types.  </li>
-  <li>A hole is considered, for the sake of illustration, as simply a geometric shape that is to be excluded from the geometric shape it appears in.  </li>
-  <li>When using the term interior geometric shape it is assumed, that there exists an exterior shape so that the former is fully included inside the convex hull of the latter.  </li>
+  <li>A hole is considered, for the sake of illustration, as simply a geometric shape that is to be excluded from the geometric shape in which it appears.  </li>
+  <li>When using the term interior geometric shape it is assumed that there exists an exterior shape such that the former is fully included inside the geometry of the latter.  </li>
 </ul>
 <p id="rfc.section.1.2.p.2">Note-sdrees: The last four items in the list above are added, to not forget to satisfy the need of defining these terms (but not necessarily at this place or in this form).  </p>
 <p id="rfc.section.1.2.p.3">Note-sdrees: We should consider adding at least an optional member on the top-level GeoJSON object with name "namespace" and a value of say "http://geojson.org/ns/geojson" or maybe something (after acceptance by the IETF like "http://docs.ietf.org/ns/rfc9876" hypothetically assuming this ends up as RFC9876) but then we might have also to adapt the "no action needed from IANA section". Then we might somewhere have a section "Namespace" explaining it in general and amend its usage with: </p>
@@ -567,7 +567,7 @@
 <ul>
   <li>The namespace member SHOULD be on the top-level GeoJSON object in the following canonical hierarchical ordering, i.e. if present on a feature collection, else if present on a feature, else on a geometry and MUST NOT be repeated or overridden on children or grandchildren of the object.  </li>
 </ul>
-<p id="rfc.section.1.2.p.5">Motivation for above proposal: The benefit would be, that we a) remain backwards compatible, but b) avoid future clashes with JSON of unclear provenience when being consumed by the client.  Alternatively one might prefix all wonderful type names with say "geo" and a dot or so (not preferred) or even the names of the members (shiver). Ammendment-20130511-sdrees: I would not call it profile as I am used to profiles as changing the look of some core construct: adding something, removing some other thing.  But as we have no core concept published, but two wide used dialects GeoJSON vs. ArcGIS JSON a namespace should be the concept that fits more natrually.  </p>
+<p id="rfc.section.1.2.p.5">Motivation for above proposal: The benefit would be, that we a) remain backwards compatible, but b) avoid future clashes with JSON of unclear provenance when consuming in a client. Alternatively one might prefix all wonderful type names with say "geo" and a dot or so (not preferred) or even the names of the members (shiver). Ammendment-20130511-sdrees: I would not call it profile as I am used to profiles as changing the look of some core construct: adding something, removing some other thing. But as we have no core concept published, but two wide used dialects GeoJSON vs. ArcGIS JSON a namespace should be the concept that fits more natrually.  </p>
 <h1 id="rfc.section.1.3"><a href="#rfc.section.1.3">1.3.</a> <a href="#example" id="example">Example</a></h1>
 <p id="rfc.section.1.3.p.1">A GeoJSON feature collection: </p>
 <pre>
@@ -623,7 +623,7 @@
 <p class="figure"></p>
 <p id="rfc.section.1.3.p.2">Note that unquoted whitespace is not significant in JSON.  Whitespace is used in the examples inside this document to help illustrate the data structures, but is not required.  </p>
 <h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#geojson-object" id="geojson-object">GeoJSON Object</a></h1>
-<p id="rfc.section.2.p.1">As stated in the introduction, a complete Geospatial JSON (GeoJSON) data structure is always represented as a single JSON object that represents a geometry, feature, or collection of features and will be referred to as the GeoJSON object in this document.  </p>
+<p id="rfc.section.2.p.1">As stated in the introduction, a complete GeoJSON data structure is always represented as a single JSON object that represents a geometry, feature, or collection of features and will be referred to as the GeoJSON object in this document.  </p>
 <p/>
 
 <ul>

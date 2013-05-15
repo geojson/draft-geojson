@@ -1,4 +1,4 @@
-20130515 - merged pull request from sgillies which promotes the practice of long, lat coords using the default CRS (which is the same as with KML) over the practice of using projected coordinates or, worst of all, lat/lng coordinates and added T. Schaub to authors as requsted per mailing list.
+20130515 - merged pull request from sgillies which promotes the practice of long, lat coords using the default CRS (which is the same as with KML) over the practice of using projected coordinates or, worst of all, lat/lng coordinates and added T. Schaub to authors as requsted per mailing list, merged pul request from mpdaly with message "Interior rings must fall within the geometry of the exterior ring, not just the convex hull of the exterior ring.".
 20130511 - added note to discuss naming for new optional profile/namespace member and enhanced section security considerations by motivating and pointing to the relevant section in the JSON RFC
 20130402 - reduced crsRef to single label with domain RFC 5165 like URN, thus renamed it to crsURN
 20130430 - moved repo to GeoJSONWG organization at https://github.com/GeoJSONWG/draft-geojson
