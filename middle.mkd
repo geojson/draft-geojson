@@ -195,10 +195,6 @@ referred to as the GeoJSON object in this document.
   value - additional rules apply, then these are stated in the
   following sections where each type is further defined.
 
-* A GeoJSON object MAY have an optional "crsURN" member. If it is present,
-  the value of it MUST be a valid coordinate reference system reference
-  (see "[3. Coordinate Reference System (CRS) Reference](rfc.section.3)").
-
 * A GeoJSON object MAY have a "bbox" member. If it is present,
   the value of it MUST be a bounding box array (see
   "4. Bounding Box").
@@ -227,14 +223,9 @@ member of a geometry object is composed of either:
 * or a multidimensional array of positions (MultiPolygon).
 
 A position is represented by an array of numbers. There MUST be two
-or more elements. The order of elements must follow x, y, z order
-that is:
-
-* easting, northing, altitude for coordinates in a projected coordinate
-  reference system, or
-
-* longitude, latitude, altitude for coordinates in a geographic
-  coordinate reference system.
+or more elements. The first two elements will be World Geodedic System
+(WGS 84) longitude and latitude.  The optional third element will be
+altitude in meters.
 
 Any number of additional elements are allowed -- interpretation and
 meaning of additional elements is beyond the scope of this
@@ -322,45 +313,10 @@ element in the array is a feature object as defined above.
 
 # Coordinate Reference System (CRS)
 
-The coordinate reference system of a GeoJSON object is determined
-by the value of its "crsURN" member (referred to as the CRS reference
-below). If an object has no crsURN member, then its parent or
-grandparent object's crsURN member may be acquired. If no crsURN member
-can be so acquired, the default CRS shall apply to the GeoJSON object.
-
-* The default CRS is a geographic coordinate reference system, using
-  the WGS84 datum, and with longitude and latitude units of decimal
-  degrees. Note-sdrees: FIXME mail from Adrian Custer states as **the
-  two GeoJSON crs**  CRS84 (an axis-flipped WGS84) and CRSGoogle
-  (EPGS:3857). So is this really WGS84 mentioned as default?
-
-* The value of a member named "crsURN" must be a string (referred to
-  as the CRS reference below) or JSON null. If the value of "crsURN" is
-  null, no CRS can be assumed. Note-sdrees: FIXME or default CRS as
-  when crsURN member is left out? It is optional anyway.
-
-* The crsURN member SHOULD be on the top-level GeoJSON object in the
-  following canonical hierarchical ordering, i.e. if present on a
-  feature collection, else if present on a feature, else on a geometry
-  and MUST NOT be repeated or overridden on children or
-  grandchildren of the object.
-
-* The referenced CRS SHALL NOT change coordinate ordering (see
-  "2.1.1 Position").
-
-Note-sdrees: The name has been changed from crs to crsURN to not
-irritate consumers that expect the crs object as of version 1.0 in the
-community spec.
-
-If present the CRS reference MUST indicate a coordinate reference
-system by name. In this case, the value of it MUST be a string
-identifying a coordinate reference system. OGC CRS URNs such as
-"urn\:ogc:def:crs:OGC:1.3:CRS84" SHALL be preferred over legacy
-identifiers such as "EPSG:4326":
-
-    "crsURN": "urn:ogc:def:crs:OGC:1.3:CRS84"
-
-For the format of a valid URN cf. [RFC5165].
+The coordinate reference system of a GeoJSON object is a geographic
+coordinate reference system, using the World Geodedic System 1984
+(WGS 84) datum, and with longitude and latitude units of decimal
+degrees.
 
 # Bounding Box
 
@@ -369,10 +325,8 @@ on the coordinate range for geometries, features, or feature
 collections. The value of the bbox member MUST be an array of length
 2*n where n is the number of dimensions represented in the contained
 geometries, with the lowest values for all axes followed by the highest
-values. The axes order of a bbox follows the axes order of geometries.
-In addition, the coordinate reference system for the bbox is assumed to
-match the coordinate reference system of the GeoJSON object of which it
-is a member.
+values. The axes order of a bbox follows the axes order of geometries
+(longitude, latitude).
 
 Example of a bbox member on a feature:
 
