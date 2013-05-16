@@ -37,10 +37,10 @@
                 fullname="S. Gillies">
             <organization>New York University</organization>
         </author>
-        <author initials="T." surname="Schaub"
+<!--        <author initials="T." surname="Schaub"
                 fullname="T. Schaub">
             <organization>OpenGeo</organization>
-        </author>
+        </author>-->
 <!--        <author initials="C." surname="Schmidt"
                 fullname="C. Schmidt">
             <organization>MetaCarta</organization>
@@ -64,7 +64,7 @@
             </address>
         </author>
 -->
-        <date month="May" year="2013"/>
+        <date month="April" year="2013"/>
 
         <area>General</area>
         <workgroup>Independent</workgroup>
@@ -87,12 +87,6 @@
 &pandocMiddle;
    <section title="Security Considerations">
        <t>This memo raises no security issues.</t>
-       <t>As GeoJSON directly builds on JSON, security considerations
-        of JSON also apply.</t>
-       <t>For JSON relevant security implications please cf. at least
-        the relevant subsections of [RFC4627] (inside
-        6. IANA Considerations without separate sectionin number) as
-        starting point.</t>
    </section>
    <section title="IANA Considerations">
        <t>This document has no actions for IANA.</t>

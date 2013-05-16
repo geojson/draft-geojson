@@ -5,14 +5,12 @@
 Independent                                                    H. Butler
 Internet-Draft                                                 Hobu Inc.
 Intended status: Informational                                   M. Daly
-Expires: November 16, 2013                                       Cadcorp
+Expires: October 03, 2013                                        Cadcorp
                                                                 A. Doyle
                                                                      MIT
                                                               S. Gillies
-                                                     New York University
-                                                               T. Schaub
-                                                                 OpenGeo
-                                                            May 15, 2013
+                                                         UNC-Chapel Hill
+                                                              April 2013
 
 
 The Geospatial JavaScript Object Notation (GeoJSON) Format Specification
@@ -38,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 16, 2013.
+   This Internet-Draft will expire on October 03, 2013.
 
 Copyright Notice
 
@@ -74,13 +72,12 @@ Table of Contents
      2.2.  Feature Object
      2.3.  Feature Collection Object
    3.  Coordinate Reference System (CRS)
-   4.  For the format of a valid URN cf. [RFC5165].
-   5.  Bounding Box
-   6.  Security Considerations
-   7.  IANA Considerations
-   8.  References
-     8.1.  Normative References
-     8.2.  Informative References
+   4.  Bounding Box
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
    Appendix A.  Geometry Examples
      A.1.  Point
      A.2.  LineString
@@ -96,14 +93,12 @@ Table of Contents
 Independent                                                    H. Butler
 Internet-Draft                                                 Hobu Inc.
 Intended status: Informational                                   M. Daly
-Expires: November 16, 2013                                       Cadcorp
+Expires: October 03, 2013                                        Cadcorp
                                                                 A. Doyle
                                                                      MIT
                                                               S. Gillies
-                                                     New York University
-                                                               T. Schaub
-                                                                 OpenGeo
-                                                            May 15, 2013
+                                                         UNC-Chapel Hill
+                                                              April 2013
 
 
 The Geospatial JavaScript Object Notation (GeoJSON) Format Specification
@@ -129,7 +124,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 16, 2013.
+   This Internet-Draft will expire on October 03, 2013.
 
 Copyright Notice
 
@@ -168,14 +163,14 @@ Copyright Notice
 
    o  GeometryCollection
 
-   GeoJSON also comprises the types:
+   Two additional types are comprised by GeoJSON:
 
    o  Feature
 
    o  FeatureCollection
 
-   Features in GeoJSON contain a geometry object and additional
-   properties, and a FeatureCollection contains an array of features.
+   Fetures in GeoJSON contain a geometry object and additional
+   properties, and a feature collection represents a list of features.
 
    A complete GeoJSON data structure is always an object (in JSON
    terms).  In GeoJSON, an object consists of a collection of name/value
@@ -215,11 +210,11 @@ Copyright Notice
       value, array, number, true, false, and null are to be interpreted
       as defined in [RFC4627].
 
-   o  The Hypertext Transfer Protocol (HTTP) is defined in [RFC2616].
+   o  The Hypertext Transfer Protocol (http) is defined in [RFC2616].
 
    o  Transport Layer Security (TLS) is defined in [RFC5246].
 
-   o  Hypertext Transfer Protocol Over TLS (HTTPS) is defined in
+   o  Hypertext Transfer Protocol Over TLS (https) is defined in
       [RFC2818].
 
    o  The Uniform Resource Identifier (URI) is defined in [RFC3986].
@@ -235,13 +230,13 @@ Copyright Notice
       nine case-senisitve strings "Feature", "FeatureCollection" and
       those considered geometry types.
 
-   o  A hole is considered, for the sake of illustration, as simply a
-      geometric shape that is to be excluded from the geometric shape in
-      which it appears.
+   o  A hole is considered - for the sake of illustration - as simply a
+      geometric shape, that is to be excluded from the geometric shape
+      it appears in.
 
-   o  When using the term interior geometric shape it is assumed that
-      there exists an exterior shape such that the former is fully
-      included inside the geometry of the latter.
+   o  When using the term interior geometric shape it is assumed, that
+      there exists an exterior shape so that the former is fully
+      included inside the convex hull of the latter.
 
    Note-sdrees: The last four items in the list above are added, to not
    forget to satisfy the need of defining these terms (but not
@@ -264,14 +259,9 @@ Copyright Notice
 
    Motivation for above proposal: The benefit would be, that we a)
    remain backwards compatible, but b) avoid future clashes with JSON of
-   unclear provenance when consuming in a client.  Alternatively one
-   might prefix all wonderful type names with say "geo" and a dot or so
-   (not preferred) or even the names of the members (shiver).
-   Ammendment-20130511-sdrees: I would not call it profile as I am used
-   to profiles as changing the look of some core construct: adding
-   something, removing some other thing.  But as we have no core concept
-   published, but two wide used dialects GeoJSON vs.  ArcGIS JSON a
-   namespace should be the concept that fits more natrually.
+   unclear provenience when being consumed by the client.  Alternatively
+   one might prefix all wonderful type names with say "geo" and a dot or
+   so (not preferred) or even the names of the members (shiver).
 
 1.3.  Example
 
@@ -333,10 +323,10 @@ Copyright Notice
 
 2.  GeoJSON Object
 
-   As stated in the introduction, a complete GeoJSON data structure is
-   always represented as a single JSON object that represents a
-   geometry, feature, or collection of features and will be referred to
-   as the GeoJSON object in this document.
+   As stated in the introduction, a complete Geospatial JSON (GeoJSON)
+   data structure is always represented as a single JSON object that
+   represents a geometry, feature, or collection of features and will be
+   referred to as the GeoJSON object in this document.
 
    o  The GeoJSON object MUST have one or more members (name/value
       pairs) including a member with the name "type".  This member's
@@ -344,6 +334,11 @@ Copyright Notice
       GeoJSON object by being one of GeoJSON types.  If - depending on
       this value - additional rules apply, then these are stated in the
       following sections where each type is further defined.
+
+   o  A GeoJSON object MAY have an optional "crsURN" member.  If it is
+      present, the value of it MUST be a valid coordinate reference
+      system reference (see "3.  Coordinate Reference System (CRS)
+      Reference [1]").
 
    o  A GeoJSON object MAY have a "bbox" member.  If it is present, the
       value of it MUST be a bounding box array (see "4.  Bounding Box").
@@ -371,23 +366,19 @@ Copyright Notice
 
    o  or a multidimensional array of positions (MultiPolygon).
 
-   <<<<<<< HEAD A position is represented by an array of numbers.  There
-   MUST be two or more elements.  In general the first two elements will
-   be World Geodetic System (WGS 84) longitude and latitude, precisely
-   in that order, and a third (optionally) will be altitude in meters.
-   ======= A position is represented by an array of numbers.  There MUST
-   be two or more elements.  The first two elements will be World
-   Geodedic System (WGS 84) longitude and latitude.  The optional third
-   element will be altitude in meters.  >>>>>>>
-   3c77b1dc14538cfdd5d32474193271fff183cb33
+   A position is represented by an array of numbers.  There MUST be two
+   or more elements.  The order of elements must follow x, y, z order
+   that is:
+
+   o  easting, northing, altitude for coordinates in a projected
+      coordinate reference system, or
+
+   o  longitude, latitude, altitude for coordinates in a geographic
+      coordinate reference system.
 
    Any number of additional elements are allowed -- interpretation and
    meaning of additional elements is beyond the scope of this
    specification.
-
-   GeoJSON data producers MAY indicate a different sense of the position
-   elements by including a "crsURN" object in the position's context.
-   See the Coordinate Reference System section below for details.
 
    Examples of positions and geometries are provided in "Appendix A.
    Geometry Examples".
@@ -472,17 +463,18 @@ Copyright Notice
 
 3.  Coordinate Reference System (CRS)
 
-   <<<<<<< HEAD The coordinate reference system of a GeoJSON object and
-   the sense of coordinate order is determined by the value of its
-   "crsURN" member (referred to as the CRS reference below).  If an
-   object has no crsURN member, then its parent or grandparent object's
-   crsURN member may be acquired.  If no crsURN member can be so
-   acquired, the default CRS shall apply to the GeoJSON object.
+   The coordinate reference system of a GeoJSON object is determined by
+   the value of its "crsURN" member (referred to as the CRS reference
+   below).  If an object has no crsURN member, then its parent or
+   grandparent object's crsURN member may be acquired.  If no crsURN
+   member can be so acquired, the default CRS shall apply to the GeoJSON
+   object.
 
    o  The default CRS is a geographic coordinate reference system, using
       the WGS84 datum, and with longitude and latitude units of decimal
-      degrees.  In an array of coordinate values, longitude is first and
-      is followed by latitude.
+      degrees.  Note-sdrees: FIXME mail from Adrian Custer states as
+      *the two GeoJSON crs* CRS84 (an axis-flipped WGS84) and CRSGoogle
+      (EPGS:3857).  So is this really WGS84 mentioned as default?
 
    o  The value of a member named "crsURN" must be a string (referred to
       as the CRS reference below) or JSON null.  If the value of
@@ -495,6 +487,9 @@ Copyright Notice
       feature collection, else if present on a feature, else on a
       geometry and MUST NOT be repeated or overridden on children or
       grandchildren of the object.
+
+   o  The referenced CRS SHALL NOT change coordinate ordering (see
+      "2.1.1 Position").
 
    Note-sdrees: The name has been changed from crs to crsURN to not
    irritate consumers that expect the crs object as of version 1.0 in
@@ -509,14 +504,9 @@ Copyright Notice
    "crsURN": "urn:ogc:def:crs:OGC:1.3:CRS84"
 
 
-4.  For the format of a valid URN cf.  [RFC5165].
+   For the format of a valid URN cf.  [RFC5165].
 
-   The coordinate reference system of a GeoJSON object is a geographic
-   coordinate reference system, using the World Geodedic System 1984
-   (WGS 84) datum, and with longitude and latitude units of decimal
-   degrees.  >>>>>>> 3c77b1dc14538cfdd5d32474193271fff183cb33
-
-5.  Bounding Box
+4.  Bounding Box
 
    A GeoJSON object MAY have a member named "bbox" to include
    information on the coordinate range for geometries, features, or
@@ -524,7 +514,9 @@ Copyright Notice
    of length 2*n where n is the number of dimensions represented in the
    contained geometries, with the lowest values for all axes followed by
    the highest values.  The axes order of a bbox follows the axes order
-   of geometries (longitude, latitude).
+   of geometries.  In addition, the coordinate reference system for the
+   bbox is assumed to match the coordinate reference system of the
+   GeoJSON object of which it is a member.
 
    Example of a bbox member on a feature:
 
@@ -557,24 +549,17 @@ Copyright Notice
    }
 
 
-6.  Security Considerations
+5.  Security Considerations
 
    This memo raises no security issues.
 
-   As GeoJSON directly builds on JSON, security considerations of JSON
-   also apply.
-
-   For JSON relevant security implications please cf.  at least the
-   relevant subsections of [RFC4627] (inside 6.  IANA Considerations
-   without separate sectionin number) as starting point.
-
-7.  IANA Considerations
+6.  IANA Considerations
 
    This document has no actions for IANA.
 
-8.  References
+7.  References
 
-8.1.  Normative References
+7.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
@@ -595,7 +580,7 @@ Copyright Notice
    [RFC5165]  Reed, C., "A Uniform Resource Name (URN) Namespace for the
               Open Geospatial Consortium (OGC)", RFC 5165, April 2008.
 
-8.2.  Informative References
+7.2.  Informative References
 
    [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
               (TLS) Protocol Version 1.2", RFC 5246, August 2008.
@@ -800,9 +785,5 @@ Authors' Addresses
 
 
    S. Gillies
-   New York University
-
-
-   T. Schaub
-   OpenGeo
+   UNC-Chapel Hill
 

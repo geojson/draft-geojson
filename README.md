@@ -15,8 +15,6 @@ Some issues are to be resolved, others are not yet known:
 
 * Is the migration from the crs object to a crs reference ok?
 
-* Namespace or profile - howto enable optional hints (for consumers of GeoJSON objects) in a natrual way
-
 * Are the formal changes applied to the existing community spec at <http://geojson.org/geojson-spec.html> ok?
 
 * Is there consensus, that the mostly editorial changes apllied are also an enhancement or where these have to be reversed or completed?
@@ -31,11 +29,5 @@ Some issues are to be resolved, others are not yet known:
 
 * There is also an Acknowledgments section possible in addition to (or replacing) a contributor section, where the former is mor for lengthy thanks, which might not fit so well with the approx 15 pages total of the to be submitted paginated text RFC draft ...
 
-hints on synch'ing the derived formats
---------------------------------------
 
-Inside the working copy of the repo perform (current practice):
-
-$> bash pandoc2rfc -R -t template.xml -x transform.xsl back.mkd middle.mkd && mv draft.txt draft-unpaginated.txt && for i in H N T X; do bash pandoc2rfc -$i -t template.xml -x transform.xsl back.mkd middle.mkd; done
-
-
+ 
