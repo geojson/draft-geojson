@@ -314,6 +314,10 @@ An object of type "FeatureCollection" MUST have a member with the name
 "features". The value corresponding to "features" is an array. Each
 element in the array is a feature object as defined above.
 
+A feature collection object MAY have a member with the name "properties". The 
+value of the properties member is an object (any JSON object or a
+JSON null value).
+
 # Coordinate Reference System (CRS)
 
 The coordinate reference system of a GeoJSON object and the sense of
