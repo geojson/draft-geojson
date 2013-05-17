@@ -91,8 +91,7 @@ at this place or in this form).
   in which it appears.
 
 * When using the term interior geometric shape it is assumed that
-  there exists an exterior shape such that the former is fully included
-  inside the geometry of the latter.
+  there exists an exterior shape.
 
 Note-sdrees: The last four items in the list above are added, to not
 forget to satisfy the need of defining these terms (but not necessarily
