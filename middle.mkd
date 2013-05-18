@@ -67,14 +67,6 @@ at this place or in this form).
   array, number, true, false, and null are to be interpreted as
   defined in [RFC4627].
 
-* The Hypertext Transfer Protocol (HTTP) is defined in [RFC2616].
-
-* Transport Layer Security (TLS) is defined in [RFC5246].
-
-* Hypertext Transfer Protocol Over TLS (HTTPS) is defined in [RFC2818].
-
-* The Uniform Resource Identifier (URI) is defined in [RFC3986].
-
 * The Uniform Resource Name (URN) is defined in [RFC5165].
 
 * Inside this document the term geometry types refers to the seven
