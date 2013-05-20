@@ -56,26 +56,11 @@ content deemed irrelevant by the authors and at that point. These
 placeholders must of course be deleted or otherwise replaced, before
 attempting to validate the corresponding JSON code example.
 
-Note-sdrees: The second and third paragraph of this section have been
-added, to not forget to satisfy the need of issueing structural
-constraints with strong impact on interoperability (but not necessarily
-at this place or in this form).
-
 ## Definitions
 
 * JavaScript Object Notation (JSON), and the terms object, name, value,
   array, number, true, false, and null are to be interpreted as
   defined in [RFC4627].
-
-* The Hypertext Transfer Protocol (HTTP) is defined in [RFC2616].
-
-* Transport Layer Security (TLS) is defined in [RFC5246].
-
-* Hypertext Transfer Protocol Over TLS (HTTPS) is defined in [RFC2818].
-
-* The Uniform Resource Identifier (URI) is defined in [RFC3986].
-
-* The Uniform Resource Name (URN) is defined in [RFC5165].
 
 * Inside this document the term geometry types refers to the seven
   case-sensitive strings: "Point", "MultiPoint", "LineString",
@@ -92,31 +77,6 @@ at this place or in this form).
 
 * When using the term interior geometric shape it is assumed that
   there exists an exterior shape.
-
-Note-sdrees: The last four items in the list above are added, to not
-forget to satisfy the need of defining these terms (but not necessarily
-at this place or in this form).
-
-Note-sdrees: We should consider adding at least an optional member
-on the top-level GeoJSON object with name "namespace" and a value
-of say "http://geojson.org/ns/geojson" or maybe something (after
-acceptance by the IETF like "http://docs.ietf.org/ns/rfc9876"
-hypothetically assuming this ends up as RFC9876) but then we might have
-also to adapt the "no action needed from IANA section".
-Then we might somewhere have a section "Namespace" explaining it in
-general and amend its usage with:
-
-* The namespace member SHOULD be on the top-level GeoJSON object in the
-  following canonical hierarchical ordering, i.e. if present on a
-  feature collection, else if present on a feature, else on a geometry
-  and MUST NOT be repeated or overridden on children or
-  grandchildren of the object.
-
-Motivation for above proposal: The benefit would be, that we a) remain
-backwards compatible, but b) avoid future clashes with JSON of unclear
-provenance when consuming in a client. Alternatively one might
-prefix all wonderful type names with say "geo" and a dot or so (not
-preferred) or even the names of the members (shiver).
 
 ## Example
 
@@ -189,13 +149,9 @@ referred to as the GeoJSON object in this document.
   value - additional rules apply, then these are stated in the
   following sections where each type is further defined.
 
-* A GeoJSON object MAY have an optional "crsURN" member. If it is present,
-  the value of it MUST be a valid coordinate reference system reference
-  (see "[3. Coordinate Reference System (CRS) Reference](rfc.section.3)").
-
 * A GeoJSON object MAY have a "bbox" member. If it is present,
   the value of it MUST be a bounding box array (see
-  "4. Bounding Box").
+  "3. Bounding Box").
 
 ## Geometry Object
 
@@ -229,10 +185,6 @@ Any number of additional elements are allowed -- interpretation and
 meaning of additional elements is beyond the scope of this
 specification.
 
-GeoJSON data producers MAY indicate a different sense of the position
-elements by including a "crsURN" object in the position's context. See
-the Coordinate Reference System section below for details. 
-
 Examples of positions and geometries are provided in "Appendix A.
 Geometry Examples".
 
@@ -265,8 +217,7 @@ the concept of a linear ring (LinearRing):
 * The first and last positions are equivalent (they represent
   equivalent points).
 
-Though a LinearRing is not explicitly represented as a GeoJSON geometry
-type, it leads to a canonical formulation of the Polygon geometry type
+This leads to a canonical formulation of the Polygon geometry type
 definition as follows:
 
 * For type "Polygon", the "coordinates" member MUST be an array of
@@ -312,45 +263,6 @@ collection object.
 An object of type "FeatureCollection" MUST have a member with the name
 "features". The value corresponding to "features" is an array. Each
 element in the array is a feature object as defined above.
-
-# Coordinate Reference System (CRS)
-
-The coordinate reference system of a GeoJSON object and the sense of
-coordinate order is determined by the value of its "crsURN" member
-(referred to as the CRS reference below). If an object has no crsURN
-member, then its parent or grandparent object's crsURN member may be
-acquired. If no crsURN member can be so acquired, the default CRS shall
-apply to the GeoJSON object.
-
-* The default CRS is a geographic coordinate reference system, using
-  the WGS84 datum, and with longitude and latitude units of decimal
-  degrees. In an array of coordinate values, longitude is first and is
-  followed by latitude. 
-
-* The value of a member named "crsURN" must be a string (referred to
-  as the CRS reference below) or JSON null. If the value of "crsURN" is
-  null, no CRS can be assumed. Note-sdrees: FIXME or default CRS as
-  when crsURN member is left out? It is optional anyway.
-
-* The crsURN member SHOULD be on the top-level GeoJSON object in the
-  following canonical hierarchical ordering, i.e. if present on a
-  feature collection, else if present on a feature, else on a geometry
-  and MUST NOT be repeated or overridden on children or
-  grandchildren of the object.
-
-Note-sdrees: The name has been changed from crs to crsURN to not
-irritate consumers that expect the crs object as of version 1.0 in the
-community spec.
-
-If present the CRS reference MUST indicate a coordinate reference
-system by name. In this case, the value of it MUST be a string
-identifying a coordinate reference system. OGC CRS URNs such as
-"urn:ogc:def:crs:OGC:1.3:CRS84" SHALL be preferred over legacy
-identifiers such as "EPSG:4326":
-
-    "crsURN": "urn:ogc:def:crs:OGC:1.3:CRS84"
-
-For the format of a valid URN cf. [RFC5165].
 
 # Bounding Box
 
