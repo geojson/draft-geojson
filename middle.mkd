@@ -88,11 +88,10 @@ at this place or in this form).
 
 * A hole is considered, for the sake of illustration, as simply a
   geometric shape that is to be excluded from the geometric shape
-  it appears in.
+  in which it appears.
 
-* When using the term interior geometric shape it is assumed, that
-  there exists an exterior shape so that the former is fully included
-  inside the convex hull of the latter.
+* When using the term interior geometric shape it is assumed that
+  there exists an exterior shape.
 
 Note-sdrees: The last four items in the list above are added, to not
 forget to satisfy the need of defining these terms (but not necessarily
@@ -115,7 +114,7 @@ general and amend its usage with:
 
 Motivation for above proposal: The benefit would be, that we a) remain
 backwards compatible, but b) avoid future clashes with JSON of unclear
-provenience when being consumed by the client. Alternatively one might
+provenance when consuming in a client. Alternatively one might
 prefix all wonderful type names with say "geo" and a dot or so (not
 preferred) or even the names of the members (shiver).
 
@@ -178,7 +177,7 @@ illustrate the data structures, but is not required.
 
 # GeoJSON Object
 
-As stated in the introduction, a complete Geospatial JSON (GeoJSON)
+As stated in the introduction, a complete GeoJSON
 data structure is always represented as a single JSON object that
 represents a geometry, feature, or collection of features and will be
 referred to as the GeoJSON object in this document.
