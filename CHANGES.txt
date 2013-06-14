@@ -1,3 +1,4 @@
+20130614 - renamed the single copies per GeoJSON example in the document to trigger the new GeoJSON display rendering on github 
 20130402 - reduced crsRef to single label with domain RFC 5165 like URN, thus renamed it to crsURN
 20130430 - moved repo to GeoJSONWG organization at https://github.com/GeoJSONWG/draft-geojson
 20130428 - typos corrected, editorial changes throughout the document and several notes partly explaining thes or requesting further changes or additions. Correction of inconsistent may in GeoJSON Object first list item into MUST, merge with second listitem and provision of js and bib folders
