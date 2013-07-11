@@ -2,7 +2,8 @@
 
 Geospatial JavaScript Object Notation (GeoJSON) is a format for
 encoding a variety of geographic data structures. A GeoJSON object may
-represent a geometry, a feature, or a collection of features.
+represent a geometry, a feature, or a collection of features. GeoJSON is
+a profile [RFC6906] of the application/json media type [RFC4627].
 
 GeoJSON supports the following seven geometry types:
 
@@ -392,3 +393,40 @@ Example of a bbox member on a feature collection:
         //...
         ]
     }
+
+# GeoJSON Profile URI
+
+GeoJSON is a profile of JSON and documents which have a "FeatureCollection" as
+the root object SHOULD use the application/json media type defined in [RFC4267].
+
+The GeoJSON feature collection profile URI,
+"http://geojson.org/profiles/feature-collection", SHOULD be used to distinguish
+a GeoJSON document from other profiles of JSON and to tell processors that the
+root object conforms with the specification above. As described in [RFC6906] it
+MAY be used in a link header:
+
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+  Link: <http://geojson.org/profiles/feature-collection>; rel="profile"
+  Connection: close
+  
+  {
+    "type": "FeatureCollection",
+    "features": []
+  }
+
+or as a media type parameter:
+
+  HTTP/1.1 200 OK
+  Content-Type: application/json; profile=http://geojson.org/profiles/feature-collection
+  Connection: close
+  
+  {
+    "type": "FeatureCollection",
+    "features": []
+  }
+
+# IANA Considerations
+
+There are no IANA considerations beyond those in [RFC4267].
+
