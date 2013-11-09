@@ -1,4 +1,18 @@
 
+   [OGC99049]     OpenGIS Consortium, Inc., "OpenGIS Simple Features
+                  Specification For SQL Revision 1.1", OGC 99-049, May
+                  1999.
+
+   [OGC02058]     Vretanos, P. A., "Web Feature Service Implementation
+                  Specification", OGC 02-058, May 2002.
+
+   [GeoJSONspec]  Butler, H., Daly, M., Doyle, A., Gillies, S., Schaub,
+                  T., and C. Schmidt, "The GeoJSON Format
+                  Specification",
+                  http://www.geojson.org/geojson-spec.html, June 2008.
+
+   [OGC07147r2]   Wilson, T. "OGC KML", OGC 07-147r2, April 2008.
+
 # Geometry Examples
 
 Each of the examples below represents a valid and complete GeoJSON

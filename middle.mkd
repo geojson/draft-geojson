@@ -1,49 +1,49 @@
 # Introduction
 
-GeoJSON is a format for encoding data about geographic features using
-JavaScript Object Notation (JSON) [RFC4627]. "Feature" is used loosely here,
-meaning not only natural and human constructed physical features of the Earth,
-but also planned features, map annotations, results of spatial analysis, and
-other information with a geographic context. The concepts in GeoJSON are not
-new; they are derived from pre-existing open geographic information system
-standards (for COM, SQL, and XML) and have been streamlined to better suit web
-application development using JSON.
+   GeoJSON is a format for encoding data about geographic features using
+   JavaScript Object Notation (JSON) [RFC4627].  The format is concerned
+   with features in the broadest sense; any object bounded in
+   geographical space may be a feature whether it is a physical
+   structure or not.  The concepts in GeoJSON are not new; they are
+   derived from pre-existing open geographic information system
+   standards (for COM, SQL, and XML) and have been streamlined to better
+   suit web application development using JSON.
 
-GeoJSON comprises the seven concrete geometry types defined in the OpenGIS
-Simple Features Implementation Specification for SQL [OGC 99-049]:
-0-dimensional Point and MultiPoint; 1-dimensional curve LineString and
-MultiLineString; 2-dimensional surface Polygon and MultiPolygon; and the
-heterogeneous GeometryCollection. GeoJSON representations of instances of these
-geometry types are analogous to the well-known binary (WKB) and text (WKT)
-representations described in that same specification.
+   GeoJSON comprises the seven concrete geometry types defined in the
+   OpenGIS Simple Features Implementation Specification for SQL
+   [OGC99-049]: 0-dimensional Point and MultiPoint; 1-dimensional curve
+   LineString and MultiLineString; 2-dimensional surface Polygon and
+   MultiPolygon; and the heterogeneous GeometryCollection.  GeoJSON
+   representations of instances of these geometry types are analogous to
+   the well-known binary (WKB) and text (WKT) representations described
+   in that same specification.
 
-GeoJSON also comprises the types Feature and FeatureCollection. Feature objects
-in GeoJSON contain a geometry object with one of the above geometry types and
-additional properties. A FeatureCollection object contains an array of feature
-objects. This structure is analogous to that of the Web Feature Service (WFS)
-response to GetFeatures requests specified in [OGC 02-058] or to a KML Folder
-of Placemarks [KML]. Some implementations of the WFS specification also provide
-GeoJSON formatted responses to GetFeature requests, but there is no particular
-service model or feature type ontology implied in the GeoJSON format
-specification.
+   GeoJSON also comprises the types Feature and FeatureCollection.
+   Feature objects in GeoJSON contain a geometry object with one of the
+   above geometry types and additional properties. A FeatureCollection
+   object contains an array of feature objects.  This structure is
+   analogous to that of the Web Feature Service (WFS) response to
+   GetFeatures requests specified in [OGC02-058] or to a KML Folder of
+   Placemarks [KML].  Some implementations of the WFS specification also
+   provide GeoJSON formatted responses to GetFeature requests, but there
+   is no particular service model or feature type ontology implied in
+   the GeoJSON format specification.
 
-Since its initial publication in 2008 [GeoJSON-spec], the GeoJSON format
-specification has steadily grown in popularity. It is widely used in
-JavaScript web mapping libraries, JSON-based document databases, and web APIs.
+   Since its initial publication in 2008 [GeoJSON-spec], the GeoJSON
+   format specification has steadily grown in popularity.  It is widely
+   used in JavaScript web mapping libraries, JSON-based document
+   databases, and web APIs.
+
+## Requirements Language
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+   document are to be interpreted as described in [RFC2119].
 
 ## Conventions Used in This Document
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-document are to be interpreted as described in [RFC2119].
-
-The ordering of the members of any JSON object defined in this
-document MUST be considered irrelevant, as specified by [RFC4627].
-
-The ordering of the elements of any JSON array defined in this
-document MUST at least follow a stable ordering unless the specific
-object's type it is a member of defines an absolute ordering, which
-then takes precedence.
+The ordering of the members of any JSON object defined in this document MUST be
+considered irrelevant, as specified by [RFC4627].
 
 Some examples use the combination of a JavaScript single line comment
 (//) followed by an ellipsis (...) as placeholder notation for
@@ -51,22 +51,11 @@ content deemed irrelevant by the authors and at that point. These
 placeholders must of course be deleted or otherwise replaced, before
 attempting to validate the corresponding JSON code example.
 
-Note-sdrees: The second and third paragraph of this section have been
-added, to not forget to satisfy the need of issueing structural
-constraints with strong impact on interoperability (but not necessarily
-at this place or in this form).
-
 ## Definitions
 
 * JavaScript Object Notation (JSON), and the terms object, name, value,
   array, number, true, false, and null are to be interpreted as
   defined in [RFC4627].
-
-* The Hypertext Transfer Protocol (HTTP) is defined in [RFC2616].
-
-* Transport Layer Security (TLS) is defined in [RFC5246].
-
-* Hypertext Transfer Protocol Over TLS (HTTPS) is defined in [RFC2818].
 
 * The Uniform Resource Identifier (URI) is defined in [RFC3986].
 
@@ -91,27 +80,6 @@ at this place or in this form).
 Note-sdrees: The last four items in the list above are added, to not
 forget to satisfy the need of defining these terms (but not necessarily
 at this place or in this form).
-
-Note-sdrees: We should consider adding at least an optional member
-on the top-level GeoJSON object with name "namespace" and a value
-of say "http://geojson.org/ns/geojson" or maybe something (after
-acceptance by the IETF like "http://docs.ietf.org/ns/rfc9876"
-hypothetically assuming this ends up as RFC9876) but then we might have
-also to adapt the "no action needed from IANA section".
-Then we might somewhere have a section "Namespace" explaining it in
-general and amend its usage with:
-
-* The namespace member SHOULD be on the top-level GeoJSON object in the
-  following canonical hierarchical ordering, i.e. if present on a
-  feature collection, else if present on a feature, else on a geometry
-  and MUST NOT be repeated or overridden on children or
-  grandchildren of the object.
-
-Motivation for above proposal: The benefit would be, that we a) remain
-backwards compatible, but b) avoid future clashes with JSON of unclear
-provenance when consuming in a client. Alternatively one might
-prefix all wonderful type names with say "geo" and a dot or so (not
-preferred) or even the names of the members (shiver).
 
 ## Example
 
