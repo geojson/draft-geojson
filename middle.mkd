@@ -1,40 +1,35 @@
 # Introduction
 
-Geospatial JavaScript Object Notation (GeoJSON) is a format for
-encoding a variety of geographic data structures. A GeoJSON object may
-represent a geometry, a feature, or a collection of features.
+GeoJSON is a format for encoding data about geographic features using
+JavaScript Object Notation (JSON) [RFC4627]. "Feature" is used loosely here,
+meaning not only natural and human constructed physical features of the Earth,
+but also planned features, map annotations, results of spatial analysis, and
+other information with a geographic context. The concepts in GeoJSON are not
+new; they are derived from pre-existing open geographic information system
+standards (for COM, SQL, and XML) and have been streamlined to better suit web
+application development using JSON.
 
-GeoJSON supports the following seven geometry types:
+GeoJSON comprises the seven concrete geometry types defined in the OpenGIS
+Simple Features Implementation Specification for SQL [OGC 99-049]:
+0-dimensional Point and MultiPoint; 1-dimensional curve LineString and
+MultiLineString; 2-dimensional surface Polygon and MultiPolygon; and the
+heterogeneous GeometryCollection. GeoJSON representations of instances of these
+geometry types are analogous to the well-known binary (WKB) and text (WKT)
+representations described in that same specification.
 
-* Point
+GeoJSON also comprises the types Feature and FeatureCollection. Feature objects
+in GeoJSON contain a geometry object with one of the above geometry types and
+additional properties. A FeatureCollection object contains an array of feature
+objects. This structure is analogous to that of the Web Feature Service (WFS)
+response to GetFeatures requests specified in [OGC 02-058] or to a KML Folder
+of Placemarks [KML]. Some implementations of the WFS specification also provide
+GeoJSON formatted responses to GetFeature requests, but there is no particular
+service model or feature type ontology implied in the GeoJSON format
+specification.
 
-* LineString
-
-* Polygon
-
-* MultiPoint
-
-* MultiLineString
-
-* MultiPolygon
-
-* GeometryCollection
-
-GeoJSON also comprises the types:
-
-* Feature
-
-* FeatureCollection
-
-Features in GeoJSON contain a geometry object and additional
-properties, and a FeatureCollection contains an array of features.
-
-A complete GeoJSON data structure is always an object (in JSON terms).
-In GeoJSON, an object consists of a collection of name/value pairs --
-also called members. For each member, the name is always a string.
-Member values are either a string, number, object, array or one of the
-JSON literals: true, false, and null. An array consists of elements
-where each element is a value as described above.
+Since its initial publication in 2008 [GeoJSON-spec], the GeoJSON format
+specification has steadily grown in popularity. It is widely used in
+JavaScript web mapping libraries, JSON-based document databases, and web APIs.
 
 ## Conventions Used in This Document
 
@@ -177,10 +172,12 @@ illustrate the data structures, but is not required.
 
 # GeoJSON Object
 
-As stated in the introduction, a complete GeoJSON
-data structure is always represented as a single JSON object that
-represents a geometry, feature, or collection of features and will be
-referred to as the GeoJSON object in this document.
+A complete GeoJSON data structure is always an object (in JSON terms).
+In GeoJSON, an object consists of a collection of name/value pairs --
+also called members. For each member, the name is always a string.
+Member values are either a string, number, object, array or one of the
+JSON literals: true, false, and null. An array consists of elements
+where each element is a value as described above.
 
 * The GeoJSON object MUST have one or more members (name/value pairs)
   including a member with the name "type". This member's value is a
@@ -349,3 +346,8 @@ Example of a bbox member on a feature collection:
         //...
         ]
     }
+
+# IANA Considerations
+
+There are no IANA considerations beyond those in [RFC4267].
+
