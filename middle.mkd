@@ -2,10 +2,10 @@
 
    GeoJSON is a format for encoding data about geographic features using
    JavaScript Object Notation (JSON) [RFC4627].  The format is concerned
-   with features in the broadest sense; any object bounded in
-   geographical space may be a feature whether it is a physical
-   structure or not.  The concepts in GeoJSON are not new; they are
-   derived from pre-existing open geographic information system
+   with features in the broadest sense; any thing with qualities that
+   are bounded in geographical space may be a feature whether it is
+   a physical structure or not.  The concepts in GeoJSON are not new;
+   they are derived from pre-existing open geographic information system
    standards (for COM, SQL, and XML) and have been streamlined to better
    suit web application development using JSON.
 
@@ -24,10 +24,10 @@
    object contains an array of feature objects.  This structure is
    analogous to that of the Web Feature Service (WFS) response to
    GetFeatures requests specified in [OGC02-058] or to a KML Folder of
-   Placemarks [KML].  Some implementations of the WFS specification also
-   provide GeoJSON formatted responses to GetFeature requests, but there
-   is no particular service model or feature type ontology implied in
-   the GeoJSON format specification.
+   Placemarks [OGC07-147r2].  Some implementations of the WFS
+   specification also provide GeoJSON formatted responses to GetFeature
+   requests, but there is no particular service model or feature type
+   ontology implied in the GeoJSON format specification.
 
    Since its initial publication in 2008 [GeoJSON-spec], the GeoJSON
    format specification has steadily grown in popularity.  It is widely
