@@ -10,26 +10,26 @@
    suit web application development using JSON.
 
    GeoJSON comprises the seven concrete geometry types defined in the
-   OpenGIS Simple Features Implementation Specification for SQL
-   [OGC99-049]: 0-dimensional Point and MultiPoint; 1-dimensional curve
-   LineString and MultiLineString; 2-dimensional surface Polygon and
-   MultiPolygon; and the heterogeneous GeometryCollection.  GeoJSON
-   representations of instances of these geometry types are analogous to
-   the well-known binary (WKB) and text (WKT) representations described
-   in that same specification.
+   OpenGIS Simple Features Implementation Specification for SQL [SFSQL]:
+   0-dimensional Point and MultiPoint; 1-dimensional curve LineString
+   and MultiLineString; 2-dimensional surface Polygon and MultiPolygon;
+   and the heterogeneous GeometryCollection.  GeoJSON representations of
+   instances of these geometry types are analogous to the well-known
+   binary (WKB) and text (WKT) representations described in that same
+   specification.
 
    GeoJSON also comprises the types Feature and FeatureCollection.
    Feature objects in GeoJSON contain a geometry object with one of the
    above geometry types and additional properties. A FeatureCollection
    object contains an array of feature objects.  This structure is
    analogous to that of the Web Feature Service (WFS) response to
-   GetFeatures requests specified in [OGC02-058] or to a KML Folder of
-   Placemarks [OGC07-147r2].  Some implementations of the WFS
-   specification also provide GeoJSON formatted responses to GetFeature
-   requests, but there is no particular service model or feature type
-   ontology implied in the GeoJSON format specification.
+   GetFeatures requests specified in [WFSv1] or to a KML Folder of
+   Placemarks [KMLv2.2].  Some implementations of the WFS specification
+   also provide GeoJSON formatted responses to GetFeature requests, but
+   there is no particular service model or feature type ontology implied
+   in the GeoJSON format specification.
 
-   Since its initial publication in 2008 [GeoJSON-spec], the GeoJSON
+   Since its initial publication in 2008 [GeoJSON], the GeoJSON
    format specification has steadily grown in popularity.  It is widely
    used in JavaScript web mapping libraries, JSON-based document
    databases, and web APIs.
@@ -42,8 +42,8 @@
 
 ## Conventions Used in This Document
 
-The ordering of the members of any JSON object defined in this document MUST be
-considered irrelevant, as specified by [RFC4627].
+The ordering of the members of any JSON object defined in this document
+MUST be considered irrelevant, as specified by [RFC4627].
 
 Some examples use the combination of a JavaScript single line comment
 (//) followed by an ellipsis (...) as placeholder notation for

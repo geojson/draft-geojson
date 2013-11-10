@@ -96,14 +96,55 @@
 <back>
     <references title="Normative References">
         &pandocRef2119;
-        &pandocRef2616;
-        &pandocRef2818;
         &pandocRef3986;
         &pandocRef4627;
         &pandocRef5165;
+        <reference anchor="GeoJSON">
+           <front>
+               <title>The GeoJSON Format Specification</title>
+               <author initials="H." surname="Butler" fullname="Howard Butler"></author>
+               <author initials="M." surname="Daly" fullname="Martin Daly"></author>
+               <author initials="A." surname="Doyle" fullname="Allan Doyle"></author>
+               <author initials="S." surname="Gillies" fullname="Sean Gillies"></author>
+               <author initials="T." surname="Schaub" fullname="Tim Schaub"></author>
+               <author initials="C." surname="Schmidt" fullname="Christopher Schmidt"></author>
+               <date month="June" year="2008" />
+           </front>
+        </reference>
     </references>
     <references title="Informative References">
-        &pandocRef5246;
+       <reference anchor="SFSQL">
+           <front>
+               <title>OpenGIS Simple Features Specification For SQL Revision 1.1</title>
+               <author>
+                   <organization abbrev="OGC">
+                   OpenGIS Consortium, Inc.
+                   </organization>
+               </author>
+               <date month="May" year="1999" />
+           </front>
+           <seriesInfo name="OGC" value="99-049" />
+       </reference>
+       <reference anchor="WFSv1">
+           <front>
+               <title>Web Feature Service Implementation Specification</title>
+               <author initials="P. A." surname="Vretanos" fullname="P. A. Vretanos">
+                   <organization abbrev="OGC">
+                   OpenGIS Consortium, Inc.
+                   </organization>
+               </author>
+               <date month="May" year="2002" />
+           </front>
+           <seriesInfo name="OGC" value="02-058" />
+       </reference>
+       <reference anchor="KMLv2.2">
+           <front>
+               <title>OGC KML</title>
+               <author initials="T." surname="Wilson"></author>
+               <date month="April" year="2008" />
+           </front>
+           <seriesInfo name="OGC" value="07-147r2" />
+       </reference>
     </references>
     &pandocBack;
 </back>
