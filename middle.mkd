@@ -215,22 +215,26 @@ of LineString coordinate arrays.
 ### Polygon
 
 To specify a constraint specific to polygons, it is useful to introduce
-the concept of a linear ring (LinearRing):
+the concept of a linear ring:
 
-* A LinearRing is a closed LineString with 4 or more positions.
+* A linear ring is a closed LineString with 4 or more positions.
 
 * The first and last positions are equivalent (they represent
   equivalent points).
 
-Though a LinearRing is not explicitly represented as a GeoJSON geometry
+* A linear ring is the boundary of a polygonal region or the boundary of a hole.
+
+Though a linear ring is not explicitly represented as a GeoJSON geometry
 type, it leads to a canonical formulation of the Polygon geometry type
 definition as follows:
 
 * For type "Polygon", the "coordinates" member MUST be an array of
-  LinearRing coordinate arrays.
+  linear ring coordinate arrays.
 
 * For Polygons with more than one of these rings, the first MUST be the
-  exterior ring and any others MUST be interior rings or holes.
+  exterior ring and any others MUST be interior rings. The exterior ring bounds
+  the polygonal region and the interiors rings (if present) bound holes within
+  the polygonal region.
 
 ### MultiPolygon
 
