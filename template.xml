@@ -64,7 +64,7 @@
             </address>
         </author>
 -->
-        <date month="April" year="2013"/>
+        <date month="January" year="2014"/>
 
         <area>General</area>
         <workgroup>Independent</workgroup>
@@ -144,6 +144,14 @@
                <date month="April" year="2008" />
            </front>
            <seriesInfo name="OGC" value="07-147r2" />
+       </reference>
+       <reference anchor="OGCURN">
+           <front>
+               <title>Definition identifier URNs in OGC namespace</title>
+               <author initials="A." surname="Whiteside"></author>
+               <date month="January" year="2009" />
+           </front>
+           <seriesInfo name="OGC" value="07-092r3" />
        </reference>
     </references>
     &pandocBack;

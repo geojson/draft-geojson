@@ -46,40 +46,29 @@ The ordering of the members of any JSON object defined in this document
 MUST be considered irrelevant, as specified by [RFC4627].
 
 Some examples use the combination of a JavaScript single line comment
-(//) followed by an ellipsis (...) as placeholder notation for
-content deemed irrelevant by the authors and at that point. These
-placeholders must of course be deleted or otherwise replaced, before
-attempting to validate the corresponding JSON code example.
+(//) followed by an ellipsis (...) as placeholder notation for content
+deemed irrelevant by the authors. These placeholders must of course be
+deleted or otherwise replaced, before attempting to validate the
+corresponding JSON code example.
+
+Whitespace is used in the examples inside this document to help
+illustrate the data structures, but is not required. Unquoted whitespace
+is not significant in JSON.
 
 ## Definitions
 
 * JavaScript Object Notation (JSON), and the terms object, name, value,
-  array, number, true, false, and null are to be interpreted as
-  defined in [RFC4627].
+  array, number, true, false, and null are to be interpreted as defined
+  in [RFC4627].
 
-* The Uniform Resource Identifier (URI) is defined in [RFC3986].
-
-* The Uniform Resource Name (URN) is defined in [RFC5165].
-
-* Inside this document the term geometry types refers to the seven
+* Inside this document the term "geometry type" refers to the seven
   case-sensitive strings: "Point", "MultiPoint", "LineString",
   "MultiLineString", "Polygon", "MultiPolygon", and
   "GeometryCollection".
 
 * As another shorthand notation the term GeoJSON types refers to the
-  nine case-senisitve strings "Feature", "FeatureCollection" and those
-  considered geometry types.
-
-* A hole is considered, for the sake of illustration, as simply a
-  geometric shape that is to be excluded from the geometric shape
-  in which it appears.
-
-* When using the term interior geometric shape it is assumed that
-  there exists an exterior shape.
-
-Note-sdrees: The last four items in the list above are added, to not
-forget to satisfy the need of defining these terms (but not necessarily
-at this place or in this form).
+  nine case-sensitve strings "Feature", "FeatureCollection" and the
+  geometry types listed above.
 
 ## Example
 
@@ -134,39 +123,27 @@ A GeoJSON feature collection:
         }]
     }
 
-Note that unquoted whitespace is not significant in JSON.
-Whitespace is used in the examples inside this document to help
-illustrate the data structures, but is not required.
-
 # GeoJSON Object
 
-A complete GeoJSON data structure is always an object (in JSON terms).
-In GeoJSON, an object consists of a collection of name/value pairs --
-also called members. For each member, the name is always a string.
-Member values are either a string, number, object, array or one of the
-JSON literals: true, false, and null. An array consists of elements
-where each element is a value as described above.
+GeoJSON always consists of a single object. This object (referred to as
+the GeoJSON object below) represents a geometry, feature, or collection
+of features.
 
-* The GeoJSON object MUST have one or more members (name/value pairs)
-  including a member with the name "type". This member's value is a
-  case-sensitive string that determines the type of the GeoJSON object
-  by being one of GeoJSON types. If - depending on this
-  value - additional rules apply, then these are stated in the
-  following sections where each type is further defined.
+* The GeoJSON object MUST have a member with the name "type". The value
+  of the member MUST be one of the GeoJSON types.
 
-* A GeoJSON object MAY have a "bbox" member. If it is present,
-  the value of it MUST be a bounding box array (see
-  "4. Bounding Box").
+* The GeoJSON object MAY have any number of other members.
+
+* A GeoJSON object MAY have a "bbox" member, the value of which MUST be
+  a bounding box array (see 4. Bounding Boxes).
 
 ## Geometry Object
 
-A geometry is a GeoJSON object where the type member's value is a
-geometry type.
-
-A GeoJSON geometry object of any type other than "GeometryCollection"
-MUST have a member with the name "coordinates". The value of the
-coordinates member is always an array. The structure for the elements
-in this array is determined by the type of geometry.
+A geometry object is a GeoJSON object where the "type" value is one of
+the geometry types. A GeoJSON geometry object of any type other than
+"GeometryCollection" MUST have a member with the name "coordinates". The
+value of the coordinates member is always an array. The structure of the
+elements in this array is determined by the type of geometry.
 
 ### Position
 
@@ -183,10 +160,12 @@ member of a geometry object is composed of either:
 
 A position is represented by an array of numbers. There MUST be two or
 more elements. The first two elements will be World Geodetic System 1984
-(WGS 84) longitude and latitude, precisely in that order, and
-a third (optional element) will be altitude in meters.
+(WGS 84) longitude and latitude, precisely in that order and in units of
+decimal degrees. A third OPTIONAL element will be altitude in meters
+above the WGS 84 reference ellipsoid.
 
-Any number of additional elements are allowed -- interpretation and
+Additional position elements MAY be included but MUST follow the three
+specified above and MAY be ignored by software. Interpretation and
 meaning of additional elements is beyond the scope of this
 specification.
 
@@ -209,8 +188,8 @@ or more positions.
 
 ### MultiLineString
 
-For type "MultiLineString", the "coordinates" member MUST be an array
-of LineString coordinate arrays.
+For type "MultiLineString", the "coordinates" member MUST be an array of
+LineString coordinate arrays.
 
 ### Polygon
 
@@ -222,7 +201,8 @@ the concept of a linear ring:
 * The first and last positions are equivalent (they represent
   equivalent points).
 
-* A linear ring is the boundary of a polygonal region or the boundary of a hole.
+* A linear ring is the boundary of a surface or the boundary of a hole in
+  a surface.
 
 Though a linear ring is not explicitly represented as a GeoJSON geometry
 type, it leads to a canonical formulation of the Polygon geometry type
@@ -232,9 +212,9 @@ definition as follows:
   linear ring coordinate arrays.
 
 * For Polygons with more than one of these rings, the first MUST be the
-  exterior ring and any others MUST be interior rings. The exterior ring bounds
-  the polygonal region and the interiors rings (if present) bound holes within
-  the polygonal region.
+  exterior ring and any others MUST be interior rings. The exterior ring
+  bounds the surface and the interiors rings (if present) bound holes
+  within the surface.
 
 ### MultiPolygon
 
@@ -244,11 +224,10 @@ Polygon coordinate arrays.
 ### Geometry Collection
 
 A GeoJSON object with type "GeometryCollection" is a geometry object
-which represents a collection of geometry objects.
-
-A geometry collection MUST have a member with the name "geometries".
-The value corresponding to "geometries" is an array. Each element in
-this array is a GeoJSON geometry object.
+which represents a collection of geometry objects. A geometry collection
+MUST have a member with the name "geometries".  The value corresponding
+to "geometries" is an array. Each element in this array is a GeoJSON
+geometry object.
 
 ## Feature Object
 
@@ -268,23 +247,23 @@ A GeoJSON object with the type "Feature" is a feature object.
 ## Feature Collection Object
 
 A GeoJSON object with the type "FeatureCollection" is a feature
-collection object.
-
-An object of type "FeatureCollection" MUST have a member with the name
-"features". The value corresponding to "features" is an array. Each
-element in the array is a feature object as defined above.
+collection object. An object of type "FeatureCollection" MUST have
+a member with the name "features". The value corresponding to "features"
+is an array. Each element in the array is a feature object as defined
+above.
 
 # Coordinate Reference System (CRS)
 
 The coordinate reference system of all GeoJSON objects is a geographic
 coordinate reference system, using the WGS84 datum, and with longitude and
-latitude units of decimal degrees. In an array of coordinate values,
-longitude is first and is followed by latitude.
+latitude units of decimal degrees. This coordinate reference system is
+equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. In an array of
+coordinate values, longitude is first and is followed by latitude.
 
 # Bounding Box
 
 A GeoJSON object MAY have a member named "bbox" to include information
-on the coordinate range for geometries, features, or feature
+on the coordinate range for its geometries, features, or feature
 collections. The value of the bbox member MUST be an array of length
 2*n where n is the number of dimensions represented in the contained
 geometries, with the lowest values for all axes followed by the highest
