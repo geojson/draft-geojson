@@ -37,8 +37,9 @@
 ## Requirements Language
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in [RFC2119].
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in 
+   [RFC2119].
 
 ## Conventions Used in This Document
 
@@ -259,6 +260,9 @@ coordinate reference system, using the WGS84 datum, and with longitude and
 latitude units of decimal degrees. This coordinate reference system is
 equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. In an array of
 coordinate values, longitude is first and is followed by latitude.
+
+So that GeoJSON data may be easily combined with other global data, other
+coordinate reference systems are NOT RECOMMENDED.
 
 # Bounding Box
 

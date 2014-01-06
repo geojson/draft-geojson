@@ -159,14 +159,9 @@ the geometry objects described above:
 
 # Contributors
 
-*  Howard Butler (Hobu Inc.),
-*  Martin Daly (Cadcorp),
-*  Allan Doyle (MIT),
-*  Sean Gillies (UNC-Chapel Hill),
-*  Tim Schaub (OpenGeo),
-*  Christopher Schmidt (MetaCarta)
+The GeoJSON format is the product of discussion on the GeoJSON mailing
+list: http://lists.geojson.org/listinfo.cgi/geojson-geojson.org.
 
-The GeoJSON format specification is the product of discussion on the
-GeoJSON list:
-
-http://lists.geojson.org/listinfo.cgi/geojson-geojson.org
+Comments are solicited and should be addressed to the GeoJSON mailing
+list at geojson@lists.geojson.org or to the GeoJSON issue tracker at
+https://github.com/geojson/draft-geojson/issues.
