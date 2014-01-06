@@ -255,11 +255,11 @@ above.
 
 # Coordinate Reference System (CRS)
 
-The coordinate reference system of all GeoJSON objects is a geographic
-coordinate reference system, using the WGS84 datum, and with longitude and
-latitude units of decimal degrees. This coordinate reference system is
-equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. In an array of
-coordinate values, longitude is first and is followed by latitude.
+The RECOMMENDED coordinate reference system for all GeoJSON objects is
+a geographic coordinate reference system, using the WGS84 datum, and with
+longitude and latitude units of decimal degrees. This coordinate reference
+system is equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. In an
+array of coordinate values, longitude is first and is followed by latitude.
 
 So that GeoJSON data may be easily combined with other global data, other
 coordinate reference systems are NOT RECOMMENDED.
