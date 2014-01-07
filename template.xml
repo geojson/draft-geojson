@@ -35,7 +35,12 @@
         </author>
         <author initials="S." surname="Gillies"
                 fullname="S. Gillies">
-            <organization>Mapbox</organization>
+            <organization>Mapbox Inc.</organization>
+            <address>
+                <email>sean.gillies@gmail.com</email>
+                <uri>http://sgillies.net</uri>
+            </address>
+
         </author>
         <author initials="T." surname="Schaub"
                 fullname="T. Schaub">
@@ -47,8 +52,7 @@
         </author>-->
         <author initials="S." surname="Drees"
                 fullname="S. Drees">
-
-            <!--<address>
+            <address>
                 <postal>
                     <street>Rheinaustr. 62</street>
                     <street></street>
@@ -60,7 +64,7 @@
                 <phone></phone>
                 <email>stefan@drees.name</email>
                 <uri>http://sdre.es/</uri>
-            </address>-->
+            </address>
         </author>
         <date month="January" year="2014"/>
 
