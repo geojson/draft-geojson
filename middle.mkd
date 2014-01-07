@@ -260,23 +260,24 @@ member, then its parent or grandparent object's crs member SHALL be acquired.
 If no crs member can be so acquired, the default CRS SHALL apply to the GeoJSON
 object.
 
-The default coordinate reference system for all GeoJSON objects is a geographic
-coordinate reference system, using the WGS84 datum, and with longitude and
-latitude units of decimal degrees. This coordinate reference system is
-equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN].  For widest
-interoperability, GeoJSON data SHOULD use this default coordinate reference
-system.
+The default coordinate reference system for all GeoJSON objects SHALL be
+a geographic coordinate reference system, using the WGS84 datum, and with
+longitude and latitude units of decimal degrees. This coordinate reference
+system is equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. An
+OPTIONAL third position element SHALL be the height in meters above the WGS 84
+reference ellipsoid. For widest interoperability, GeoJSON data SHOULD use this
+default coordinate reference system.
 
 If an application demands a different coordinate reference system, the
 following specifications shall be followed:
 
-* The value of a member named "crs" must be a JSON object (referred to as the
+* CRS SHOULD be defined as highly in GeoJSON object hierarchy as possible,
+  ideally in the FeatureCollection and and SHOULD NOT be repeated or overridden
+  in child objects.
+
+* The value of a member named "crs" is a JSON object (referred to as the
   CRS object below) or JSON null. If the value of CRS is null, no CRS can be
   assumed.
-
-* The crs member SHOULD be on the top-level GeoJSON object in a hierarchy (in
-  feature collection, feature, geometry order) and SHOULD NOT be repeated or
-  overridden on children or grandchildren of the object.
 
 * A non-null CRS object has two mandatory members: "type" and "properties".
 
