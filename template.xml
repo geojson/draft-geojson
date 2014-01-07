@@ -105,9 +105,7 @@
 <back>
     <references title="Normative References">
         &pandocRef2119;
-        &pandocRef3986;
         &pandocRef4627;
-        &pandocRef5165;
         <reference anchor="GeoJSON">
            <front>
                <title>The GeoJSON Format Specification</title>
