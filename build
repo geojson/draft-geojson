@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH="`pwd`:$PATH"
+
 pandoc2rfc -R -t template.xml -x transform.xsl back.mkd middle.mkd
 
 mv draft.txt draft-unpaginated.txt
