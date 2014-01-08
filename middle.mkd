@@ -272,7 +272,7 @@ If an application demands a different coordinate reference system, the
 following specifications shall be followed:
 
 * CRS SHOULD be defined as highly in GeoJSON object hierarchy as possible,
-  ideally in the FeatureCollection and and SHOULD NOT be repeated or overridden
+  ideally in the FeatureCollection, and SHOULD NOT be repeated or overridden
   in child objects.
 
 * The value of a member named "crs" is a JSON object (referred to as the
