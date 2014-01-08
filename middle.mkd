@@ -277,7 +277,7 @@ following specifications shall be followed:
 
 * The value of a member named "crs" is a JSON object (referred to as the
   CRS object below) or JSON null. If the value of CRS is null, no CRS can be
-  assumed. GeoJSON data utilizing the default CRS should have no CRS member.
+  assumed. GeoJSON data utilizing the default CRS SHOULD have no CRS member.
 
 
 * A non-null CRS object has two mandatory members: "type" and "properties".
