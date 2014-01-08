@@ -373,7 +373,3 @@ Example of a bbox member on a feature collection:
         ]
     }
 
-# IANA Considerations
-
-There are no IANA considerations beyond those in [RFC4267].
-

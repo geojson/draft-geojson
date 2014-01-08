@@ -98,7 +98,7 @@
        <t>This memo raises no security issues.</t>
    </section>
    <section title="IANA Considerations">
-       <t>This document has no actions for IANA.</t>
+       <t>There are no IANA considerations beyond those in [RFC4267].</t>
    </section>
 </middle>
 
