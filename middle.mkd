@@ -255,8 +255,8 @@ above.
 # Coordinate Reference System Object
 
 The coordinate reference system (CRS) of a GeoJSON object is determined by its
-"crs" member (referred to as the CRS object below). If an object has no crs
-member, then its parent or grandparent object's crs member SHALL be acquired.
+OPTIONAL "crs" member (referred to as the CRS object below). If an object has no 
+crs member, then its parent or grandparent object's crs member SHALL be acquired.
 If no crs member can be so acquired, the default CRS SHALL apply to the GeoJSON
 object.
 
@@ -277,7 +277,8 @@ following specifications shall be followed:
 
 * The value of a member named "crs" is a JSON object (referred to as the
   CRS object below) or JSON null. If the value of CRS is null, no CRS can be
-  assumed.
+  assumed. GeoJSON data utilizing the default CRS SHOULD have no CRS member.
+
 
 * A non-null CRS object has two mandatory members: "type" and "properties".
 
