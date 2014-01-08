@@ -37,8 +37,9 @@
 ## Requirements Language
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in [RFC2119].
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in 
+   [RFC2119].
 
 ## Conventions Used in This Document
 
@@ -159,10 +160,9 @@ member of a geometry object is composed of either:
 * or a multidimensional array of positions (MultiPolygon).
 
 A position is represented by an array of numbers. There MUST be two or
-more elements. The first two elements will be World Geodetic System 1984
-(WGS 84) longitude and latitude, precisely in that order and in units of
-decimal degrees. A third OPTIONAL element will be altitude in meters
-above the WGS 84 reference ellipsoid.
+more elements. The first two elements will be longitude and latitude, 
+or easting and northing, precisely in that order and using decimal numbers.
+Altitude or elevation MAY be included as an optional third element.
 
 Additional position elements MAY be included but MUST follow the three
 specified above and MAY be ignored by software. Interpretation and
@@ -252,13 +252,88 @@ a member with the name "features". The value corresponding to "features"
 is an array. Each element in the array is a feature object as defined
 above.
 
-# Coordinate Reference System (CRS)
+# Coordinate Reference System Object
 
-The coordinate reference system of all GeoJSON objects is a geographic
-coordinate reference system, using the WGS84 datum, and with longitude and
-latitude units of decimal degrees. This coordinate reference system is
-equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. In an array of
-coordinate values, longitude is first and is followed by latitude.
+The coordinate reference system (CRS) of a GeoJSON object is determined by its
+"crs" member (referred to as the CRS object below). If an object has no crs
+member, then its parent or grandparent object's crs member SHALL be acquired.
+If no crs member can be so acquired, the default CRS SHALL apply to the GeoJSON
+object.
+
+The default coordinate reference system for all GeoJSON objects SHALL be
+a geographic coordinate reference system, using the WGS84 datum, and with
+longitude and latitude units of decimal degrees. This coordinate reference
+system is equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. An
+OPTIONAL third position element SHALL be the height in meters above the WGS 84
+reference ellipsoid. For widest interoperability, GeoJSON data SHOULD use this
+default coordinate reference system.
+
+If an application demands a different coordinate reference system, the
+following specifications shall be followed:
+
+* CRS SHOULD be defined as highly in GeoJSON object hierarchy as possible,
+  ideally in the FeatureCollection and and SHOULD NOT be repeated or overridden
+  in child objects.
+
+* The value of a member named "crs" is a JSON object (referred to as the
+  CRS object below) or JSON null. If the value of CRS is null, no CRS can be
+  assumed.
+
+* A non-null CRS object has two mandatory members: "type" and "properties".
+
+* The value of the type member indicates the type of CRS object.
+
+* The value of the properties member must be an object.
+
+* The presence of a CRS object SHALL NOT change the ordering of coordinates
+  specified in section 2.1.1.
+
+## Named CRS
+
+A CRS object may indicate a coordinate reference system by name. In this case,
+the value of its "type" member must be the string "name". The value of its
+"properties" member must be an object containing a "name" member. The value of
+that "name" member must be a string identifying a coordinate reference system.
+OGC CRS URNs such as "urn:ogc:def:crs:OGC::CRS84" are RECOMMENDED over
+legacy identifiers such as "EPSG:4326".
+
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC::CRS84"
+        }
+    }
+
+## Linked CRS
+
+A CRS object may link to CRS parameters on the Web. In this case, the value of
+its "type" member must be the string "link", and the value of its "properties"
+member must be a Link object.
+
+A link object has one required member: "href", and one optional member: "type".
+The value of the required "href" member must be a dereferenceable URI. The
+value of the optional "type" member must be a string that hints at the
+format used to represent CRS parameters at the provided URI. Suggested values
+are: "proj4", "ogcwkt", "esriwkt", but others can be used::
+
+    "crs": {
+        "type": "link", 
+        "properties": {
+            "href": "http://example.com/crs/42",
+            "type": "proj4"
+        }
+    }
+    
+Relative links may be used to direct processors to CRS parameters in an
+auxiliary file:
+
+    "crs": {
+        "type": "link",
+        "properties": {
+            "href": "data.crs",
+            "type": "ogcwkt"
+        }
+    }
 
 # Bounding Box
 

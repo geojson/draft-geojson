@@ -12,14 +12,14 @@
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-sdrees-geojson-format-spec-01">
+<rfc ipr="trust200902" category="info" docName="draft-butler-geojson-00">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
 <?rfc compact="yes" ?>    <!-- conserve vertical whitespace -->
 <?rfc subcompact="no" ?>  <!-- but keep a blank line between list items -->
  <front>
-        <title abbrev="GeoJSON Format Specification">The Geospatial JavaScript Object Notation (GeoJSON) Format Specification</title>
+        <title abbrev="GeoJSON">The GeoJSON Format</title>
 
         <author initials="H." surname="Butler"
                 fullname="H. Butler">
@@ -35,7 +35,12 @@
         </author>
         <author initials="S." surname="Gillies"
                 fullname="S. Gillies">
-            <organization>MapBox</organization>
+            <organization>Mapbox Inc.</organization>
+            <address>
+                <email>sean.gillies@gmail.com</email>
+                <uri>http://sgillies.net</uri>
+            </address>
+
         </author>
         <author initials="T." surname="Schaub"
                 fullname="T. Schaub">
@@ -45,10 +50,8 @@
                 fullname="C. Schmidt">
             <organization>MetaCarta</organization>
         </author>-->
-<!--        <author initials="S." surname="Drees"
+        <author initials="S." surname="Drees"
                 fullname="S. Drees">
-            <organization>Editor</organization>
-
             <address>
                 <postal>
                     <street>Rheinaustr. 62</street>
@@ -63,7 +66,6 @@
                 <uri>http://sdre.es/</uri>
             </address>
         </author>
--->
         <date month="January" year="2014"/>
 
         <area>General</area>
@@ -78,7 +80,14 @@
         <abstract>
             <t>
             GeoJSON is a geospatial data interchange format based on
-            JavaScript Object Notation (JSON).
+            JavaScript Object Notation (JSON). It defines several types of
+            JSON objects and the manner in which they are combined to 
+            represent data about geographic features, their
+            properties, and their spatial extents.
+            
+            This document recommends a single coordinate reference system
+            based on WGS 84. Other coordinate reference systems are not
+            recommended.
             </t>
         </abstract>
 </front>
@@ -96,9 +105,7 @@
 <back>
     <references title="Normative References">
         &pandocRef2119;
-        &pandocRef3986;
         &pandocRef4627;
-        &pandocRef5165;
         <reference anchor="GeoJSON">
            <front>
                <title>The GeoJSON Format Specification</title>
@@ -152,6 +159,15 @@
                <date month="January" year="2009" />
            </front>
            <seriesInfo name="OGC" value="07-092r3" />
+       </reference>
+       <reference anchor="WGS84">
+           <front>
+               <title>Department of Defense World Geodetic System 1984, Third Edition</title>
+               <author>
+                  <organization abbrev="NIMA">National Imagery and Mapping Agency</organization>
+               </author>
+               <date year="1984" />
+           </front>
        </reference>
     </references>
     &pandocBack;
