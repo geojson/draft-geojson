@@ -234,8 +234,9 @@ geometry object.
 A GeoJSON object with the type "Feature" is a feature object.
 
 * A feature object MUST have a member with the name "geometry". The
-  value of the geometry member shall be a geometry object as defined above or,
-  in the the case that the feature is unlocated, a JSON null value. 
+  value of the geometry member SHALL be either a geometry object as
+  defined above or, in the the case that the feature is unlocated,
+  a JSON null value. 
 
 * A feature object MUST have a member with the name "properties". The
   value of the properties member is an object (any JSON object or a
