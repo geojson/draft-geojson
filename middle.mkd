@@ -1,7 +1,7 @@
 # Introduction
 
    GeoJSON is a format for encoding data about geographic features using
-   JavaScript Object Notation (JSON) [RFC4627].  The format is concerned
+   JavaScript Object Notation (JSON) [RFC7159].  The format is concerned
    with features in the broadest sense; any thing with qualities that
    are bounded in geographical space may be a feature whether it is
    a physical structure or not.  The concepts in GeoJSON are not new;
@@ -44,7 +44,7 @@
 ## Conventions Used in This Document
 
 The ordering of the members of any JSON object defined in this document
-MUST be considered irrelevant, as specified by [RFC4627].
+MUST be considered irrelevant, as specified by [RFC7159].
 
 Some examples use the combination of a JavaScript single line comment
 (//) followed by an ellipsis (...) as placeholder notation for content
@@ -60,7 +60,7 @@ is not significant in JSON.
 
 * JavaScript Object Notation (JSON), and the terms object, name, value,
   array, number, true, false, and null are to be interpreted as defined
-  in [RFC4627].
+  in [RFC7159].
 
 * Inside this document the term "geometry type" refers to the seven
   case-sensitive strings: "Point", "MultiPoint", "LineString",
@@ -263,7 +263,7 @@ acquired.  If no crs member can be so acquired, the default CRS SHALL apply to
 the GeoJSON object.
 
 The default coordinate reference system for all GeoJSON objects SHALL be
-a geographic coordinate reference system, using the WGS84 datum, and with
+a geographic coordinate reference system, using the [WGS84] datum, and with
 longitude and latitude units of decimal degrees. This coordinate reference
 system is equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. An
 OPTIONAL third position element SHALL be the height in meters above the WGS 84

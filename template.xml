@@ -7,7 +7,7 @@
 <!ENTITY pandocRef2616  PUBLIC '' 'bib/reference.RFC.2616.xml'>
 <!ENTITY pandocRef2818  PUBLIC '' 'bib/reference.RFC.2818.xml'>
 <!ENTITY pandocRef3986  PUBLIC '' 'bib/reference.RFC.3986.xml'>
-<!ENTITY pandocRef4627  PUBLIC '' 'bib/reference.RFC.4627.xml'>
+<!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
 <!ENTITY pandocRef5165  PUBLIC '' 'bib/reference.RFC.5165.xml'>
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
 ]>
@@ -98,14 +98,14 @@
        <t>This memo raises no security issues.</t>
    </section>
    <section title="IANA Considerations">
-       <t>There are no IANA considerations beyond those in [RFC4267].</t>
+       <t>There are no IANA considerations beyond those in [RFC7159].</t>
    </section>
 </middle>
 
 <back>
     <references title="Normative References">
         &pandocRef2119;
-        &pandocRef4627;
+        &pandocRef7159;
         <reference anchor="GeoJSON">
            <front>
                <title>The GeoJSON Format Specification</title>
