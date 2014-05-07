@@ -40,6 +40,10 @@ information. vnd.geo+json does not provide executable content.
 Information contained in vnd.geo+json documents do not require
 privacy or integrity services.
 
+As with other geographic data formats, providing details about the locations of
+sensitive persons, animals, habitats, or facilities can expose them to
+unauthorized tracking or injury.
+
 ##Interoperability considerations
 
 There is a difference of opinion among geographic data formats
@@ -48,6 +52,7 @@ numbers. Longitude comes first in vnd.geo+json coordinates.
 
 ## Published specification
 
+http://geojson.org/ and
 https://datatracker.ietf.org/doc/draft-butler-geojson/
 
 ##Applications which use this media
