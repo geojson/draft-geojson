@@ -67,7 +67,7 @@ is not significant in JSON.
   "MultiLineString", "Polygon", "MultiPolygon", and
   "GeometryCollection".
 
-* As another shorthand notation the term GeoJSON types refers to the
+* As another shorthand notation, the term "GeoJSON types" refers to the
   nine case-sensitve strings "Feature", "FeatureCollection" and the
   geometry types listed above.
 
