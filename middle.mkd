@@ -68,7 +68,7 @@ is not significant in JSON.
   "GeometryCollection".
 
 * As another shorthand notation, the term "GeoJSON types" refers to the
-  nine case-sensitve strings "Feature", "FeatureCollection" and the
+  nine case-sensitive strings "Feature", "FeatureCollection" and the
   geometry types listed above.
 
 ## Example
