@@ -62,13 +62,13 @@ is not significant in JSON.
   array, number, true, false, and null are to be interpreted as defined
   in [RFC7159].
 
-* Inside this document the term "geometry type" refers to the seven
+* Inside this document, the term "geometry type" refers to the seven
   case-sensitive strings: "Point", "MultiPoint", "LineString",
   "MultiLineString", "Polygon", "MultiPolygon", and
   "GeometryCollection".
 
-* As another shorthand notation the term GeoJSON types refers to the
-  nine case-sensitve strings "Feature", "FeatureCollection" and the
+* As another shorthand notation, the term "GeoJSON types" refers to the
+  nine case-sensitive strings "Feature", "FeatureCollection", and the
   geometry types listed above.
 
 ## Example
