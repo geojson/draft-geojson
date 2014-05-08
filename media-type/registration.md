@@ -9,7 +9,7 @@ Sean Gillies
 
 ##Email
 
-sean.gillies@gmai.com
+sean.gillies@gmail.com
 
 ##MIME media type name
 
@@ -34,8 +34,8 @@ binary
 ## Security considerations
 
 vnd.geo+json shares security issues common to all JSON content
-types. See RFC4627 Section #6
-(http://tools.ietf.org/html/rfc4627#section-6) for additional
+types. See RFC7159 Section #12
+(http://tools.ietf.org/html/rfc7159#section-12) for additional
 information. vnd.geo+json does not provide executable content.
 Information contained in vnd.geo+json documents do not require
 privacy or integrity services.
