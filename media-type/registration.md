@@ -33,27 +33,27 @@ binary
 
 ## Security considerations
 
-vnd.geo+json shares security issues common to all JSON content
-types. See RFC7159 Section #12
-(http://tools.ietf.org/html/rfc7159#section-12) for additional
-information. vnd.geo+json does not provide executable content.
-Information contained in vnd.geo+json documents do not require
+vnd.geo+json shares security issues common to all JSON content types.
+See RFC7159 Section #12 (http://tools.ietf.org/html/rfc7159#section-12)
+for additional information. vnd.geo+json does not provide executable
+content. Information contained in vnd.geo+json documents do not require
 privacy or integrity services.
 
-As with other geographic data formats, providing details about the locations of
-sensitive persons, animals, habitats, or facilities can expose them to
-unauthorized tracking or injury.
+As with other geographic data formats, e.g.,
+application/vnd.google-earth.kml+xml, providing details about the
+locations of sensitive persons, animals, habitats, and facilities can
+expose them to unauthorized tracking or injury.
 
 ##Interoperability considerations
 
 There is a difference of opinion among geographic data formats
 over whether latitude or longitude come first in a pair of
-numbers. Longitude comes first in vnd.geo+json coordinates.
+numbers. Longitude comes first in vnd.geo+json coordinates as it 
+does in application/vnd.google-earth.kml+xml.
 
 ## Published specification
 
-http://geojson.org/ and
-https://datatracker.ietf.org/doc/draft-butler-geojson/
+http://geojson.org/
 
 ##Applications which use this media
 
