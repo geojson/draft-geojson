@@ -36,13 +36,14 @@ binary
 vnd.geo+json shares security issues common to all JSON content types.
 See RFC7159 Section #12 (http://tools.ietf.org/html/rfc7159#section-12)
 for additional information. vnd.geo+json does not provide executable
-content. Information contained in vnd.geo+json documents do not require
-privacy or integrity services.
+content. 
 
 As with other geographic data formats, e.g.,
-application/vnd.google-earth.kml+xml, providing details about the
-locations of sensitive persons, animals, habitats, and facilities can
-expose them to unauthorized tracking or injury.
+application/vnd.google-earth.kml+xml, providing details about the locations of
+sensitive persons, animals, habitats, and facilities can expose them to
+unauthorized tracking or injury. vnd.geo+json does not provide privacy or
+integrity services; if sensitive data requires privacy or integrity protection
+the service must be provided externally.
 
 ##Interoperability considerations
 
