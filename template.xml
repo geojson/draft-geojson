@@ -95,15 +95,25 @@
 &pandocMiddle;
    <section title="Security Considerations">
        <t>
-       GeoJSON shares security issues common to all JSON content types.  See
-       RFC7159 Section #12 (http://tools.ietf.org/html/rfc7159#section-12) for
-       additional information. GeoJSON does not provide executable content.
-       Information contained in GeoJSON documents do not require privacy or
-       integrity services.</t>
+       GeoJSON shares security issues common to all JSON content types.
+       See [RFC7159] Section 12 for additional information. GeoJSON does not
+       provide executable content.
+       </t>
        <t>
-       As with other geographic data formats, e.g., [KMLv2.2], providing
-       details about the locations of sensitive persons, animals, habitats, and
-       facilities can expose them to unauthorized tracking or injury.</t>
+       As with other geographic data formats, e.g.,
+       [KMLv2.2], providing details about the
+       locations of sensitive persons, animals, habitats, and facilities can
+       expose them to unauthorized tracking or injury. GeoJSON does not
+       provide privacy or integrity services; if sensitive data requires
+       privacy or integrity protection the service must be provided externally.
+       </t>
+   </section>
+   <section title="Interoperability Considerations">
+       <t>
+       There is a difference of opinion among geographic data formats over
+       whether latitude or longitude come first in a pair of numbers. Longitude
+       comes first in GeoJSON coordinates as it does in [KMLv2.2].
+       </t>
    </section>
    <section title="IANA Considerations">
        <t>The MIME media type for GeoJSON text is application/vnd.geo+json.</t>
@@ -112,7 +122,8 @@
        <t>Required parameters: n/a</t>
        <t>Optional parameters: n/a</t>
        <t>Encoding considerations: binary</t>
-       <t>Security considerations: See section x above</t>
+       <t>Security considerations: See section 5 above</t>
+       <t>Interoperability considerations: See section 6 above</t>
        <t>Published specification: draft-butler-geojson</t>
        <t>Applications that use this media type: various</t>
        <t>Additional information:</t>
