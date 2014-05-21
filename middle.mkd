@@ -144,7 +144,9 @@ A geometry object is a GeoJSON object where the "type" value is one of
 the geometry types. A GeoJSON geometry object of any type other than
 "GeometryCollection" MUST have a member with the name "coordinates". The
 value of the coordinates member is always an array. The structure of the
-elements in this array is determined by the type of geometry.
+elements in this array is determined by the type of geometry. GeoJSON
+processors MAY interpret geometry objects with empty coordinates arrays
+as null objects.
 
 ### Position
 
