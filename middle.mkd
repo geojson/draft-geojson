@@ -318,16 +318,28 @@ A link object has one required member: "href", and one optional member: "type".
 The value of the required "href" member must be a dereferenceable URI. The
 value of the optional "type" member must be a string that hints at the
 format used to represent CRS parameters at the provided URI. Suggested values
-are: "proj4", "ogcwkt", "esriwkt", but others can be used::
+are: "proj4", "ogcwkt", "esriwkt", "gml", but others can be used.
 
-    "crs": {
-        "type": "link", 
-        "properties": {
-            "href": "http://example.com/crs/42",
-            "type": "proj4"
-        }
+```
+"crs": {
+    "type": "link", 
+    "properties": {
+        "href": "http://example.com/crs/42",
+        "type": "proj4"
     }
-    
+}
+```
+
+```
+"crs": {
+    "type": "link",
+    "properties": {
+        "href": "http://www.opengis.net/def/crs/EPSG/0/27700",
+        "type": "gml"
+    }
+}
+```
+
 Relative links may be used to direct processors to CRS parameters in an
 auxiliary file:
 
