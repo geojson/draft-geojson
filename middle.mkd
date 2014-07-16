@@ -289,8 +289,8 @@ following specifications shall be followed:
 
 * The value of the properties member must be an object.
 
-* The presence of a CRS object SHALL NOT change the ordering of coordinates
-  specified in section 2.1.1.
+* Coordinates in a GeoJSON dataset SHALL be ordered as specified in section 
+  2.1.1. regardless of the coordinate order specified by any CRS definition.
 
 ## Named CRS
 
