@@ -267,10 +267,10 @@ the GeoJSON object.
 The default coordinate reference system for all GeoJSON objects SHALL be
 a geographic coordinate reference system, using the [WGS84] datum, and with
 longitude and latitude units of decimal degrees. This coordinate reference
-system is equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. An
-OPTIONAL third position element SHALL be the height in meters above the WGS 84
-reference ellipsoid. For widest interoperability, GeoJSON data SHOULD use this
-default coordinate reference system and omit CRS objects.
+system is equivalent to the OGC's http://www.opengis.net/def/crs/OGC/1.3/CRS84 
+[OGCURL]. An OPTIONAL third position element SHALL be the height in meters 
+above the WGS 84 reference ellipsoid. For widest interoperability, GeoJSON data 
+SHOULD use this default coordinate reference system and omit CRS objects.
 
 If an application demands a different coordinate reference system, the
 following specifications shall be followed:
@@ -298,13 +298,13 @@ A CRS object may indicate a coordinate reference system by name. In this case,
 the value of its "type" member must be the string "name". The value of its
 "properties" member must be an object containing a "name" member. The value of
 that "name" member must be a string identifying a coordinate reference system.
-OGC CRS URNs such as "urn:ogc:def:crs:OGC::CRS84" are RECOMMENDED over
-legacy identifiers such as "EPSG:4326".
+OGC CRS URLs such as "http://www.opengis.net/def/crs/OGC/1.3/CRS84" are 
+RECOMMENDED over legacy identifiers such as "EPSG:4326".
 
     "crs": {
         "type": "name",
         "properties": {
-            "name": "urn:ogc:def:crs:OGC::CRS84"
+            "name": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
         }
     }
 
