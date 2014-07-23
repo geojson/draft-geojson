@@ -293,6 +293,13 @@ following specifications shall be followed:
 * Coordinates in a GeoJSON dataset SHALL be ordered as specified in section 
   2.1.1. regardless of the coordinate order specified by any CRS definition.
 
+NOTE: For historical reasons, some standard CRSs specify that coordinates are 
+given in latitude-longitude order. Care should be taken when exchanging data 
+using these coordinate reference systems, as the coordinate order may be 
+misinterpreted by clients. For full compatibility with both GeoJSON and the 
+historical CRS definitions, it is recommended that only "right-handed" CRS 
+are used in GeoJSON.
+
 ## Named CRS
 
 A CRS object may indicate a coordinate reference system by name. In this case,
