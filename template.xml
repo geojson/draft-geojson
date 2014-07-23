@@ -193,13 +193,13 @@
            </front>
            <seriesInfo name="OGC" value="07-147r2" />
        </reference>
-       <reference anchor="OGCURN">
+       <reference anchor="OGCURL">
            <front>
-               <title>Definition identifier URNs in OGC namespace</title>
-               <author initials="A." surname="Whiteside"></author>
-               <date month="January" year="2009" />
+               <title>OGC-NA Name type specification - definitions: Part 1 - basic name</title>
+               <author initials="S.J.D." surname="Cox"></author>
+               <date month="March" year="2010" />
            </front>
-           <seriesInfo name="OGC" value="07-092r3" />
+           <seriesInfo name="OGC" value="09-048r3" />
        </reference>
        <reference anchor="WGS84">
            <front>
