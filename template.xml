@@ -114,6 +114,12 @@
        whether latitude or longitude come first in a pair of numbers. Longitude
        comes first in GeoJSON coordinates as it does in [KMLv2.2].
        </t>
+       <t>
+       Some commonly-used CRS definitions specify coordinate ordering that is
+       not longitude then latitude (for a geographic CRS) or easting then northing
+       (for a projected CRS). Using such a CRS is NOT RECOMMENDED due to the
+       potential disruption of interoperability.
+       </t>
    </section>
    <section title="IANA Considerations">
        <t>The MIME media type for GeoJSON text is application/vnd.geo+json.</t>
