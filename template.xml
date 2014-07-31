@@ -7,12 +7,12 @@
 <!ENTITY pandocRef2616  PUBLIC '' 'bib/reference.RFC.2616.xml'>
 <!ENTITY pandocRef2818  PUBLIC '' 'bib/reference.RFC.2818.xml'>
 <!ENTITY pandocRef3986  PUBLIC '' 'bib/reference.RFC.3986.xml'>
-<!ENTITY pandocRef4627  PUBLIC '' 'bib/reference.RFC.4627.xml'>
+<!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
 <!ENTITY pandocRef5165  PUBLIC '' 'bib/reference.RFC.5165.xml'>
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-butler-geojson-01">
+<rfc ipr="trust200902" category="info" docName="draft-butler-geojson-03">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -66,7 +66,7 @@
                 <uri>http://sdre.es/</uri>
             </address>
         </author>
-        <date month="February" year="2014"/>
+        <date day="21" month="May" year="2014"/>
 
         <area>General</area>
         <workgroup>Independent</workgroup>
@@ -84,7 +84,6 @@
             JSON objects and the manner in which they are combined to 
             represent data about geographic features, their
             properties, and their spatial extents.
-            
             This document recommends a single coordinate reference system
             based on WGS 84. Other coordinate reference systems are not
             recommended.
@@ -95,17 +94,59 @@
 <middle>
 &pandocMiddle;
    <section title="Security Considerations">
-       <t>This memo raises no security issues.</t>
+       <t>
+       GeoJSON shares security issues common to all JSON content types.
+       See [RFC7159] Section 12 for additional information. GeoJSON does not
+       provide executable content.
+       </t>
+       <t>
+       As with other geographic data formats, e.g.,
+       [KMLv2.2], providing details about the
+       locations of sensitive persons, animals, habitats, and facilities can
+       expose them to unauthorized tracking or injury. GeoJSON does not
+       provide privacy or integrity services; if sensitive data requires
+       privacy or integrity protection the service must be provided externally.
+       </t>
+   </section>
+   <section title="Interoperability Considerations">
+       <t>
+       There is a difference of opinion among geographic data formats over
+       whether latitude or longitude come first in a pair of numbers. Longitude
+       comes first in GeoJSON coordinates as it does in [KMLv2.2].
+       </t>
    </section>
    <section title="IANA Considerations">
-       <t>There are no IANA considerations beyond those in [RFC4267].</t>
+       <t>The MIME media type for GeoJSON text is application/vnd.geo+json.</t>
+       <t>Type name: application</t>
+       <t>Subtype name: vnd.geo+json</t>
+       <t>Required parameters: n/a</t>
+       <t>Optional parameters: n/a</t>
+       <t>Encoding considerations: binary</t>
+       <t>Security considerations: See section 5 above</t>
+       <t>Interoperability considerations: See section 6 above</t>
+       <t>Published specification: draft-butler-geojson</t>
+       <t>Applications that use this media type: various</t>
+       <t>Additional information:</t>
+       <t><list>
+          <t>Magic number(s) : n/a</t>
+          <t>File extension(s) : .json, .geojson</t>
+          <t>Macintosh file type code : TEXT</t>
+          <t>Object Identifiers: n/a</t>
+       </list></t>
+       <t>Person to contact for further information:</t>
+          <t><list>
+          <t>Sean Gillies</t>
+          <t>sean.gillies@gmail.com</t>
+          </list></t>
+       <t>Intended usage: COMMON</t>
+       <t>Restrictions on usage: none</t>
    </section>
 </middle>
 
 <back>
     <references title="Normative References">
         &pandocRef2119;
-        &pandocRef4627;
+        &pandocRef7159;
         <reference anchor="GeoJSON">
            <front>
                <title>The GeoJSON Format Specification</title>
@@ -152,13 +193,13 @@
            </front>
            <seriesInfo name="OGC" value="07-147r2" />
        </reference>
-       <reference anchor="OGCURN">
+       <reference anchor="OGCURL">
            <front>
-               <title>Definition identifier URNs in OGC namespace</title>
-               <author initials="A." surname="Whiteside"></author>
-               <date month="January" year="2009" />
+               <title>OGC-NA Name type specification - definitions: Part 1 - basic name</title>
+               <author initials="S.J.D." surname="Cox"></author>
+               <date month="March" year="2010" />
            </front>
-           <seriesInfo name="OGC" value="07-092r3" />
+           <seriesInfo name="OGC" value="09-048r3" />
        </reference>
        <reference anchor="WGS84">
            <front>

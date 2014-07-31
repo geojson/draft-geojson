@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reference anchor="RFC7159">
+
+<front>
+<title>The JavaScript Object Notation (JSON) Data Interchange Format</title>
+<author initials="T." surname="Bray" fullname="T. Bray">
+<organization/></author>
+<date year="2014" month="March"/>
+<abstract>
+<t>JavaScript Object Notation (JSON) is a lightweight, text-based, language-independent data interchange format. It was derived from the ECMAScript Programming Language Standard. JSON defines a small set of formatting rules for the portable representation of structured data.&lt;/t&gt;&lt;t&gt; This document removes inconsistencies with other specifications of JSON, repairs specification errors, and offers experience-based interoperability guidance.</t></abstract></front>
+
+<seriesInfo name="RFC" value="7159"/>
+<format type="TXT" octets="27451" target="http://www.rfc-editor.org/rfc/rfc7159.txt"/>
+</reference>

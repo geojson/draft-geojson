@@ -1,7 +1,7 @@
 # Introduction
 
    GeoJSON is a format for encoding data about geographic features using
-   JavaScript Object Notation (JSON) [RFC4627].  The format is concerned
+   JavaScript Object Notation (JSON) [RFC7159].  The format is concerned
    with features in the broadest sense; any thing with qualities that
    are bounded in geographical space may be a feature whether it is
    a physical structure or not.  The concepts in GeoJSON are not new;
@@ -44,7 +44,7 @@
 ## Conventions Used in This Document
 
 The ordering of the members of any JSON object defined in this document
-MUST be considered irrelevant, as specified by [RFC4627].
+MUST be considered irrelevant, as specified by [RFC7159].
 
 Some examples use the combination of a JavaScript single line comment
 (//) followed by an ellipsis (...) as placeholder notation for content
@@ -60,15 +60,15 @@ is not significant in JSON.
 
 * JavaScript Object Notation (JSON), and the terms object, name, value,
   array, number, true, false, and null are to be interpreted as defined
-  in [RFC4627].
+  in [RFC7159].
 
 * Inside this document the term "geometry type" refers to the seven
   case-sensitive strings: "Point", "MultiPoint", "LineString",
   "MultiLineString", "Polygon", "MultiPolygon", and
   "GeometryCollection".
 
-* As another shorthand notation the term GeoJSON types refers to the
-  nine case-sensitve strings "Feature", "FeatureCollection" and the
+* As another shorthand notation, the term "GeoJSON types" refers to the
+  nine case-sensitive strings "Feature", "FeatureCollection" and the
   geometry types listed above.
 
 ## Example
@@ -144,7 +144,9 @@ A geometry object is a GeoJSON object where the "type" value is one of
 the geometry types. A GeoJSON geometry object of any type other than
 "GeometryCollection" MUST have a member with the name "coordinates". The
 value of the coordinates member is always an array. The structure of the
-elements in this array is determined by the type of geometry.
+elements in this array is determined by the type of geometry. GeoJSON
+processors MAY interpret geometry objects with empty coordinates arrays
+as null objects.
 
 ### Position
 
@@ -263,12 +265,13 @@ acquired.  If no crs member can be so acquired, the default CRS SHALL apply to
 the GeoJSON object.
 
 The default coordinate reference system for all GeoJSON objects SHALL be
-a geographic coordinate reference system, using the WGS84 datum, and with
+a geographic coordinate reference system, using the [WGS84] datum, and with
 longitude and latitude units of decimal degrees. This coordinate reference
-system is equivalent to the OGC's urn:ogc:def:crs:OGC::CRS84 [OGCURN]. An
-OPTIONAL third position element SHALL be the height in meters above the WGS 84
-reference ellipsoid. For widest interoperability, GeoJSON data SHOULD use this
-default coordinate reference system and omit CRS objects.
+system is equivalent to the OGC's
+"http://www.opengis.net/def/crs/OGC/1.3/CRS84" [OGCURL]. An OPTIONAL third
+position element SHALL be the height in meters above the WGS 84 reference
+ellipsoid. For widest interoperability, GeoJSON data SHOULD use this default
+coordinate reference system and omit CRS objects.
 
 If an application demands a different coordinate reference system, the
 following specifications shall be followed:
@@ -287,8 +290,8 @@ following specifications shall be followed:
 
 * The value of the properties member must be an object.
 
-* The presence of a CRS object SHALL NOT change the ordering of coordinates
-  specified in section 2.1.1.
+* Coordinates in a GeoJSON dataset SHALL be ordered as specified in section 
+  2.1.1. regardless of the coordinate order specified by any CRS definition.
 
 ## Named CRS
 
@@ -296,13 +299,13 @@ A CRS object may indicate a coordinate reference system by name. In this case,
 the value of its "type" member must be the string "name". The value of its
 "properties" member must be an object containing a "name" member. The value of
 that "name" member must be a string identifying a coordinate reference system.
-OGC CRS URNs such as "urn:ogc:def:crs:OGC::CRS84" are RECOMMENDED over
-legacy identifiers such as "EPSG:4326".
+OGC CRS URLs such as "http://www.opengis.net/def/crs/OGC/1.3/CRS84" are
+RECOMMENDED over legacy identifiers such as "EPSG:4326".
 
     "crs": {
         "type": "name",
         "properties": {
-            "name": "urn:ogc:def:crs:OGC::CRS84"
+            "name": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
         }
     }
 
@@ -316,7 +319,7 @@ A link object has one required member: "href", and one optional member: "type".
 The value of the required "href" member must be a dereferenceable URI. The
 value of the optional "type" member must be a string that hints at the
 format used to represent CRS parameters at the provided URI. Suggested values
-are: "proj4", "ogcwkt", "esriwkt", but others can be used::
+are: "proj4", "ogcwkt", "esriwkt", "gml", but others can be used::
 
     "crs": {
         "type": "link", 
@@ -325,7 +328,7 @@ are: "proj4", "ogcwkt", "esriwkt", but others can be used::
             "type": "proj4"
         }
     }
-    
+
 Relative links may be used to direct processors to CRS parameters in an
 auxiliary file:
 

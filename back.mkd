@@ -4,7 +4,7 @@
 Each of the examples below represents a valid and complete GeoJSON
 object.
 
-## Point
+## Points
 
 Point coordinates are in x, y order (easting, northing for projected
 coordinates, longitude, latitude for geographic coordinates):
@@ -14,7 +14,7 @@ coordinates, longitude, latitude for geographic coordinates):
           "coordinates": [100.0, 0.0]
       }
 
-## LineString
+## LineStrings
 
 Coordinates of LineString are an array of positions (see
 "2.1.1. Position"):
@@ -27,7 +27,7 @@ Coordinates of LineString are an array of positions (see
           ]
       }
 
-## Polygon
+## Polygons
 
 Coordinates of a Polygon are an array of LinearRing (cf.
 "2.1.6 Polygon") coordinate arrays.
@@ -71,7 +71,7 @@ With holes:
           ]
       }
 
-## MultiPoint
+## MultiPoints
 
 Coordinates of a MultiPoint are an array of positions::
 
@@ -83,7 +83,7 @@ Coordinates of a MultiPoint are an array of positions::
           ]
       }
 
-## MultiLineString
+## MultiLineStrings
 
 Coordinates of a MultiLineString are an array of LineString coordinate
 arrays:
@@ -102,7 +102,7 @@ arrays:
           ]
       }
 
-## MultiPolygon
+## MultiPolygons
 
 Coordinates of a MultiPolygon are an array of Polygon coordinate
 arrays:
@@ -138,7 +138,7 @@ arrays:
           ]
       }
 
-## GeometryCollection
+## GeometryCollections
 
 Each element in the geometries array of a GeometryCollection is one of
 the geometry objects described above:
