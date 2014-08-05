@@ -29,7 +29,7 @@
    there is no particular service model or feature type ontology implied
    in the GeoJSON format specification.
 
-   Since its initial publication in 2008 [GeoJSON], the GeoJSON
+   Since its initial publication in 2008 [GJ2008], the GeoJSON
    format specification has steadily grown in popularity.  It is widely
    used in JavaScript web mapping libraries, JSON-based document
    databases, and web APIs.
@@ -59,7 +59,7 @@ is not significant in JSON.
 ## Specification of GeoJSON
 
 This document updates the original GeoJSON format specification
-[GeoJSON].
+[GJ2008].
 
 ## Definitions
 
@@ -273,7 +273,7 @@ reference ellipsoid. For widest interoperability, GeoJSON data SHOULD
 use this default coordinate reference system.
 
 Other coordinate reference systems, including ones described by CRS
-objects of the kind defined in [GeoJSON] are NOT RECOMMENDED. GeoJSON
+objects of the kind defined in [GJ2008] are NOT RECOMMENDED. GeoJSON
 processing software SHALL NOT be expected to have access to coordinate
 reference systems databases.  Applications requiring CRS other than the
 default MUST assume all responsibility for reference system and

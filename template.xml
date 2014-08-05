@@ -115,7 +115,7 @@
        comes first in GeoJSON coordinates as it does in [KMLv2.2].
        </t>
        <t>
-       The original GeoJSON format specification [GeoJSON] included
+       The original GeoJSON format specification [GJ2008] included
        descriptions of coordinate reference system (CRS) objects. These are NOT
        RECOMMENDED but may be found in existing documents. When such a CRS is
        encountered in GeoJSON, the document should be processed with caution.
@@ -179,7 +179,9 @@
     <references title="Normative References">
         &pandocRef2119;
         &pandocRef7159;
-        <reference anchor="GeoJSON">
+    </references>
+    <references title="Informative References">
+        <reference anchor="GJ2008">
            <front>
                <title>The GeoJSON Format Specification</title>
                <author initials="H." surname="Butler" fullname="Howard Butler"></author>
@@ -191,8 +193,6 @@
                <date month="June" year="2008" />
            </front>
         </reference>
-    </references>
-    <references title="Informative References">
        <reference anchor="SFSQL">
            <front>
                <title>OpenGIS Simple Features Specification For SQL Revision 1.1</title>
