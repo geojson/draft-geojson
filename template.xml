@@ -110,7 +110,7 @@
    </section>
    <section title="Interoperability Considerations">
        <t>
-       There is a difference of opinion among geographic data formats over
+       There are differences among geographic data formats over
        whether latitude or longitude come first in a pair of numbers. Longitude
        comes first in GeoJSON coordinates as it does in [KMLv2.2].
        </t>
