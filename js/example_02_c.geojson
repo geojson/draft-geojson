@@ -1,0 +1,12 @@
+  {
+      "type": "Feature",
+      "bbox": [170, 10, -170, 11],
+      "geometry": {
+          "type": "LineString",
+          "coordinates": [
+              [-170, 10],
+              [170, 11]
+          ]
+      }
+      //...
+  }
