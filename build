@@ -2,10 +2,10 @@
 
 export PATH="`pwd`:$PATH"
 
-pandoc2rfc -R -t template.xml -x transform.xsl back.mkd middle.mkd
+pandoc2rfc -R -t template.xml -x transform.xsl back.mkd considerations.mkd middle.mkd
 
 mv draft.txt draft-unpaginated.txt
 
 for i in H N T X; 
-  do bash pandoc2rfc -$i -t template.xml -x transform.xsl back.mkd middle.mkd; 
+  do bash pandoc2rfc -$i -t template.xml -x transform.xsl back.mkd considerations.mkd middle.mkd; 
   done
