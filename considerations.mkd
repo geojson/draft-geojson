@@ -36,3 +36,12 @@
    documents and will do so until replaced by newer versions. GeoJSON
    processors should be prepared for either form.
 
+   In representing features that cross the dateline or the poles, 
+   following the ring-orientation best practice (counter-clockwise 
+   external rings, clockwise internal rings) and ensuring your 
+   bounding boxes use the south-west corner as the first coordinate
+   will improve interoperability. Remain aware that software that
+   represents edges as straight cartesian lines and software that
+   represents edges as great circles will have different interpretations
+   of edges, which vary more the longer the edges are. Try to
+   avoid edges of more than 180 degrees in length as far as possible.
