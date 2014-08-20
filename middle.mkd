@@ -288,8 +288,9 @@ A GeoJSON object MAY have a member named "bbox" to include information
 on the coordinate range for its geometries, features, or feature
 collections. The value of the bbox member MUST be an array of length
 2*n where n is the number of dimensions represented in the contained
-geometries, with the lowest values for all axes followed by the highest
-values. The axes order of a bbox follows the axes order of geometries.
+geometries, with for all axes of the most south-westerly point followed by 
+all axes of the more north-easterly point. The axes order of a bbox 
+follows the axes order of geometries.
 
 Example of a bbox member on a feature:
 
@@ -318,5 +319,20 @@ Example of a bbox member on a feature collection:
         "features": [
         //...
         ]
+    }
+
+Example of a bbox for line crossing the date-line:
+
+    {
+        "type": "Feature",
+        "bbox": [170, 10, -170, 11],
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-170, 10],
+                [170, 11]
+            ]
+        }
+        //...
     }
 
