@@ -1,10 +1,5 @@
-Charter
-=======
-
-Start of an IETF GeoJSON WG charter document.
-
-GeoJSON
--------
+Proposed GeoJSON WG Charter
+===========================
 
 GeoJSON is a geospatial data interchange format based on JavaScript Object
 Notation (JSON). It has succeeded in streamlining geographic information system
@@ -14,13 +9,15 @@ web APIs, and open data platforms. However, shortcomings of its original
 specification have hindered and continue to hinder implementers. This working
 group is charged with the following tasks:
 
-- improving the clarity of the GeoJSON format specification.
-- removing features that have not been widely implemented or have hampered
-  interoperability.
-- adding implementation and extension advice to the specification.
+- The improvement in the clarity of the GeoJSON format specification.
+- The deprecation and further removal of features that have not been widely
+  implemented or have hampered interoperability.
+- The addition of implementation advice to the specification.
+- The addition of extension advice to the specification.
 
-The working group is not charged with adding new features to the GeoJSON format
-specification.
+The addition of new features to the GeoJSON format specification is not within
+the charter of this working group.
 
 The working group plans one deliverable: a GeoJSON format RFC. The working
-group will start from draft-butler-geojson-04.
+group will start from draft-butler-geojson-04. Work on the first 4 versions of
+this draft has largely accomplished the tasks listed above.
