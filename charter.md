@@ -8,8 +8,8 @@ development. GeoJSON today plays an important role in many spatial databases,
 web APIs, and open data platforms. This working group is charged with the
 following tasks:
 
-- The improvement of clarity of the GeoJSON format specification.
-- The removal or deprecation on features that have hampered interoperability.
+- The improvement of clarity for the GeoJSON format specification.
+- The removal or deprecation of features that have hampered interoperability.
 - The addition of implementation advice to the specification.
 - The addition of extension advice to the specification.
 
