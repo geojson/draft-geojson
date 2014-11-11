@@ -1,26 +1,24 @@
-Charter
-=======
-
-Start of an IETF GeoJSON WG charter document.
+Proposed GeoJSON WG Charter
+===========================
 
 GeoJSON
 -------
 
 GeoJSON is a geospatial data interchange format based on JavaScript Object
-Notation (JSON). It has succeeded in streamlining geographic information system
-standards and making them accessible to practitioners of modern web
-development. GeoJSON today plays an important role in many spatial databases,
-web APIs, and open data platforms. However, shortcomings of its original
-specification have hindered and continue to hinder implementers. This working
-group is charged with the following tasks:
+Notation (JSON). It was published at http://geojson.org in 2008. It has
+succeeded in streamlining geographic information system standards and making
+them accessible to practitioners of modern web development. GeoJSON today plays
+an important role in many spatial databases, web APIs, and open data platforms. 
 
-- improving the clarity of the GeoJSON format specification.
-- removing features that have not been widely implemented or have hampered
-  interoperability.
-- adding implementation and extension advice to the specification.
+This WG will work on a GeoJSON Format RFC that specifies the format more
+precisely and serves as a better guide for implementers. The work will start
+from an Internet-Draft written by the original authors. This I-D,
+draft-butler-geojson-04, substantially improves the format specification. The
+remaining tasks of the WG are:
 
-The working group is not charged with adding new features to the GeoJSON format
-specification.
+- the further clarification of the GeoJSON format specification.
+- the addition of implementation advice based on lessons learned since 2008.
+- the addition of extension advice to the specification.
 
-The working group plans one deliverable: a GeoJSON format RFC. The working
-group will start from draft-butler-geojson-04.
+The addition of new features to the GeoJSON format is not within the scope of
+this WG.
