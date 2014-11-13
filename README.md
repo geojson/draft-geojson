@@ -4,7 +4,7 @@ Incubator for geojson spec rewrite and subsequent IETF RFC submission.
 
 ## Status
 
-Test and development. The idnits tool from IETF already reports 0 errors.
+See https://datatracker.ietf.org/doc/draft-butler-geojson/.
 
 ## Generating Docs
 
