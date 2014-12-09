@@ -13,8 +13,9 @@ an important role in many spatial databases, web APIs, and open data platforms.
 This WG will work on a GeoJSON Format RFC that specifies the format more
 precisely and serves as a better guide for implementers. The work will start
 from an Internet-Draft written by the original authors. This I-D,
-draft-butler-geojson-04, substantially improves the format specification. The
-remaining tasks of the WG are:
+[draft-butler-geojson-04](https://tools.ietf.org/html/draft-butler-geojson-04),
+substantially improves the format specification. The remaining tasks of the WG
+are:
 
 - the further clarification of the GeoJSON format specification.
 - the addition of implementation advice based on lessons learned since 2008.
