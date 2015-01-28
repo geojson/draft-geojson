@@ -13,7 +13,7 @@
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-butler-geojson-04">
+<rfc ipr="trust200902" category="info" docName="draft-butler-geojson-05">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -67,7 +67,7 @@
                 <uri>http://sdre.es/</uri>
             </address>
         </author>
-        <date day="5" month="August" year="2014"/>
+        <date day="28" month="January" year="2015"/>
 
         <area>General</area>
         <workgroup>Independent</workgroup>
