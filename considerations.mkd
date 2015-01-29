@@ -13,7 +13,7 @@
 
 # Interoperability Considerations
 
-   There is a difference of opinion among geographic data formats over
+   There are conflicting precedents among geographic data formats over
    whether latitude or longitude come first in a pair of numbers.
    Longitude comes first in GeoJSON coordinates as it does in [KMLv2.2].
 
