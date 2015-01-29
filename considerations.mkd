@@ -13,9 +13,8 @@
 
 # Interoperability Considerations
 
-   There are various precedents among geographic data formats over
-   whether latitude or longitude come first in a pair of numbers, 
-   related to interpretation of coordinate reference system definitions.
+   There are conflicting precedents among geographic data formats over
+   whether latitude or longitude come first in a pair of numbers.
    Longitude comes first in GeoJSON coordinates as it does in [KMLv2.2].
 
    Some commonly-used CRS definitions specify coordinate ordering that
