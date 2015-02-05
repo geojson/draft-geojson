@@ -13,7 +13,7 @@ The GeoJSON Format Specification
   Martin Daly (Cadcorp),
   Allan Doyle (MIT),
   Sean Gillies (UNC-Chapel Hill),
-  Tim Schaub (OpenGeo),
+  Tim Schaub (Planet Labs),
   Christopher Schmidt (MetaCarta)
 
 :Revision: 1.0
