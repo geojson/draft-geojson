@@ -1,6 +1,6 @@
 # GeoJSON
 
-Incubator for geojson spec rewrite and subsequent IETF RFC submission.
+Incubator for GeoJSON spec rewrite and subsequent IETF RFC submission.
 
 ## Status
 
@@ -11,7 +11,7 @@ See https://datatracker.ietf.org/doc/draft-butler-geojson/.
 ### Dependencies
 
  * [`xml2rfc`](https://pypi.python.org/pypi/xml2rfc/)
- * [`pandoc2rcf`](https://raw.github.com/miekg/pandoc2rfc/master/pandoc2rfc)
+ * [`pandoc2rfc`](https://raw.github.com/miekg/pandoc2rfc/master/pandoc2rfc)
 
 ### Transform Markdown to XML etc.
 
