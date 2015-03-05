@@ -51,8 +51,8 @@
                 fullname="C. Schmidt">
             <organization>MetaCarta</organization>
         </author>-->
-        <author initials="S." surname="Drees"
-                fullname="S. Drees">
+        <author initials="S." surname="Hagen"
+                fullname="S. Hagen">
             <address>
                 <postal>
                     <street>Rheinaustr. 62</street>
@@ -63,8 +63,8 @@
                 </postal>
 
                 <phone></phone>
-                <email>stefan@drees.name</email>
-                <uri>http://sdre.es/</uri>
+                <email>stefan@hagen.link</email>
+                <uri>http://stefan-hagen.website/</uri>
             </address>
         </author>
         <date day="28" month="January" year="2015"/>
