@@ -4,24 +4,24 @@ Proposed GeoJSON WG Charter
 GeoJSON
 -------
 
-GeoJSON is a geospatial data interchange format based on JavaScript Object
-Notation (JSON). It was published at http://geojson.org in 2008. It has
-succeeded in streamlining geographic information system standards and making
-them accessible to practitioners of modern web development. GeoJSON today plays
-an important role in many spatial databases, web APIs, and open data platforms.
+GeoJSON is a format for encoding data about geographic features using
+JavaScript Object Notation (JSON) [RFC7159]. Geographic features need not be
+physical things; any thing with qualities that are bounded in space may be
+considered a feature. GeoJSON provides a means of representing both the
+qualities and spatial extent of features.
+
+The GeoJSON format specification was published at http://geojson.org in 2008.
+GeoJSON today plays an important role in many spatial databases, web APIs, and
+open data platforms.
 
 This WG will work on a GeoJSON Format RFC that specifies the format more
-precisely and serves as a better guide for implementers. The work will start
-from an Internet-Draft written by the original authors. This I-D,
-[draft-butler-geojson](https://tools.ietf.org/html/draft-butler-geojson),
-substantially improves the format specification. The remaining tasks of the WG
-are:
+precisely, serves as a better guide for implementers, and improves
+extensibility of the format. The work will start from an Internet-Draft written
+by the original authors:
+[draft-butler-geojson](https://tools.ietf.org/html/draft-butler-geojson).
 
-- Further clarification of the GeoJSON format specification.
-- Addition of implementation advice based on lessons learned since 2008.
-- Addition of more explicit extension advice to the specification.
+This WG will work on a format for a streamable sequence of GeoJSON texts based
+on RFC 7464.
 
-The addition of new features to the GeoJSON format is not within the scope of
-this WG. One possible exception to this (depending on WG consensus) is the
-adoption of JSON Text Sequences as an alternative way of serializing sets of
-GeoJSON objects.
+This WG will work on GeoJSON mappings of 'geo' URIs, reinforcing the use of
+RFC 5870.
