@@ -13,6 +13,25 @@
 
 # Interoperability Considerations
 
+## I-JSON
+
+GeoJSON texts SHOULD follow the constraints of I-JSON [RFC7493] for
+maximum interoperability.
+
+## Coordinate Precision
+
+The size of a GeoJSON text in bytes is a major interoperability
+consideration and precision of coordinate values has a large impact on
+the size of texts.  A GeoJSON text containing many detailed polygons can
+be inflated almost by a factor of two by increasing coordinate precision
+from 6 to 15 decimal places. For geographic coordinates with units of
+degrees, 6 decimal places (a default common in, e.g., sprintf) amounts
+to about 10 centimeters, a precision well within that of current GPS
+systems.  Implementations should consider the cost to using a greater
+precision than necessary.
+
+## Coordinate Order
+
    There are conflicting precedents among geographic data formats over
    whether latitude or longitude come first in a pair of numbers.
    Longitude comes first in GeoJSON coordinates as it does in [KMLv2.2].
@@ -28,6 +47,8 @@
    necessary to interpret the coordinates properly; they may not be in
    the required longitude, latitude order.
 
+## Coordinate Reference System Identifiers
+
    Earlier versions of the GeoJSON specification recommended use of OGC
    URNs such as "urn:ogc:def:crs:OGC:1.3:CRS84" to name a CRS. This
    version deprecates the URNs and recommends a change to HTTP URLs
@@ -35,6 +56,8 @@
    libraries, currently write the deprecated OGC URNs into GeoJSON
    documents and will do so until replaced by newer versions. GeoJSON
    processors should be prepared for either form.
+
+## Bounding boxes
 
    In representing features that cross the dateline or the poles, 
    following the ring-orientation best practice (counter-clockwise 

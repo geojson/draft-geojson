@@ -135,13 +135,16 @@ GeoJSON always consists of a single object. This object (referred to as
 the GeoJSON object below) represents a geometry, feature, or collection
 of features.
 
+* The top level of GeoJSON text MUST be a JSON object.
+
 * The GeoJSON object MUST have a member with the name "type". The value
   of the member MUST be one of the GeoJSON types.
 
-* The GeoJSON object MAY have any number of other members.
-
 * A GeoJSON object MAY have a "bbox" member, the value of which MUST be
   a bounding box array (see 4. Bounding Boxes).
+
+* The GeoJSON object MAY have any number of other members.
+  Implementations MUST ignore unrecognized members.
 
 ## Geometry Object
 
