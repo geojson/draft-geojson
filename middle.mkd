@@ -215,7 +215,7 @@ the concept of a linear ring:
   a surface.
   
 * A linear ring SHOULD follow right-hand rule with respect to the area
-  it bounds (ie. exterior rings are counter-clockwise, holes are 
+  it bounds (i.e., exterior rings are counter-clockwise, holes are 
   clockwise)
 
 Though a linear ring is not explicitly represented as a GeoJSON geometry
