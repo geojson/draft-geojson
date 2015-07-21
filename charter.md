@@ -19,7 +19,7 @@ on extensibility, and the means to utilize larger GeoJSON datasets.
 This WG will work on a GeoJSON Format RFC that specifies the format more
 precisely, serves as a better guide for implementers, and improves
 extensibility of the format. The work will start from an Internet-Draft written
-by the original GeoJSON authors: draft-butler-geojson] [1].
+by the original GeoJSON authors: draft-butler-geojson [1].
 
 This WG will work on GeoJSON mappings of 'geo' URIs, reinforcing the use of
 RFC 5870.
