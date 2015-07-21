@@ -42,4 +42,9 @@ security, and privacy considerations in RFC 6280. The application of those
 considerations is specific to protocols that make use of GeoJSON objects and is
 out of scope for the GeoJSON WG.
 
+Deliverables:
+
+* A GeoJSON format specification document including mappings of 'geo' URIs
+* A document describing a format for a streamable sequence of GeoJSON texts
+
 [1] https://tools.ietf.org/html/draft-butler-geojson
