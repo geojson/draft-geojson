@@ -24,7 +24,7 @@ by the original GeoJSON authors: draft-butler-geojson] [1].
 This WG will work on GeoJSON mappings of 'geo' URIs, reinforcing the use of
 RFC 5870.
 
-This WG may work on a format for a streamable sequence of GeoJSON texts based
+This WG will work on a format for a streamable sequence of GeoJSON texts based
 on RFC 7464 to address the difficulties in serializing very large sequences of
 features or feature sequences of indeterminate length.
 
