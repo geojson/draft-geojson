@@ -47,5 +47,7 @@ Deliverables:
 * A GeoJSON format specification document including mappings of 'geo' URIs
 * A document describing a format for a streamable sequence of GeoJSON texts
 
-[1] https://tools.ietf.org/html/draft-butler-geojson
-[2] http://tools.ietf.org/html/rfc5870
+References:
+
+* [1] https://tools.ietf.org/html/draft-butler-geojson
+* [2] http://tools.ietf.org/html/rfc5870
