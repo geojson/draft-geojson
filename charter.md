@@ -22,7 +22,7 @@ extensibility of the format. The work will start from an Internet-Draft written
 by the original GeoJSON authors: draft-butler-geojson [1].
 
 This WG will work on GeoJSON mappings of 'geo' URIs, reinforcing the use of
-RFC 5870.
+RFC 5870 [2].
 
 This WG will work on a format for a streamable sequence of GeoJSON texts based
 on RFC 7464 to address the difficulties in serializing very large sequences of
@@ -48,3 +48,4 @@ Deliverables:
 * A document describing a format for a streamable sequence of GeoJSON texts
 
 [1] https://tools.ietf.org/html/draft-butler-geojson
+[2] http://tools.ietf.org/html/rfc5870
