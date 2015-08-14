@@ -39,7 +39,7 @@ precision than necessary.
    Some commonly-used CRS definitions specify coordinate ordering that
    is not longitude then latitude (for a geographic CRS) or easting then
    northing (for a projected CRS). The CRS historically known as
-   "EPSG:4326" and more accurately named
+   "EPSG:4326" and more accurately identified by 
    "http://www.opengis.net/def/crs/EPSG/0/4326" is a prime example.
    Using such a CRS is NOT RECOMMENDED due to the potential disruption
    of interoperability. When such a CRS is encountered in GeoJSON, the
