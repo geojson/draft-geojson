@@ -6,6 +6,10 @@ Incubator for GeoJSON spec rewrite and subsequent IETF RFC submission.
 
 See https://datatracker.ietf.org/doc/draft-butler-geojson/.
 
+## Contributing
+
+See https://github.com/geojson/draft-geojson/blob/master/CONTRIBUTING.md
+
 ## Generating Docs
 
 ### Dependencies
