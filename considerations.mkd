@@ -47,16 +47,6 @@ precision than necessary.
    necessary to interpret the coordinates properly; they may not be in
    the required longitude, latitude order.
 
-## Coordinate Reference System Identifiers
-
-   Earlier versions of the GeoJSON specification recommended use of OGC
-   URNs such as "urn:ogc:def:crs:OGC:1.3:CRS84" to name a CRS. This
-   version deprecates the URNs and recommends a change to HTTP URLs
-   [Section 3.1]. Widely deployed systems using, e.g. the GDAL and OGR
-   libraries, currently write the deprecated OGC URNs into GeoJSON
-   documents and will do so until replaced by newer versions. GeoJSON
-   processors should be prepared for either form.
-
 ## Bounding boxes
 
    In representing features that cross the dateline or the poles, 
