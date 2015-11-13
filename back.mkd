@@ -182,8 +182,9 @@ the geometry objects described above:
 # Contributors
 
 The GeoJSON format is the product of discussion on the GeoJSON mailing
-list: http://lists.geojson.org/listinfo.cgi/geojson-geojson.org.
+list, http://lists.geojson.org/listinfo.cgi/geojson-geojson.org, before
+October 2015 and the IETF's GeoJSON WG after October 2015.
 
 Comments are solicited and should be addressed to the GeoJSON mailing
-list at geojson@lists.geojson.org or to the GeoJSON issue tracker at
+list at geojson@ietf.org or to the GeoJSON issue tracker at
 https://github.com/geojson/draft-geojson/issues.
