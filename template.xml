@@ -14,7 +14,7 @@
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-butler-geojson-06">
+<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-00">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -68,7 +68,7 @@
                 <uri>http://stefan-hagen.website/</uri>
             </address>
         </author>
-        <date day="18" month="July" year="2015"/>
+        <date day="13" month="November" year="2015"/>
 
         <area>General</area>
         <workgroup>Independent</workgroup>
