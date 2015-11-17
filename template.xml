@@ -105,7 +105,7 @@
        <t>Encoding considerations: binary</t>
        <t>Security considerations: See section 5 above</t>
        <t>Interoperability considerations: See section 6 above</t>
-       <t>Published specification: draft-butler-geojson</t>
+       <t>Published specification: draft-ietf-geojson</t>
        <t>Applications that use this media type: various</t>
        <t>Additional information:</t>
        <t><list>
