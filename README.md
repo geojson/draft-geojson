@@ -4,7 +4,7 @@ Incubator for GeoJSON spec rewrite and subsequent IETF RFC submission.
 
 ## Status
 
-An IETF WG has been chartered: https://tools.ietf.org/wg/geojson/. Its first task is adoption of the independent draft at https://datatracker.ietf.org/doc/draft-butler-geojson/, which will become `draft-ietf-geojson-00`.
+An IETF WG has been chartered: https://tools.ietf.org/wg/geojson/ and has adopted `draft-butler-geojson`. The official draft is https://datatracker.ietf.org/doc/draft-ietf-geojson/.
 
 ## Contributing
 
