@@ -58,3 +58,38 @@ precision than necessary.
    represents edges as great circles will have different interpretations
    of edges, which vary more the longer the edges are. Try to
    avoid edges of more than 180 degrees in length as far as possible.
+
+
+# Extensibility
+
+In GeoJSON, an "extension" is any property not defined in section 2.
+Consuming implementations that encounter unfamiliar extensions MUST NOT
+stop processing or signal an error and MUST continue processing the
+items as if those properties were not present. Note that support for
+extensions can vary across implementations and no normative processing
+model for extensions is defined. Accordingly, implementations that rely
+too heavily on the use of extensions may experience reduced
+interoperability with other implementations.
+
+## GeoJSON types are fixed
+
+Implementations MUST NOT extend the fixed set of GeoJSON types:
+FeatureCollection, Feature, Point, LineString, MultiPoint, Polygon,
+MultiLineString, MultiPolygon, and GeometryCollection.
+
+## Semantics of GeoJSON properties are fixed
+
+Implementations MUST NOT change the the semantics of GeoJSON properties.
+
+## Re-serialization of extensions
+
+Implementations that parse and then reserialize GeoJSON documents that
+contain extension properties SHOULD take sufficient care to ensure that
+extension properties used within the original document are preserved and
+serialized appropriately.
+
+## Aggregation of extensions
+
+Implementations that collect and aggregate GeoJSON objects from multiple
+sources may often need to deal with conflicting or incompatible
+extensions.
