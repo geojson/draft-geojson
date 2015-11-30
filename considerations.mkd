@@ -63,7 +63,7 @@ precision than necessary.
 # Extending GeoJSON
 
 Properties not described in this specification ("foreign properties")
-can be used in a GeoJSON document. Consuming implementations that
+may be used in a GeoJSON document. Consuming implementations that
 encounter unfamiliar foreign properties MUST NOT stop processing or
 signal an error and MUST continue processing the document as if those
 foreign properties were not present. Note that support for foreign
