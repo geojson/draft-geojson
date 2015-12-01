@@ -343,3 +343,23 @@ Example of a bbox for line crossing the date-line:
         //...
     }
 
+# Extending GeoJSON
+
+## Foreign properties
+
+Properties not described in this specification ("foreign properties")
+may be used in a GeoJSON document. Note that support for foreign
+properties can vary across implementations and no normative processing
+model for foreign properties is defined. Accordingly, implementations
+that rely too heavily on the use of foreign properties may experience
+reduced interoperability with other implementations.
+
+## GeoJSON types are not extensible
+
+Implementations MUST NOT extend the fixed set of GeoJSON types:
+FeatureCollection, Feature, Point, LineString, MultiPoint, Polygon,
+MultiLineString, MultiPolygon, and GeometryCollection.
+
+## Semantics of GeoJSON properties are not extensible
+
+Implementations MUST NOT change the the semantics of GeoJSON properties.

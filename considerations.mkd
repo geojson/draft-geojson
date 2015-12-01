@@ -58,3 +58,26 @@ precision than necessary.
    represents edges as great circles will have different interpretations
    of edges, which vary more the longer the edges are. Try to
    avoid edges of more than 180 degrees in length as far as possible.
+
+
+# Extending GeoJSON
+
+Properties not described in this specification ("foreign properties")
+may be used in a GeoJSON document. Consuming implementations that
+encounter unfamiliar foreign properties MUST NOT stop processing or
+signal an error and MUST continue processing the document as if those
+foreign properties were not present. Note that support for foreign
+properties can vary across implementations and no normative processing
+model for foreign properties is defined. Accordingly, implementations
+that rely too heavily on the use of foreign properties may experience
+reduced interoperability with other implementations.
+
+## GeoJSON types are fixed
+
+Implementations MUST NOT extend the fixed set of GeoJSON types:
+FeatureCollection, Feature, Point, LineString, MultiPoint, Polygon,
+MultiLineString, MultiPolygon, and GeometryCollection.
+
+## Semantics of GeoJSON properties are fixed
+
+Implementations MUST NOT change the the semantics of GeoJSON properties.
