@@ -129,22 +129,25 @@ A GeoJSON feature collection:
         }]
     }
 
+# GeoJSON Text
+
+A GeoJSON text is a JSON text and consists of a single GeoJSON object.
+
 # GeoJSON Object
 
-GeoJSON always consists of a single object. This object (referred to as
-the GeoJSON object below) represents a geometry, feature, or collection
-of features.
+A GeoJSON object represents a geometry, feature, or collection of
+features.
 
-* The top level of GeoJSON text MUST be a JSON object.
+* A GeoJSON object is a JSON object.
 
-* The GeoJSON object MUST have a member with the name "type". The value
+* A GeoJSON object MUST have a member with the name "type". The value
   of the member MUST be one of the GeoJSON types.
 
 * A GeoJSON object MAY have a "bbox" member, the value of which MUST be
   a bounding box array (see 4. Bounding Boxes).
 
-* The GeoJSON object MAY have any number of other members.
-  Implementations MUST ignore unrecognized members.
+* A GeoJSON object MAY have any number of other members (see 6.
+  Extending GeoJSON).
 
 ## Geometry Object
 
@@ -285,7 +288,7 @@ processing software SHALL NOT be expected to have access to coordinate
 reference systems databases.  Applications requiring CRS other than the
 default MUST assume all responsibility for reference system and
 coordinate accuracy. Furthermore, GeoJSON coordinates MUST NOT under any
-circumstances use latitude, longitude order. See Section 6,
+circumstances use latitude, longitude order. See Section 8,
 Interoperability Considerations, for guidance in processing GeoJSON
 documents that do contain such a CRS object.
 
