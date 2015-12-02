@@ -169,15 +169,14 @@ member of a geometry object is composed of either:
 
 * or a multidimensional array of positions (MultiPolygon).
 
-A position is represented by an array of numbers. There MUST be two or
+A position is an array of numbers. There MUST be two or
 more elements. The first two elements will be longitude and latitude, 
 or easting and northing, precisely in that order and using decimal numbers.
 Altitude or elevation MAY be included as an optional third element.
 
-Additional position elements MAY be included but MUST follow the three
-specified above and MAY be ignored by software. Interpretation and
-meaning of additional elements is beyond the scope of this
-specification.
+Implementations SHOULD NOT extend positions beyond 3 elements. Parsers
+MAY ignore additional elements. Interpretation and meaning of additional
+elements is beyond the scope of this specification.
 
 Examples of positions and geometries are provided in "Appendix A.
 Geometry Examples".
@@ -363,3 +362,7 @@ MultiLineString, MultiPolygon, and GeometryCollection.
 ## Semantics of GeoJSON properties are not extensible
 
 Implementations MUST NOT change the the semantics of GeoJSON properties.
+
+## Positions are not extensible
+
+The position array is not a point of extension for GeoJSON.
