@@ -362,7 +362,3 @@ MultiLineString, MultiPolygon, and GeometryCollection.
 ## Semantics of GeoJSON properties are not extensible
 
 Implementations MUST NOT change the the semantics of GeoJSON properties.
-
-## Positions are not extensible
-
-The position array is not a point of extension for GeoJSON.
