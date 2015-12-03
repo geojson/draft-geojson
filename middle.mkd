@@ -365,7 +365,4 @@ MultiLineString, MultiPolygon, and GeometryCollection.
 ## Semantics of GeoJSON properties and types are not extensible
 
 Implementations MUST NOT change the the semantics of GeoJSON properties
-and types. For example, extensions MUST not 
-
-and SHOULD treat all components of geometry collections as parts of
-a whole without applying any other interpretation or semantic meaning to them.
+and types.
