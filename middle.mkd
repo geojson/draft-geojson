@@ -144,10 +144,10 @@ features.
   of the member MUST be one of the GeoJSON types.
 
 * A GeoJSON object MAY have a "bbox" member, the value of which MUST be
-  a bounding box array (see 4. Bounding Boxes).
+  a bounding box array (see [](#bounding-box)).
 
-* A GeoJSON object MAY have any number of other members (see 6.
-  Extending GeoJSON).
+* A GeoJSON object MAY have any number of other members (see
+  [](#extending-geojson)).
 
 ## Geometry Object
 
