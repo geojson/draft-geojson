@@ -237,10 +237,14 @@ Polygon coordinate arrays.
 ### Geometry Collection
 
 A GeoJSON object with type "GeometryCollection" is a geometry object
-which represents a collection of geometry objects. A geometry collection
-MUST have a member with the name "geometries".  The value corresponding
-to "geometries" is an array. Each element in this array is a GeoJSON
+that is a composition of other geometry objects. A geometry collection
+MUST have a member with the name "geometries".  The value of
+"geometries" is an array. Each element of this array is a GeoJSON
 geometry object.
+
+A geometry collection is nothing other than a composition of other
+geometry objects. For example, a Point type geometry and a geometry
+collection composed of a single identical Point are equivalent.
 
 ## Feature Object
 
@@ -262,10 +266,9 @@ A GeoJSON object with the type "Feature" is a feature object.
 ## Feature Collection Object
 
 A GeoJSON object with the type "FeatureCollection" is a feature
-collection object. An object of type "FeatureCollection" MUST have
-a member with the name "features". The value corresponding to "features"
-is an array. Each element in the array is a feature object as defined
-above.
+collection object. A feature collection object MUST have a member with
+the name "features". The value of "features" is an array. Each element
+of the array is a feature object as defined above.
 
 # Coordinate Reference System
 
@@ -359,6 +362,10 @@ Implementations MUST NOT extend the fixed set of GeoJSON types:
 FeatureCollection, Feature, Point, LineString, MultiPoint, Polygon,
 MultiLineString, MultiPolygon, and GeometryCollection.
 
-## Semantics of GeoJSON properties are not extensible
+## Semantics of GeoJSON properties and types are not extensible
 
-Implementations MUST NOT change the the semantics of GeoJSON properties.
+Implementations MUST NOT change the the semantics of GeoJSON properties
+and types. For example, extensions MUST not 
+
+and SHOULD treat all components of geometry collections as parts of
+a whole without applying any other interpretation or semantic meaning to them.
