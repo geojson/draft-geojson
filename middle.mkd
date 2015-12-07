@@ -149,12 +149,15 @@ of features.
 ## Geometry Object
 
 A geometry object is a GeoJSON object where the "type" value is one of
-the geometry types. A GeoJSON geometry object of any type other than
-"GeometryCollection" MUST have a member with the name "coordinates". The
-value of the coordinates member is always an array. The structure of the
-elements in this array is determined by the type of geometry. GeoJSON
-processors MAY interpret geometry objects with empty coordinates arrays
-as null objects.
+the geometry types. Geometry objects represent points, curves, and
+surfaces in coordinate space.
+
+A GeoJSON geometry object of any type other than "GeometryCollection"
+MUST have a member with the name "coordinates". The value of the
+coordinates member is always an array. The structure of the elements in
+this array is determined by the type of geometry. GeoJSON processors MAY
+interpret geometry objects with empty coordinates arrays as null
+objects.
 
 ### Position
 
@@ -236,15 +239,13 @@ Polygon coordinate arrays.
 
 ### Geometry Collection
 
-A GeoJSON object with type "GeometryCollection" is a geometry object
-that is a composition of other geometry objects. A geometry collection
-MUST have a member with the name "geometries".  The value of
-"geometries" is an array. Each element of this array is a GeoJSON
-geometry object.
-
-A geometry collection is nothing other than a composition of other
-geometry objects. For example, a Point type geometry and a geometry
-collection composed of a single identical Point are equivalent.
+A GeoJSON object with type "GeometryCollection" is a geometry object.
+A geometry collection MUST have a member with the name "geometries". The
+value of "geometries" is array. Each element of this array is a GeoJSON
+geometry object. Unlike the other geometry types described above,
+a geometry collection may be a heterogeneous composition of smaller
+geometry objects. For example, a geometry object in the shape of
+a lowercase roman "i" may be composed of one point and one line string.
 
 ## Feature Object
 
