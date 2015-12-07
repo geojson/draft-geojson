@@ -3,7 +3,7 @@
    GeoJSON is a format for encoding data about geographic features using
    JavaScript Object Notation (JSON) [RFC7159].  The format is concerned
    with features in the broadest sense; any thing with qualities that
-   are bounded in geographical space may be a feature whether it is
+   are bounded in geographical space might be a feature whether it is
    a physical structure or not.  The concepts in GeoJSON are not new;
    they are derived from pre-existing open geographic information system
    standards (for COM, SQL, and XML) and have been streamlined to better
@@ -243,9 +243,9 @@ A GeoJSON object with type "GeometryCollection" is a geometry object.
 A geometry collection MUST have a member with the name "geometries". The
 value of "geometries" is array. Each element of this array is a GeoJSON
 geometry object. Unlike the other geometry types described above,
-a geometry collection may be a heterogeneous composition of smaller
+a geometry collection can be a heterogeneous composition of smaller
 geometry objects. For example, a geometry object in the shape of
-a lowercase roman "i" may be composed of one point and one line string.
+a lowercase roman "i" can be composed of one point and one line string.
 
 ## Feature Object
 
@@ -351,10 +351,10 @@ Example of a bbox for line crossing the date-line:
 ## Foreign properties
 
 Properties not described in this specification ("foreign properties")
-may be used in a GeoJSON document. Note that support for foreign
+MAY be used in a GeoJSON document. Note that support for foreign
 properties can vary across implementations and no normative processing
 model for foreign properties is defined. Accordingly, implementations
-that rely too heavily on the use of foreign properties may experience
+that rely too heavily on the use of foreign properties might experience
 reduced interoperability with other implementations.
 
 ## GeoJSON types are not extensible
