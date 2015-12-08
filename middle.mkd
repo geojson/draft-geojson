@@ -274,11 +274,11 @@ collection object. A feature collection object MUST have a member with
 the name "features". The value of "features" is an array. Each element
 of the array is a feature object as defined above.
 
-A feature collection MAY have a property with the name "modified". The
+A feature collection MAY have a property with the name "created". The
 value of this property MUST be a timestamp string formatted as
-a [RFC3339] full-date or date-time. This timestamp records the last
-modification time of the data. Implementations MAY use this timestamp to
-make corrections to coordinates recorded in the past.
+a [RFC3339] full-date or date-time. This timestamp records the data's
+date of creation. Implementations MAY use this timestamp to make
+corrections to coordinates recorded in the past.
 
 # Coordinate Reference System
 
