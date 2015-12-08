@@ -3,7 +3,7 @@
    GeoJSON is a format for encoding data about geographic features using
    JavaScript Object Notation (JSON) [RFC7159].  The format is concerned
    with features in the broadest sense; any thing with qualities that
-   are bounded in geographical space may be a feature whether it is
+   are bounded in geographical space might be a feature whether it is
    a physical structure or not.  The concepts in GeoJSON are not new;
    they are derived from pre-existing open geographic information system
    standards (for COM, SQL, and XML) and have been streamlined to better
@@ -152,12 +152,15 @@ features.
 ## Geometry Object
 
 A geometry object is a GeoJSON object where the "type" value is one of
-the geometry types. A GeoJSON geometry object of any type other than
-"GeometryCollection" MUST have a member with the name "coordinates". The
-value of the coordinates member is always an array. The structure of the
-elements in this array is determined by the type of geometry. GeoJSON
-processors MAY interpret geometry objects with empty coordinates arrays
-as null objects.
+the geometry types. Geometry objects represent points, curves, and
+surfaces in coordinate space.
+
+A GeoJSON geometry object of any type other than "GeometryCollection"
+MUST have a member with the name "coordinates". The value of the
+coordinates member is always an array. The structure of the elements in
+this array is determined by the type of geometry. GeoJSON processors MAY
+interpret geometry objects with empty coordinates arrays as null
+objects.
 
 ### Position
 
@@ -239,11 +242,13 @@ Polygon coordinate arrays.
 
 ### Geometry Collection
 
-A GeoJSON object with type "GeometryCollection" is a geometry object
-which represents a collection of geometry objects. A geometry collection
-MUST have a member with the name "geometries".  The value corresponding
-to "geometries" is an array. Each element in this array is a GeoJSON
-geometry object.
+A GeoJSON object with type "GeometryCollection" is a geometry object.
+A geometry collection MUST have a member with the name "geometries". The
+value of "geometries" is array. Each element of this array is a GeoJSON
+geometry object. Unlike the other geometry types described above,
+a geometry collection can be a heterogeneous composition of smaller
+geometry objects. For example, a geometry object in the shape of
+a lowercase roman "i" can be composed of one point and one line string.
 
 ## Feature Object
 
@@ -265,10 +270,9 @@ A GeoJSON object with the type "Feature" is a feature object.
 ## Feature Collection Object
 
 A GeoJSON object with the type "FeatureCollection" is a feature
-collection object. An object of type "FeatureCollection" MUST have
-a member with the name "features". The value corresponding to "features"
-is an array. Each element in the array is a feature object as defined
-above.
+collection object. A feature collection object MUST have a member with
+the name "features". The value of "features" is an array. Each element
+of the array is a feature object as defined above.
 
 # Coordinate Reference System
 
@@ -350,10 +354,10 @@ Example of a bbox for line crossing the date-line:
 ## Foreign properties
 
 Properties not described in this specification ("foreign properties")
-may be used in a GeoJSON document. Note that support for foreign
+MAY be used in a GeoJSON document. Note that support for foreign
 properties can vary across implementations and no normative processing
 model for foreign properties is defined. Accordingly, implementations
-that rely too heavily on the use of foreign properties may experience
+that rely too heavily on the use of foreign properties might experience
 reduced interoperability with other implementations.
 
 ## GeoJSON types are not extensible
@@ -362,6 +366,7 @@ Implementations MUST NOT extend the fixed set of GeoJSON types:
 FeatureCollection, Feature, Point, LineString, MultiPoint, Polygon,
 MultiLineString, MultiPolygon, and GeometryCollection.
 
-## Semantics of GeoJSON properties are not extensible
+## Semantics of GeoJSON properties and types are not extensible
 
-Implementations MUST NOT change the the semantics of GeoJSON properties.
+Implementations MUST NOT change the the semantics of GeoJSON properties
+and types.
