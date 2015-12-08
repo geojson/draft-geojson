@@ -62,7 +62,7 @@ precision than necessary.
 ## Geometry Collections
 
 Geometry collections have a different syntax from single type geometry
-objects (points, line strings, and polygons) and homogenously typed
+objects (points, line strings, and polygons) and homogeneously typed
 multipart geometry objects (multipoints, multiline strings, and
 multipolygons) but have no different semantics. Although a geometry
 collection object has no "coordinates" property, it does have 
