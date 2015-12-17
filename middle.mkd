@@ -292,7 +292,7 @@ objects of the kind defined in [GJ2008] are NOT RECOMMENDED. GeoJSON
 processing software SHALL NOT be expected to have access to coordinate
 reference systems databases.  Applications requiring CRS other than the
 default MUST assume all responsibility for reference system and
-coordinate accuracy and interpreation of missing elevation values.
+coordinate accuracy and interpretation of missing elevation values.
 Furthermore, GeoJSON coordinates MUST NOT under any circumstances use
 latitude, longitude order. See Section 8, Interoperability
 Considerations, for guidance in processing GeoJSON documents that do
