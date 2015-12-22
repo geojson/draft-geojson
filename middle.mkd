@@ -290,7 +290,7 @@ interpret positions as being at local ground or sea level.
 Other coordinate reference systems, including ones described by CRS
 objects of the kind defined in [GJ2008] are NOT RECOMMENDED. GeoJSON
 processing software SHALL NOT be expected to have access to coordinate
-reference systems databases. Applications requiring CRS other than the
+reference systems databases. Applications requiring a CRS other than the
 default MUST assume all responsibility for CRS identification,
 coordinate accuracy, and interpretation of missing elevation values.
 Furthermore, GeoJSON coordinates MUST NOT under any circumstances use
