@@ -274,6 +274,10 @@ collection object. A feature collection object MUST have a member with
 the name "features". The value of "features" is an array. Each element
 of the array is a feature object as defined above.
 
+A feature collection object MAY have a member with the name "version",
+specifying the version of the GeoJSON format. The value of this member
+MUST NOT be anything other than "1.0".
+
 # Coordinate Reference System
 
 The default reference system for all GeoJSON coordinates SHALL be
