@@ -184,7 +184,7 @@ the geometry objects described above:
 
 GeoJSON as defined in this specification consists of exactly one GeoJSON object. However, there may be cases in which applications want to represent sets or sequences of GeoJSON objects. Representing sets or sequences of GeoJSON objects is outside of the scope of this specification.
 
-If such a representation is needed, a new media type is required that has the ability to represent sets or sequences. When defining such a media type, it may be useful to base it on "JSON Text Sequences" [RFC7464], leaving the foundations of how to represent multiple JSON objects to that specifications, and only defining how it applies to GeoJSON objects. However, no such definition is included here, and at the time of writing it is unclear if and when there will be a specification for "GeoJSON Text Sequences".
+If such a representation is needed, a new media type is required that has the ability to represent sets or sequences. When defining such a media type, it may be useful to base it on "JSON Text Sequences" [RFC7464], leaving the foundations of how to represent multiple JSON objects to that specification, and only defining how it applies to GeoJSON objects. However, no such definition is included here, and at the time of writing it is unclear if and when there will be a specification for "GeoJSON Text Sequences".
 
 
 # Contributors
