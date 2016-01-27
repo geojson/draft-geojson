@@ -26,14 +26,23 @@
         <author initials="H." surname="Butler"
                 fullname="H. Butler">
             <organization>Hobu Inc.</organization>
+            <address>
+                <email>howard@hobu.co</email>
+            </address>
         </author>
         <author initials="M." surname="Daly"
                 fullname="M. Daly">
             <organization>Cadcorp</organization>
+            <address>
+                <email>martin.daly@cadcorp.com</email>
+            </address>
         </author>
         <author initials="A." surname="Doyle"
                 fullname="A. Doyle">
             <organization>MIT</organization>
+            <address>
+                <email>adoyle@intl-interfaces.com</email>
+            </address>
         </author>
         <author initials="S." surname="Gillies"
                 fullname="S. Gillies">
@@ -47,6 +56,9 @@
         <author initials="T." surname="Schaub"
                 fullname="T. Schaub">
             <organization>Planet Labs</organization>
+            <address>
+                <email>tim.schaub@gmail.com</email>
+            </address>
         </author>
 <!--        <author initials="C." surname="Schmidt"
                 fullname="C. Schmidt">
