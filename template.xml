@@ -129,6 +129,15 @@
         &pandocRef2119;
         &pandocRef7159;
         &pandocRef7493;
+       <reference anchor="WGS84">
+           <front>
+               <title>Department of Defense World Geodetic System 1984, Third Edition</title>
+               <author>
+                  <organization abbrev="NIMA">National Imagery and Mapping Agency</organization>
+               </author>
+               <date year="1984" />
+           </front>
+       </reference>
     </references>
     <references title="Informative References">
         <reference anchor="GJ2008">
@@ -182,15 +191,6 @@
                <date month="March" year="2010" />
            </front>
            <seriesInfo name="OGC" value="09-048r3" />
-       </reference>
-       <reference anchor="WGS84">
-           <front>
-               <title>Department of Defense World Geodetic System 1984, Third Edition</title>
-               <author>
-                  <organization abbrev="NIMA">National Imagery and Mapping Agency</organization>
-               </author>
-               <date year="1984" />
-           </front>
        </reference>
     </references>
     &pandocBack;
