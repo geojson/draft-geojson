@@ -396,7 +396,7 @@ GeoJSON:
 
   {"type": "Point", "coordinates": [%lon%, %lat%]}
 
-The mapping between 'geo' URIs and GeoJSON points that specifiy elevation is
+The mapping between 'geo' URIs and GeoJSON points that specify elevation is
 shown below.
 
 'geo' URI:
