@@ -384,7 +384,7 @@ are placeholders for 'geo' URI latitude, longitude, altitude, and uncertainty
 values, respectively.
 
 A 'geo' URI with two coordinates and an uncertainty ('u') parameter that
-is absent or zero and a GeoJSON Point geometry may be mapped to each other.
+is absent or zero, and a GeoJSON Point geometry may be mapped to each other.
 A GeoJSON point is always converted to a 'geo' URI that has no uncertainty
 parameter.
 
@@ -407,5 +407,5 @@ GeoJSON:
 
   {"type": "Point", "coordinates": [%lon%, %lat%, %alt%]}
 
-GeoJSON has no concept of uncertainty; imprecise or uncertain 'geo' URIs can
-not be mapped to GeoJSON geometries.
+GeoJSON has no concept of uncertainty; imprecise or uncertain 'geo' URIs thus
+can not be mapped to GeoJSON geometries.
