@@ -132,6 +132,7 @@
         &pandocRef7493;
     </references>
     <references title="Informative References">
+        &pandocRef7464;
         <reference anchor="GJ2008">
            <front>
                <title>The GeoJSON Format Specification</title>
