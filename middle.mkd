@@ -244,8 +244,10 @@ Polygon coordinate arrays.
 
 A GeoJSON object with type "GeometryCollection" is a geometry object.
 A geometry collection MUST have a member with the name "geometries". The
-value of "geometries" is array. Each element of this array is a GeoJSON
-geometry object. Unlike the other geometry types described above,
+value of "geometries" is an array. Each element of this array is a GeoJSON
+geometry object. It is possible for this array to be empty.
+
+Unlike the other geometry types described above,
 a geometry collection can be a heterogeneous composition of smaller
 geometry objects. For example, a geometry object in the shape of
 a lowercase roman "i" can be composed of one point and one line string.
@@ -272,7 +274,8 @@ A GeoJSON object with the type "Feature" is a feature object.
 A GeoJSON object with the type "FeatureCollection" is a feature
 collection object. A feature collection object MUST have a member with
 the name "features". The value of "features" is an array. Each element
-of the array is a feature object as defined above.
+of the array is a feature object as defined above. It is possible for
+this array to be empty
 
 # Coordinate Reference System
 
