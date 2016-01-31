@@ -213,8 +213,8 @@ the concept of a linear ring:
 
 * A linear ring is a closed LineString with 4 or more positions.
 
-* The first and last positions are equivalent, they MUST contain identical
-  values; their representation SHOULD also be identical.
+* The first and last positions are equivalent (they represent
+  equivalent points).
 
 * A linear ring is the boundary of a surface or the boundary of a hole in
   a surface.
