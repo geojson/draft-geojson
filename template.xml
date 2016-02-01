@@ -11,6 +11,7 @@
 <!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
 <!ENTITY pandocRef5165  PUBLIC '' 'bib/reference.RFC.5165.xml'>
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
+<!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
@@ -140,6 +141,7 @@
        </reference>
     </references>
     <references title="Informative References">
+        &pandocRef7464;
         <reference anchor="GJ2008">
            <front>
                <title>The GeoJSON Format Specification</title>
