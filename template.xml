@@ -113,8 +113,13 @@
    <section title="IANA Considerations">
        <t>
        The media type for GeoJSON text is <spanx
-       style="verb">application/geo+json</spanx>, which is registered in the
-       "Media Types" registtry described in <xref target="RFC6838"/>.
+       style="verb">application/geo+json</spanx> and is registered in the
+       "Media Types" registry described in <xref target="RFC6838"/>.
+       The entry for <spanx style="verb">application/vnd.geo+json</spanx> in
+       the same registry should have its status
+       changed to be Obsolete with a pointer to the media type
+       <spanx style="verb">application/geo+json</spanx> and a reference added
+       to this RFC.
 
        <list style="hanging">
          <t hangText="Type name:">application</t>
