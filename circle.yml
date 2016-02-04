@@ -5,8 +5,8 @@ machine:
 dependencies:
   pre:
     - sudo apt-get update; sudo apt-get install pandoc
-    - pip install -U pip --allow-external pip --allow-unverified pip
-    - pip install xml2rfc --allow-external xml2rfc --allow-unverified xml2rfc
+    - pip install -U pip
+    - pip install xml2rfc
 
 test:
   override:
