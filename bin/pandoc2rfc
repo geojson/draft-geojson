@@ -1,0 +1,106 @@
+#!/bin/bash
+# (c) Miek Gieben, 2013, A small wrapper around Pandoc, xsltproc and xml2rfc to create an I-D.
+TRANS=/usr/share/pandoc2rfc/transform.xsl
+TEMPLATE=template.xml
+VERSION="@VERSION@"
+
+function usage {
+    echo "Usage: pandoc2rfc [-1THXNRh] [FILE]..."
+    echo "Process files with Pandoc syntax and run xml2rfc on them."
+    echo
+    echo "  -T                  create a draft.txt (with page breaks), this is the default"
+    echo "  -R                  create a draft.txt (raw, unpaginated)"
+    echo "  -H                  create a draft.html"
+    echo "  -M                  create a draft.html (using rfcmarkup)"
+    echo "  -X                  create a draft.xml"
+    echo "  -N                  create a draft.nroff"
+    echo "  -C                  clean, remove all drafts"
+    echo "  -1                  parse FILE as XML and output Pandoc"
+    echo "  -2                  set output to xml2rfc v2 XML"
+    echo "  -3                  set output to xml2rfc v3 XML"
+    echo "  -n                  pass --nonet to xsltproc"
+    echo "  -v                  be verbose (show warnings)"
+    echo "  -d                  debug mode, do not delete intermediate XML files"
+    echo "  -t template.xml     path to template.xml, defaults to current directory"
+    echo "  -x transform.xsl    path to transform.xsl, defaults to /usr/share/pandoc2rfc/transform.xsl"
+    echo "  -h                  this help"
+    echo "  -V                  show version ($VERSION)"
+}
+
+# As the extension for Pandoc is not really fixed, we try
+# .pdc, .pandoc, .mkd, .markdown, .md and .txt
+function extension {
+    for ext in .pdc .pandoc .mkd .markdown .md .txt; do
+        base=$(basename "$1" $ext)
+        if [[ "$base" != $1 ]]; then
+            echo $base
+            return 0
+        fi
+    done
+    echo ""
+}
+
+REV=""
+OUT="-f draft.txt --text"
+MARKUP=""
+RM=rm
+NONET=""
+Q="-q"
+while getopts "nvdht:x:THMXNRCV123" o; do
+    case $o in
+    T) ;;
+    M) MARKUP="1";;
+    1) REV="1"; TRANS=/usr/share/pandoc2rfc/plain.xsl;;
+    2) :;;
+    3) :;;
+    R) OUT="-f draft.txt --raw";;
+    H) OUT="-f draft.html --html";;
+    X) OUT="-f draft.xml --exp";;
+    N) OUT="-f draft.nroff --nroff";;
+    n) NONET="--nonet";;
+    C) [[ -n "$VERBOSE" ]] && echo rm -f draft.{txt,html,xml,nroff} >&2
+       rm -f draft.{txt,html,xml,nroff} && exit 0;;
+    h) usage && exit 0;;
+    V) echo $VERSION && exit 0;;
+    t) TEMPLATE="$OPTARG";;
+    x) TRANS="$OPTARG";;
+    v) VERBOSE="y"; Q="";;
+    d) RM=":"
+    esac
+done
+shift $((OPTIND - 1))
+
+if [[ -n "$REV" ]]; then
+    [[ -n "$VERBOSE" ]] && echo sed \'s/^ *//\' \< "$1" \| xsltproc $NONET $TRANS - >&2
+    sed 's/^ *//' < "$1" | xsltproc $NONET $TRANS -
+    exit
+fi
+
+XML=""
+for f in "$@"; do
+    base=$(extension "$f")
+    if [[ -z "$base" ]]; then
+        echo $0: Could not detect extension for $f >&2
+        exit 1
+    fi
+    [[ -n "$VERBOSE" ]] && echo pandoc -t docbook -s $f \| xsltproc $NONET $TRANS - \> "$base".xml >&2
+    pandoc -t docbook -s "$f" | xsltproc $NONET $TRANS - > "$base".xml || exit 1
+    XML="$XML $base.xml"
+done
+# if XML is filled we have files to process otherwise process stdin
+if [[ -n "$XML" ]]; then
+    [[ -n "$VERBOSE" ]] && echo xml2rfc $Q $TEMPLATE $OUT \&\& $RM $XML >&2
+    xml2rfc $Q $TEMPLATE $OUT && $RM $XML
+    if [[ -n "$MARKUP" ]]; then
+        [[ -n "$VERBOSE" ]] && echo rfcmarkup url=file:///$PWD/draft.txt \> draft.html \&\& rm draft.txt >&2
+        rfcmarkup url=file:///$PWD/draft.txt > draft.html && rm draft.txt
+    fi
+else
+    if [[ -n "$MARKUP" ]]; then
+        [[ -n "$VERBOSE" ]] && echo pandoc -t docbook -s \| xsltproc $NONET $TRANS - \| rfcmarkup url=file:///dev/stdin >&2
+        pandoc -t docbook -s | xsltproc $NONET $TRANS - | rfcmarkup url=file:///dev/stdin || exit 1
+    else 
+        [[ -n "$VERBOSE" ]] && echo pandoc -t docbook -s \| xsltproc $NONET $TRANS - >&2
+        pandoc -t docbook -s | xsltproc $NONET $TRANS - || exit 1
+    fi
+fi

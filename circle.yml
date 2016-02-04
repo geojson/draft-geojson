@@ -1,0 +1,8 @@
+dependencies:
+  pre:
+    - sudo apt-get update; sudo apt-get install pandoc
+    - pip install xml2rfc
+
+test:
+  override:
+    - make
