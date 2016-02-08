@@ -357,6 +357,10 @@ Example of a bbox for a line crossing the date-line:
 
 # Extending GeoJSON
 
+## GeoJSON properties
+
+The properties (or members) described above are the core GeoJSON properties.
+
 ## Foreign properties
 
 Properties not described in this specification ("foreign properties")
@@ -376,6 +380,18 @@ MultiLineString, MultiPolygon, and GeometryCollection.
 
 Implementations MUST NOT change the the semantics of GeoJSON properties
 and types.
+
+The GeoJSON "coordinates" and "geometries" properties define Geometry
+and GeometryCollection objects. FeatureCollection and Feature objects MUST NOT
+contain a "coordinate" or "geometries" member.
+
+The GeoJSON "geometry" and "properties" properties define a Feature object.
+FeatureCollection, Geometry, and GeometryCollections objects MUST NOT 
+contain a "geometry" or "properties" member.
+
+The GeoJSON "features" property defines a FeatureCollection object. Feature,
+Geometry, and GeometryCollection objects MUST NOT contain a "features"
+member.
 
 # Mapping 'geo' URIs
 
