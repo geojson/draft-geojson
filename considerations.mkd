@@ -39,7 +39,7 @@ precision than necessary.
    Some commonly-used CRS definitions specify coordinate ordering that
    is not longitude then latitude (for a geographic CRS) or easting then
    northing (for a projected CRS). The CRS historically known as
-   "EPSG:4326" and more accurately identified by 
+   "EPSG:4326" and more accurately identified by
    "http://www.opengis.net/def/crs/EPSG/0/4326" is a prime example.
    Using such a CRS is NOT RECOMMENDED due to the potential disruption
    of interoperability. When such a CRS is encountered in GeoJSON, the
@@ -49,9 +49,9 @@ precision than necessary.
 
 ## Bounding boxes
 
-   In representing features that cross the dateline or the poles, 
-   following the ring-orientation best practice (counter-clockwise 
-   external rings, clockwise internal rings) and ensuring your 
+   In representing features that cross the dateline or the poles,
+   following the ring-orientation best practice (counter-clockwise
+   external rings, clockwise internal rings) and ensuring your
    bounding boxes use the south-west corner as the first coordinate
    will improve interoperability. Remain aware that software that
    represents edges as straight cartesian lines and software that
@@ -65,9 +65,9 @@ Geometry collections have a different syntax from single type geometry
 objects (points, line strings, and polygons) and homogeneously typed
 multipart geometry objects (multipoints, multiline strings, and
 multipolygons) but have no different semantics. Although a geometry
-collection object has no "coordinates" property, it does have 
+collection object has no "coordinates" member, it does have
 coordinates: the coordinates of all its parts belong to the collection.
-The "geometries" property of a geometry collection describes the parts
+The "geometries" member of a geometry collection describes the parts
 of this composition. Implementations SHOULD NOT apply any additional
 semantics to the "geometries" array.
 

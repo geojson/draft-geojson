@@ -20,7 +20,7 @@
 
    GeoJSON also comprises the types Feature and FeatureCollection.
    Feature objects in GeoJSON contain a geometry object with one of the
-   above geometry types and additional properties. A FeatureCollection
+   above geometry types and additional members. A FeatureCollection
    object contains an array of feature objects.  This structure is
    analogous to that of the Web Feature Service (WFS) response to
    GetFeatures requests specified in [WFSv1] or to a KML Folder of
@@ -38,7 +38,7 @@
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in 
+   "OPTIONAL" in this document are to be interpreted as described in
    [RFC2119].
 
 ## Conventions Used in This Document
@@ -176,7 +176,7 @@ member of a geometry object is composed of either:
 * or a multidimensional array of positions (MultiPolygon).
 
 A position is an array of numbers. There MUST be two or
-more elements. The first two elements are longitude and latitude, 
+more elements. The first two elements are longitude and latitude,
 or easting and northing, precisely in that order and using decimal numbers.
 Altitude or elevation MAY be included as an optional third element.
 
@@ -218,9 +218,9 @@ the concept of a linear ring:
 
 * A linear ring is the boundary of a surface or the boundary of a hole in
   a surface.
-  
+
 * A linear ring SHOULD follow right-hand rule with respect to the area
-  it bounds (i.e., exterior rings are counter-clockwise, holes are 
+  it bounds (i.e., exterior rings are counter-clockwise, holes are
   clockwise)
 
 Though a linear ring is not explicitly represented as a GeoJSON geometry
@@ -259,7 +259,7 @@ A GeoJSON object with the type "Feature" is a feature object.
 * A feature object MUST have a member with the name "geometry". The
   value of the geometry member SHALL be either a geometry object as
   defined above or, in the the case that the feature is unlocated,
-  a JSON null value. 
+  a JSON null value.
 
 * A feature object MUST have a member with the name "properties". The
   value of the properties member is an object (any JSON object or a
@@ -307,8 +307,8 @@ A GeoJSON object MAY have a member named "bbox" to include information
 on the coordinate range for its geometries, features, or feature
 collections. The value of the bbox member MUST be an array of length
 2*n where n is the number of dimensions represented in the contained
-geometries, with all axes of the most south-westerly point followed by 
-all axes of the more north-easterly point. The axes order of a bbox 
+geometries, with all axes of the most south-westerly point followed by
+all axes of the more north-easterly point. The axes order of a bbox
 follows the axes order of geometries.
 
 Example of a bbox member on a feature:
@@ -357,13 +357,13 @@ Example of a bbox for a line crossing the date-line:
 
 # Extending GeoJSON
 
-## Foreign properties
+## Foreign members
 
-Properties not described in this specification ("foreign properties")
+Members not described in this specification ("foreign members")
 MAY be used in a GeoJSON document. Note that support for foreign
-properties can vary across implementations and no normative processing
-model for foreign properties is defined. Accordingly, implementations
-that rely too heavily on the use of foreign properties might experience
+members can vary across implementations and no normative processing
+model for foreign members is defined. Accordingly, implementations
+that rely too heavily on the use of foreign members might experience
 reduced interoperability with other implementations.
 
 ## GeoJSON types are not extensible
@@ -372,9 +372,9 @@ Implementations MUST NOT extend the fixed set of GeoJSON types:
 FeatureCollection, Feature, Point, LineString, MultiPoint, Polygon,
 MultiLineString, MultiPolygon, and GeometryCollection.
 
-## Semantics of GeoJSON properties and types are not extensible
+## Semantics of GeoJSON members and types are not extensible
 
-Implementations MUST NOT change the the semantics of GeoJSON properties
+Implementations MUST NOT change the the semantics of GeoJSON members
 and types.
 
 # Mapping 'geo' URIs
