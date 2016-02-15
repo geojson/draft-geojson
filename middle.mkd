@@ -340,20 +340,20 @@ Example of a bbox member on a feature collection:
         ]
     }
 
-Example of a bbox for a line crossing the date-line:
+## The Antimeridian
 
-    {
-        "type": "Feature",
-        "bbox": [170, 10, -170, 11],
-        "geometry": {
-            "type": "LineString",
-            "coordinates": [
-                [-170, 10],
-                [170, 11]
-            ]
-        }
-        //...
-    }
+Consider a set of point features within the Fiji archipelago, straddling
+the antimeridian between 16°S and 20°S. The southwest corner of the box
+containing these features is at 20°S and 177°E, the northwest corner is
+at 16°S and 178°W. The antimeridian-spanning GeoJSON bounding box for
+this feature collection is:
+
+    "bbox": [177.0, -20.0, -178.0, -16.0]
+
+The complementary bounding box for the same latitude band, not crossing
+the antimeridian is:
+
+    "bbox": [-178.0, -20.0, 177.0, -16.0]
 
 # Extending GeoJSON
 
