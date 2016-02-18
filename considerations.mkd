@@ -30,6 +30,11 @@ to about 10 centimeters, a precision well within that of current GPS
 systems.  Implementations should consider the cost to using a greater
 precision than necessary.
 
+Furthermore the default WGS84 datum uses a relatively coarse geoid; 
+with the WGS84 height varying by up to 5m (but generally between 2 and 
+3 meter) higher or lower relative to a surface parallel to earths 
+mean sea level.
+
 ## Coordinate Order
 
 There are conflicting precedents among geographic data formats over

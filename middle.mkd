@@ -184,6 +184,28 @@ Implementations SHOULD NOT extend positions beyond 3 elements. Parsers
 MAY ignore additional elements. Interpretation and meaning of additional
 elements is beyond the scope of this specification.
 
+A line between two points is a straight cartesian line. I.e. it is the
+the shortest line between those two points in the Coordinate Reference 
+System used to express those points. 
+
+Or in other words; every point on a line between a point (lon0,lat0) and
+(lon1, lat1) can be calculated as F(lon,lat)=(lon0 + (lon1-lon0) * t,
+(lat1 - lat0) * t) with t a real number greater or equal to 0 and
+smaller or equal to 1.
+
+Note that -for example in the WGS84 datum; the default Coordinate Reference 
+System- this line may marketly differ from the shortest line between two
+points (such as a great circles).
+
+The same applies to the optional height element with the provisio
+that the direction of the heigth is as specified in the Coordinate
+Reference System.
+
+Note that, again, using the default WGS84 datum as a starting point,
+this does not mean that a surface with equal height follows, for
+example, the curvature of a body of water. Nor is a surface of equal
+height perpendicular to a plum line.
+
 Examples of positions and geometries are provided in "Appendix A.
 Geometry Examples".
 
@@ -339,6 +361,13 @@ Example of a bbox member on a feature collection:
         //...
         ]
     }
+
+## The connecting lines
+
+The 4 lines of the bounding box are defined fully within the
+Coordinate Reference System; i.e. every point on the northernmost 
+line can be expressed as (lon,lat) = (lon0 + (lon1-lon0) * t, lat1)
+with  0 <= t <= 1. 
 
 ## The Antimeridian
 
