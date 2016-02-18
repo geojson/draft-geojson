@@ -355,6 +355,41 @@ Example of a bbox for a line crossing the date-line:
         //...
     }
 
+
+## The Poles
+
+In the default GeoJSON CRS (see [](#coordinate-reference-system)),
+a bounding box that contains the North Pole extends from a southwest
+corner of %minlat% degrees N, 180 degrees W to a northeast corner of 90
+degrees N, 180 degrees E. Viewed on a globe, this bounding box
+approximates a spherical cap.
+
+    "bbox": [-180.0, %minlat%, 180.0, 90.0]
+
+A bounding box that contains the South Pole extends from a southwest
+corner of 90 degrees S, 180 degrees W to a northeast corner of
+%maxlat% degrees S, 180 degrees E.
+
+    "bbox": [-180.0, -90.0, 180.0, %maxlat%]
+
+A bounding box that just touches the North Pole and forms a slice of an
+approximate spherical cap when viewed on a globe has as its northeast
+corner coordinates the easternmost longitude value and 90 degrees N.
+
+
+    "bbox": [%westlon%, %minlat%, %eastlon%, 90.0]
+
+A bounding box that just touches the South Pole and forms a slice of an
+approximate spherical cap when viewed on a globe has as its southwest
+corner coordinates the westernmost longitude value and 90 degrees S.
+
+
+    "bbox": [%westlon%, -90.0, %eastlon%, %maxlat%]
+
+Implementers MUST NOT use latitude values greater than 90 or less than
+-90 when using the default GeoJSON coordinate reference system to imply
+an extent that is not a spherical cap.
+
 # Extending GeoJSON
 
 ## Foreign members
