@@ -273,9 +273,12 @@ A GeoJSON object with the type "Feature" is a feature object.
 
 A GeoJSON object with the type "FeatureCollection" is a feature
 collection object. A feature collection object MUST have a member with
-the name "features". The value of "features" is an array. Each element
-of the array is a feature object as defined above. It is possible for
-this array to be empty.
+the name "features". The value of "features" is an JSON array. Each
+element of the array is a feature object as defined above. It is
+possible for this array to be empty. The word "Collection" in
+"FeatureCollection" does not have any significance for the semantics of
+the "features" array: this member is a standard ordered JSON array, not
+an unordered set.
 
 # Coordinate Reference System
 
