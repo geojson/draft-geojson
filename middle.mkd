@@ -377,11 +377,12 @@ For example, in the (abridged) feature object shown below
     }
 
 the name/value pair of "title": "Example Feature" is a foreign member.
-When the value of a foreign member is an object, all the members of that
-object are themselves foreign members.
+When the value of a foreign member is an object, all the descendant
+members of that object are themselves foreign members.
 
-GeoJSON semantics do not apply to foreign members, regardless of their
-names and values. For example, in the (abridged) feature object below
+GeoJSON semantics do not apply to foreign members and their descendants,
+regardless of their names and values. For example, in the (abridged)
+feature object below
 
     {
         "type": "Feature",
@@ -411,15 +412,16 @@ Implementations MUST NOT change the the semantics of GeoJSON members and
 types.
 
 The GeoJSON "coordinates" and "geometries" members define Geometry
-objects. FeatureCollection and Feature objects MUST NOT contain a
-"coordinates" or "geometries" member.
+objects. FeatureCollection and Feature objects, respectively, MUST NOT
+contain a "coordinates" or "geometries" member.
 
 The GeoJSON "geometry" and "properties" members define a Feature object.
-FeatureCollection and Geometry objects MUST NOT contain a "geometry" or
-"properties" member.
+FeatureCollection and Geometry objects, respectively, MUST NOT contain
+a "geometry" or "properties" member.
 
 The GeoJSON "features" member defines a FeatureCollection object.
-Feature and Geometry objects MUST NOT contain a "features" member.
+Feature and Geometry objects, respectively, MUST NOT contain
+a "features" member.
 
 # Mapping 'geo' URIs
 
