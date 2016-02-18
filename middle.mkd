@@ -347,14 +347,23 @@ the antimeridian between 16°S and 20°S. The southwest corner of the box
 containing these features is at 20°S and 177°E, the northwest corner is
 at 16°S and 178°W. In the default GeoJSON CRS (see
 [](#coordinate-reference-system)) the antimeridian-spanning GeoJSON
-bounding box for this feature collection is:
+bounding box for this feature collection is
 
     "bbox": [177.0, -20.0, -178.0, -16.0]
 
+and covers 5 degrees of longitude.
+
 The complementary bounding box for the same latitude band, not crossing
-the antimeridian is:
+the antimeridian, is
 
     "bbox": [-178.0, -20.0, 177.0, -16.0]
+
+and covers 355 degrees of longitude.
+
+The latitude of the northeast corner is always greater than the latitude
+of the southwest corner, but bounding boxes that cross the antimeridian
+have a northeast corner longitude that is less than the longitude of the
+southwest corner.
 
 # Extending GeoJSON
 
