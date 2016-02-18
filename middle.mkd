@@ -358,9 +358,10 @@ Example of a bbox for a line crossing the date-line:
 
 ## The Poles
 
-A bounding box that contains the North Pole extends from a southwest
-corner of %minlat% degrees N, 180 degrees W to a northeast corner
-of 90 degrees N, 180 degrees E. Viewed on a globe, this bounding box
+In the default GeoJSON CRS (see [](#coordinate-reference-system)),
+a bounding box that contains the North Pole extends from a southwest
+corner of %minlat% degrees N, 180 degrees W to a northeast corner of 90
+degrees N, 180 degrees E. Viewed on a globe, this bounding box
 approximates a spherical cap.
 
     "bbox": [-180.0, %minlat%, 180.0, 90.0]
