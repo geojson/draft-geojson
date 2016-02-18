@@ -412,7 +412,7 @@ types.
 
 The GeoJSON "coordinates" and "geometries" members define Geometry
 objects. FeatureCollection and Feature objects MUST NOT contain a
-"coordinate" or "geometries" member.
+"coordinates" or "geometries" member.
 
 The GeoJSON "geometry" and "properties" members define a Feature object.
 FeatureCollection and Geometry objects MUST NOT contain a "geometry" or
