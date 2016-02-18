@@ -1,15 +1,15 @@
 # Security Considerations
 
-   GeoJSON shares security issues common to all JSON content types.  See
-   [RFC7159] Section 12 for additional information. GeoJSON does not
-   provide executable content.
+GeoJSON shares security issues common to all JSON content types.  See
+[RFC7159] Section 12 for additional information. GeoJSON does not
+provide executable content.
 
-   As with other geographic data formats, e.g., [KMLv2.2], providing
-   details about the locations of sensitive persons, animals, habitats,
-   and facilities can expose them to unauthorized tracking or injury.
-   GeoJSON does not provide privacy or integrity services; if sensitive
-   data requires privacy or integrity protection the service must be
-   provided externally.
+As with other geographic data formats, e.g., [KMLv2.2], providing
+details about the locations of sensitive persons, animals, habitats, and
+facilities can expose them to unauthorized tracking or injury.  GeoJSON
+does not provide privacy or integrity services; if sensitive data
+requires privacy or integrity protection the service must be provided
+externally.
 
 # Interoperability Considerations
 
@@ -32,32 +32,32 @@ precision than necessary.
 
 ## Coordinate Order
 
-   There are conflicting precedents among geographic data formats over
-   whether latitude or longitude come first in a pair of numbers.
-   Longitude comes first in GeoJSON coordinates as it does in [KMLv2.2].
+There are conflicting precedents among geographic data formats over
+whether latitude or longitude come first in a pair of numbers.
+Longitude comes first in GeoJSON coordinates as it does in [KMLv2.2].
 
-   Some commonly-used CRS definitions specify coordinate ordering that
-   is not longitude then latitude (for a geographic CRS) or easting then
-   northing (for a projected CRS). The CRS historically known as
-   "EPSG:4326" and more accurately identified by
-   "http://www.opengis.net/def/crs/EPSG/0/4326" is a prime example.
-   Using such a CRS is NOT RECOMMENDED due to the potential disruption
-   of interoperability. When such a CRS is encountered in GeoJSON, the
-   document should be processed with caution.  Heuristics may be
-   necessary to interpret the coordinates properly; they may not be in
-   the required longitude, latitude order.
+Some commonly-used CRS definitions specify coordinate ordering that is
+not longitude then latitude (for a geographic CRS) or easting then
+northing (for a projected CRS). The CRS historically known as
+"EPSG:4326" and more accurately identified by
+"http://www.opengis.net/def/crs/EPSG/0/4326" is a prime example.  Using
+such a CRS is NOT RECOMMENDED due to the potential disruption of
+interoperability. When such a CRS is encountered in GeoJSON, the
+document should be processed with caution.  Heuristics may be necessary
+to interpret the coordinates properly; they may not be in the required
+longitude, latitude order.
 
 ## Bounding boxes
 
-   In representing features that cross the dateline or the poles,
-   following the ring-orientation best practice (counter-clockwise
-   external rings, clockwise internal rings) and ensuring your
-   bounding boxes use the south-west corner as the first coordinate
-   will improve interoperability. Remain aware that software that
-   represents edges as straight cartesian lines and software that
-   represents edges as great circles will have different interpretations
-   of edges, which vary more the longer the edges are. Try to
-   avoid edges of more than 180 degrees in length as far as possible.
+In representing features that cross the antimeridian or the poles,
+following the ring-orientation best practice (counter-clockwise external
+rings, clockwise internal rings) and ensuring your bounding boxes use
+the south-west corner as the first coordinate will improve
+interoperability.  Remain aware that software that represents edges as
+straight cartesian lines and software that represents edges as great
+circles will have different interpretations of edges, which vary more
+the longer the edges are. Try to avoid edges of more than 180 degrees in
+length as far as possible.
 
 ## Geometry Collections
 
@@ -65,14 +65,14 @@ Geometry collections have a different syntax from single type geometry
 objects (points, line strings, and polygons) and homogeneously typed
 multipart geometry objects (multipoints, multiline strings, and
 multipolygons) but have no different semantics. Although a geometry
-collection object has no "coordinates" member, it does have
-coordinates: the coordinates of all its parts belong to the collection.
-The "geometries" member of a geometry collection describes the parts
-of this composition. Implementations SHOULD NOT apply any additional
-semantics to the "geometries" array.
+collection object has no "coordinates" member, it does have coordinates:
+the coordinates of all its parts belong to the collection.  The
+"geometries" member of a geometry collection describes the parts of this
+composition. Implementations SHOULD NOT apply any additional semantics
+to the "geometries" array.
 
-To maximize interoperability implementations SHOULD avoid nested geometry
-collections. Furthermore, geometry collections composed of a single part or
-a number of parts of a single SHOULD be avoided when that single part or
-a single object of multi-part type (MultiPoint, MultiLineString, or
-MultiPolygon) could be used instead.
+To maximize interoperability implementations SHOULD avoid nested
+geometry collections. Furthermore, geometry collections composed of
+a single part or a number of parts of a single SHOULD be avoided when
+that single part or a single object of multi-part type (MultiPoint,
+MultiLineString, or MultiPolygon) could be used instead.
