@@ -410,17 +410,16 @@ MultiLineString, MultiPolygon, and GeometryCollection.
 Implementations MUST NOT change the the semantics of GeoJSON members and
 types.
 
-The GeoJSON "coordinates" and "geometries" members define Geometry and
-GeometryCollection objects. FeatureCollection and Feature objects MUST
-NOT contain a "coordinate" or "geometries" member.
+The GeoJSON "coordinates" and "geometries" members define Geometry
+objects. FeatureCollection and Feature objects MUST NOT contain a
+"coordinate" or "geometries" member.
 
 The GeoJSON "geometry" and "properties" members define a Feature object.
-FeatureCollection, Geometry, and GeometryCollections objects MUST NOT
-contain a "geometry" or "properties" member.
+FeatureCollection and Geometry objects MUST NOT contain a "geometry" or
+"properties" member.
 
 The GeoJSON "features" member defines a FeatureCollection object.
-Feature, Geometry, and GeometryCollection objects MUST NOT contain
-a "features" member.
+Feature and Geometry objects MUST NOT contain a "features" member.
 
 # Mapping 'geo' URIs
 
