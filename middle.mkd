@@ -406,7 +406,7 @@ Implementations MUST NOT extend the fixed set of GeoJSON types:
 FeatureCollection, Feature, Point, LineString, MultiPoint, Polygon,
 MultiLineString, MultiPolygon, and GeometryCollection.
 
-## Semantics of GeoJSON members and types are not extensible
+## Semantics of GeoJSON members and types are not changeable
 
 Implementations MUST NOT change the the semantics of GeoJSON members and
 types.
