@@ -76,6 +76,11 @@ This document updates the original GeoJSON format specification
   nine case-sensitive strings "Feature", "FeatureCollection" and the
   geometry types listed above.
 
+* The word "Collection" in "FeatureCollection" and "GeometryCollection"
+  does not have any significance for the semantics of array members.
+  The "features" and "geometries" members, respectively, of these 
+  objects are standard ordered JSON arrays, not unordered sets.
+
 ## Example
 
 A GeoJSON feature collection:
@@ -275,10 +280,7 @@ A GeoJSON object with the type "FeatureCollection" is a feature
 collection object. A feature collection object MUST have a member with
 the name "features". The value of "features" is a JSON array. Each
 element of the array is a feature object as defined above. It is
-possible for this array to be empty. The word "Collection" in
-"FeatureCollection" does not have any significance for the semantics of
-the "features" array: this member is a standard ordered JSON array, not
-an unordered set.
+possible for this array to be empty.
 
 # Coordinate Reference System
 
