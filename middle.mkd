@@ -189,6 +189,30 @@ Implementations SHOULD NOT extend positions beyond 3 elements. Parsers
 MAY ignore additional elements. Interpretation and meaning of additional
 elements is beyond the scope of this specification.
 
+A line between two positions is a straight Cartesian line, the shortest
+line between those two points in the Coordinate Reference System (see
+#[](#coordinate-reference-system)).
+
+In other words, every point on a line between a point (lon0, lat0) and
+(lon1, lat1) can be calculated as
+
+    F(lon, lat) = (lon0 + (lon1 - lon0) * t, lat0 + (lat1 - lat0) * t)
+
+with t a real number greater or equal to 0 and smaller or equal to 1.
+
+Note that - for example in the WGS84 datum, the default Coordinate
+Reference System - this line may marketly differ from the geodesic path
+along the curved surface of the reference ellipsoid.
+
+The same applies to the optional height element with the provisio that
+the direction of the height is as specified in the Coordinate Reference
+System.
+
+Note that, again, using the default WGS84 datum as a starting point,
+this does not mean that a surface with equal height follows, for
+example, the curvature of a body of water. Nor is a surface of equal
+height perpendicular to a plum line.
+
 Examples of positions and geometries are provided in "Appendix A.
 Geometry Examples".
 
@@ -358,6 +382,16 @@ Example of a 3D bbox member with a depth of 100 meters:
         //...
         ]
     }
+
+## The connecting lines
+
+The 4 lines of the bounding box are defined fully within the coordinate
+reference system; i.e. every point on the northernmost line can be
+expressed as
+
+    (lon, lat) = (%minlon% + (%maxlon% - %minlon%) * t, %maxlat%)
+
+with 0 <= t <= 1.
 
 ## The Antimeridian
 
