@@ -316,7 +316,11 @@ geometries, with all axes of the most south-westerly point followed by
 all axes of the more north-easterly point. The axes order of a bbox
 follows the axes order of geometries.
 
-Example of a bbox member on a feature:
+In the default GeoJSON CRS (see [](#coordinate-reference-system)), the
+"bbox" values define shapes with edges that follow lines of constant
+longitude, latitude, and elevation.
+
+Example of a 2D bbox member on a feature:
 
     {
         "type": "Feature",
@@ -335,11 +339,21 @@ Example of a bbox member on a feature:
         //...
     }
 
-Example of a bbox member on a feature collection:
+Example of a 2D bbox member on a feature collection:
 
     {
         "type": "FeatureCollection",
         "bbox": [100.0, 0.0, 105.0, 1.0],
+        "features": [
+        //...
+        ]
+    }
+
+Example of a 3D bbox member with a depth of 100 meters:
+
+    {
+        "type": "FeatureCollection",
+        "bbox": [100.0, 0.0, -100.0, 105.0, 1.0, 0.0],
         "features": [
         //...
         ]
