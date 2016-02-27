@@ -146,6 +146,9 @@ features.
 * A GeoJSON object MAY have a "bbox" member, the value of which MUST be
   a bounding box array (see [](#bounding-box)).
 
+* The GeoJSON format reserves the following member without defining
+  its meaning: "version".
+
 * A GeoJSON object MAY have any number of other members (see
   [](#extending-geojson)).
 
@@ -273,10 +276,6 @@ A GeoJSON object with the type "FeatureCollection" is a feature
 collection object. A feature collection object MUST have a member with
 the name "features". The value of "features" is an array. Each element
 of the array is a feature object as defined above.
-
-A feature collection object MAY have a member with the name "version",
-specifying the version of the GeoJSON format. The value of this member
-MUST NOT be anything other than "1.0".
 
 # Coordinate Reference System
 
