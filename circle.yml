@@ -12,3 +12,8 @@ test:
   override:
     - make
     - head draft.txt
+
+general:
+  artifacts:
+    - draft.txt
+    - draft.html
