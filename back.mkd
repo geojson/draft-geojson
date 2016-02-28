@@ -179,6 +179,16 @@ the geometry objects described above:
           }]
       }
 
+# Changes from pre-IETF specification
+
+TODO: bullet points below need to be fleshed out.
+
+* CRS other than the default are not recommended.
+* Right-hand rule polygon winding order is recommended.
+* Rules for bounding boxes at antimeridian and poles.
+* Extension rules including restrictons on extensions.
+* New application/geo+json media type.
+* Explicit Cartesian interpretation of line segments.
 
 # GeoJSON Text Sequences
 
