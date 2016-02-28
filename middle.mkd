@@ -357,6 +357,14 @@ Example of a bbox for line crossing the date-line:
 
 # Extending GeoJSON
 
+## Versioning
+
+The GeoJSON format can be extended as defined here, but no explicit
+versioning scheme is defined. A specification that alters the
+semantics of GeoJSON members or otherwise modifies the format does not
+create a new version of this format; instead, it defines an entirely
+new format that cannot be identified as GeoJSON.
+
 ## Foreign properties
 
 Properties not described in this specification ("foreign properties")
