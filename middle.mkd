@@ -1,38 +1,44 @@
 # Introduction
 
-   GeoJSON is a format for encoding data about geographic features using
-   JavaScript Object Notation (JSON) [RFC7159].  The format is concerned
-   with features in the broadest sense; any thing with qualities that
-   are bounded in geographical space might be a feature whether it is
-   a physical structure or not.  The concepts in GeoJSON are not new;
-   they are derived from pre-existing open geographic information system
-   standards (for COM, SQL, and XML) and have been streamlined to better
-   suit web application development using JSON.
+GeoJSON is a format for encoding a variety of geographic data structures
+using JavaScript Object Notation (JSON) [RFC7159]. A GeoJSON object may
+represent a region of space (a Geometry), a spatially-bounded entity (a
+Feature), or a list of features (a Feature Collection). GeoJSON supports
+the following geometry types: Point, LineString, Polygon, MultiPoint,
+MultiLineString, MultiPolygon, and GeometryCollection.  Features in
+GeoJSON contain a geometry object and additional properties, and
+a Feature Collection contains a list of features.
 
-   GeoJSON comprises the seven concrete geometry types defined in the
-   OpenGIS Simple Features Implementation Specification for SQL [SFSQL]:
-   0-dimensional Point and MultiPoint; 1-dimensional curve LineString
-   and MultiLineString; 2-dimensional surface Polygon and MultiPolygon;
-   and the heterogeneous GeometryCollection.  GeoJSON representations of
-   instances of these geometry types are analogous to the well-known
-   binary (WKB) and text (WKT) representations described in that same
-   specification.
+The format is concerned with geographic data in the broadest sense; any
+thing with qualities that are bounded in geographical space might be
+a feature whether it is a physical structure or not. The concepts in
+GeoJSON are not new; they are derived from pre-existing open geographic
+information system standards (for COM, SQL, and XML) and have been
+streamlined to better suit web application development using JSON.
 
-   GeoJSON also comprises the types Feature and FeatureCollection.
-   Feature objects in GeoJSON contain a geometry object with one of the
-   above geometry types and additional members. A FeatureCollection
-   object contains an array of feature objects.  This structure is
-   analogous to that of the Web Feature Service (WFS) response to
-   GetFeatures requests specified in [WFSv1] or to a KML Folder of
-   Placemarks [KMLv2.2].  Some implementations of the WFS specification
-   also provide GeoJSON formatted responses to GetFeature requests, but
-   there is no particular service model or feature type ontology implied
-   in the GeoJSON format specification.
+GeoJSON comprises the seven concrete geometry types defined in the
+OpenGIS Simple Features Implementation Specification for SQL [SFSQL]:
+0-dimensional Point and MultiPoint; 1-dimensional curve LineString and
+MultiLineString; 2-dimensional surface Polygon and MultiPolygon; and the
+heterogeneous GeometryCollection. GeoJSON representations of instances
+of these geometry types are analogous to the well-known binary (WKB) and
+text (WKT) representations described in that same specification.
 
-   Since its initial publication in 2008 [GJ2008], the GeoJSON
-   format specification has steadily grown in popularity.  It is widely
-   used in JavaScript web mapping libraries, JSON-based document
-   databases, and web APIs.
+GeoJSON also comprises the types Feature and FeatureCollection. Feature
+objects in GeoJSON contain a geometry object with one of the above
+geometry types and additional members. A FeatureCollection object
+contains an array of feature objects. This structure is analogous to
+that of the Web Feature Service (WFS) response to GetFeatures requests
+specified in [WFSv1] or to a KML Folder of Placemarks [KMLv2.2]. Some
+implementations of the WFS specification also provide GeoJSON formatted
+responses to GetFeature requests, but there is no particular service
+model or feature type ontology implied in the GeoJSON format
+specification.
+
+Since its initial publication in 2008 [GJ2008], the GeoJSON format
+specification has steadily grown in popularity. It is widely used in
+JavaScript web mapping libraries, JSON-based document databases, and web
+APIs.
 
 ## Requirements Language
 
@@ -156,16 +162,18 @@ features.
 
 ## Geometry Object
 
-A geometry object is a GeoJSON object where the "type" value is one of
-the geometry types. Geometry objects represent points, curves, and
-surfaces in coordinate space.
+A Geometry object represents points, curves, and surfaces in coordinate
+space.
 
-A GeoJSON geometry object of any type other than "GeometryCollection"
-MUST have a member with the name "coordinates". The value of the
-coordinates member is always an array. The structure of the elements in
-this array is determined by the type of geometry. GeoJSON processors MAY
-interpret geometry objects with empty coordinates arrays as null
-objects.
+* The value of a geometry object's "type" member MUST be one of the
+  seven geometry types (see [](#definitions)).
+
+* A GeoJSON geometry object of any type other than "GeometryCollection"
+  MUST have a member with the name "coordinates". The value of the
+  coordinates member is always an array. The structure of the elements
+  in this array is determined by the type of geometry. GeoJSON
+  processors MAY interpret geometry objects with empty coordinates
+  arrays as null objects.
 
 ### Position
 
@@ -283,7 +291,9 @@ a lowercase roman "i" can be composed of one point and one line string.
 
 ## Feature Object
 
-A GeoJSON object with the type "Feature" is a feature object.
+A Feature object represents a spatially-bounded thing.
+
+* A feature object MUST have a "type" member with the value "Feature".
 
 * A feature object MUST have a member with the name "geometry". The
   value of the geometry member SHALL be either a geometry object as
