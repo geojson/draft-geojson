@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference  anchor='RFC6838' target='http://www.rfc-editor.org/info/rfc6838'>
+<front>
+<title>Media Type Specifications and Registration Procedures</title>
+<author initials='N.' surname='Freed' fullname='N. Freed'><organization /></author>
+<author initials='J.' surname='Klensin' fullname='J. Klensin'><organization /></author>
+<author initials='T.' surname='Hansen' fullname='T. Hansen'><organization /></author>
+<date year='2013' month='January' />
+<abstract><t>This document defines procedures for the specification and registration of media types for use in HTTP, MIME, and other Internet protocols.  This memo documents an Internet Best Current Practice.</t></abstract>
+</front>
+<seriesInfo name='BCP' value='13'/>
+<seriesInfo name='RFC' value='6838'/>
+<seriesInfo name='DOI' value='10.17487/RFC6838'/>
+</reference>

@@ -179,6 +179,14 @@ the geometry objects described above:
           }]
       }
 
+
+# GeoJSON Text Sequences
+
+All GeoJSON objects defined in this specification - FeatureCollection, Feature, and Geometry - consist of exactly one JSON object. However, there may be circumstances in which applications need to represent sets or sequences of these objects (over and above the grouping of Feature objects in a FeatureCollection), e.g. in order to efficiently "stream" large numbers of Feature objects. The definition of such sets or sequences is outside the scope of this specification.
+
+If such a representation is needed, a new media type is required that has the ability to represent these sets or sequences. When defining such a media type, it may be useful to base it on "JSON Text Sequences" [RFC7464], leaving the foundations of how to represent multiple JSON objects to that specification, and only defining how it applies to GeoJSON objects.
+
+
 # Contributors
 
 The GeoJSON format is the product of discussion on the GeoJSON mailing

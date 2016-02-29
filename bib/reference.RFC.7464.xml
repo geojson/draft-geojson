@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference  anchor='RFC7464' target='http://www.rfc-editor.org/info/rfc7464'>
+<front>
+<title>JavaScript Object Notation (JSON) Text Sequences</title>
+<author initials='N.' surname='Williams' fullname='N. Williams'><organization /></author>
+<date year='2015' month='February' />
+<abstract><t>This document describes the JavaScript Object Notation (JSON) text sequence format and associated media type &quot;application/json-seq&quot;.  A JSON text sequence consists of any number of JSON texts, all encoded in UTF-8, each prefixed by an ASCII Record Separator (0x1E), and each ending with an ASCII Line Feed character (0x0A).</t></abstract>
+</front>
+<seriesInfo name='RFC' value='7464'/>
+<seriesInfo name='DOI' value='10.17487/RFC7464'/>
+</reference>
