@@ -531,6 +531,14 @@ The GeoJSON "features" member defines a FeatureCollection object.
 Feature and Geometry objects, respectively, MUST NOT contain
 a "features" member.
 
+# Versioning
+
+The GeoJSON format can be extended as defined here, but no explicit
+versioning scheme is defined. A specification that alters the
+semantics of GeoJSON members or otherwise modifies the format does not
+create a new version of this format; instead, it defines an entirely
+new format that MUST NOT be identified as GeoJSON.
+
 # Mapping 'geo' URIs
 
 'geo' URIs [RFC5870] identify geographic locations and precise (not uncertain)
