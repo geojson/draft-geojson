@@ -16,7 +16,7 @@
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
-<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-00">
+<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-01">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -62,10 +62,6 @@
                 <email>tim.schaub@gmail.com</email>
             </address>
         </author>
-<!--        <author initials="C." surname="Schmidt"
-                fullname="C. Schmidt">
-            <organization>MetaCarta</organization>
-        </author>-->
         <author initials="S." surname="Hagen"
                 fullname="S. Hagen">
             <address>
@@ -82,7 +78,7 @@
                 <uri>http://stefan-hagen.website/</uri>
             </address>
         </author>
-        <date day="13" month="November" year="2015"/>
+        <date day="29" month="February" year="2016"/>
 
         <area>Applications and Real-Time Area (art)</area>
         <workgroup>GeoJSON</workgroup>
