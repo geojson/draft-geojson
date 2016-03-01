@@ -13,8 +13,8 @@ The format is concerned with geographic data in the broadest sense; any
 thing with qualities that are bounded in geographical space might be
 a feature whether it is a physical structure or not. The concepts in
 GeoJSON are not new; they are derived from pre-existing open geographic
-information system standards (for COM, SQL, and XML) and have been
-streamlined to better suit web application development using JSON.
+information system standards and have been streamlined to better suit
+web application development using JSON.
 
 GeoJSON comprises the seven concrete geometry types defined in the
 OpenGIS Simple Features Implementation Specification for SQL [SFSQL]:
