@@ -179,6 +179,54 @@ the geometry objects described above:
           }]
       }
 
+# Changes from pre-IETF specification
+
+This appendix briefly summarizes non-editorial changes from the 2008
+specification [GJ2008].
+
+## Normative changes
+
+* Coordinate reference systems other than the default are NOT
+  RECOMMENDED (see [](#coordinate-reference-system)).
+
+* In the absence of elevation values, applications sensitive to height
+  or depth SHOULD interpret positions as being at local ground or sea
+  level (see [](#coordinate-reference-system)).
+
+* Implementations SHOULD NOT extend position arrays beyond 3 elements
+  (see [](#position)).
+
+* A line between two positions is a straight Cartesian line (see
+  [](#position)).
+
+* The values of a "bbox" array are `[%west%, %south%, %east%, %north%]`,
+  not [%minx%, %miny%, %maxx%, %maxy%]` (see [](#bounding-box)).
+
+* Extensions MAY be used, but MUST NOT change the the semantics of
+  GeoJSON members and types (see [](#extending-geojson)).
+
+* GeoJSON objects MUST NOT contain the defining members of other types
+  (see [](#semantics-of-geojson-members-and-types-are-not-changeable)).
+
+* The media type for GeoJSON is application/geo+json.
+
+## Informative changes
+
+* The definition of a GeoJSON text has been added.
+
+* Rules for mapping 'geo' URIs have been added.
+
+* A recommendation of the I-JSON [RFC7493] constraints has been added.
+
+* Implementers are cautioned about the effect of excessive coordinate
+  precision on interoperability.
+
+* Right-hand rule orientation of polygon rings (counter-clockwise
+  external rings, clockwise internal rings) is recommended to improve
+  interoperability.
+
+* Interoperability concerns of geometry collections are noted. These
+  objects should be used sparingly (see [](#geometry-collections)).
 
 # GeoJSON Text Sequences
 
