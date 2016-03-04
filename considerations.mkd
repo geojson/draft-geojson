@@ -56,16 +56,17 @@ longitude, latitude order.
 
 In representing features that cross the antimeridian, interoperability
 is improved by cutting geometries so that no single part crosses the
-antimeridian. For example, a line extending from 45dN, 170dE across the
-antimeridian to 45dN, 170dW should be cut in two and represented as a
-MultiLineString.
+antimeridian. For example, a line extending from 45 degrees N, 170
+degrees E across the antimeridian to 45 degrees N, 170 degrees W should
+be cut in two and represented as a MultiLineString.
 
     {"type": "MultiLineString", "coordinates": [
       [[170.0, 45.0], [180.0, 45.0]],
       [[-180.0, 45.0], [-170.0, 45.0]]]}
 
-A rectangle extending from 40dN, 170dE across the antimeridian to 50dN,
-170dW should be cut in two and represented as a MultiPolygon.
+A rectangle extending from 40 degrees N, 170 degrees E across the
+antimeridian to 50 degrees N, 170 degrees W should be cut in two and
+represented as a MultiPolygon.
 
     {"type": "MultiPolygon", "coordinates": [
       [[[180.0, 40.0], [180.0, 50.0], [170.0, 50.0], [170.0, 40.0],
