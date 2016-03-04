@@ -52,17 +52,27 @@ document should be processed with caution.  Heuristics may be necessary
 to interpret the coordinates properly; they may not be in the required
 longitude, latitude order.
 
-## Bounding boxes
+## Antimeridian cutting
 
-In representing features that cross the antimeridian or the poles,
-following the ring-orientation best practice (counter-clockwise external
-rings, clockwise internal rings) and ensuring your bounding boxes use
-the south-west corner as the first coordinate will improve
-interoperability.  Remain aware that software that represents edges as
-straight cartesian lines and software that represents edges as great
-circles will have different interpretations of edges, which vary more
-the longer the edges are. Try to avoid edges of more than 180 degrees in
-length as far as possible.
+In representing features that cross the antimeridian, interoperability
+is improved by cutting geometries so that no single part crosses the
+antimeridian. For example, a line extending from 45 degrees N, 170
+degrees E across the antimeridian to 45 degrees N, 170 degrees W should
+be cut in two and represented as a MultiLineString.
+
+    {"type": "MultiLineString", "coordinates": [
+      [[170.0, 45.0], [180.0, 45.0]],
+      [[-180.0, 45.0], [-170.0, 45.0]]]}
+
+A rectangle extending from 40 degrees N, 170 degrees E across the
+antimeridian to 50 degrees N, 170 degrees W should be cut in two and
+represented as a MultiPolygon.
+
+    {"type": "MultiPolygon", "coordinates": [
+      [[[180.0, 40.0], [180.0, 50.0], [170.0, 50.0], [170.0, 40.0],
+        [180.0, 40.0]]],
+      [[[-170.0, 40.0], [-170.0, 50.0], [-180.0, 50.0], [-180.0, 40.0],
+        [-170.0, 40.0]]]]}
 
 ## Geometry Collections
 

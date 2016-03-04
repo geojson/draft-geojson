@@ -201,8 +201,9 @@ A line between two positions is a straight Cartesian line, the shortest
 line between those two points in the Coordinate Reference System (see
 #[](#coordinate-reference-system)).
 
-In other words, every point on a line between a point (lon0, lat0) and
-(lon1, lat1) can be calculated as
+In other words, every point on a line that does not cross the
+antimeridian between a point (lon0, lat0) and (lon1, lat1) can be
+calculated as
 
     F(lon, lat) = (lon0 + (lon1 - lon0) * t, lat0 + (lat1 - lat0) * t)
 
@@ -406,11 +407,12 @@ with 0 <= t <= 1.
 ## The Antimeridian
 
 Consider a set of point features within the Fiji archipelago, straddling
-the antimeridian between 16°S and 20°S. The southwest corner of the box
-containing these features is at 20°S and 177°E, the northwest corner is
-at 16°S and 178°W. In the default GeoJSON CRS (see
-[](#coordinate-reference-system)) the antimeridian-spanning GeoJSON
-bounding box for this feature collection is
+the antimeridian between 16 degrees S and 20 degrees S. The southwest
+corner of the box containing these features is at 20 degrees S and 177
+degrees E, the northwest corner is at 16 degrees S and 178 degrees W. In
+the default GeoJSON CRS (see [](#coordinate-reference-system)) the
+antimeridian-spanning GeoJSON bounding box for this feature collection
+is
 
     "bbox": [177.0, -20.0, -178.0, -16.0]
 
