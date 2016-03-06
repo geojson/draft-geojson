@@ -337,9 +337,7 @@ reference systems databases. Applications requiring a CRS other than the
 default MUST assume all responsibility for CRS identification,
 coordinate accuracy, and interpretation of missing elevation values.
 Furthermore, GeoJSON coordinates MUST NOT under any circumstances use
-latitude, longitude order. See Section 8, Interoperability
-Considerations, for guidance in processing GeoJSON documents that do
-contain such a CRS object.
+latitude, longitude order.
 
 # Bounding Box
 
