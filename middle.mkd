@@ -213,7 +213,7 @@ Note that - for example in the WGS84 datum, the default Coordinate
 Reference System - this line may marketly differ from the geodesic path
 along the curved surface of the reference ellipsoid.
 
-The same applies to the optional height element with the provisio that
+The same applies to the optional height element with the proviso that
 the direction of the height is as specified in the Coordinate Reference
 System.
 
