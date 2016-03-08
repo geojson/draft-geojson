@@ -210,7 +210,7 @@ calculated as
 with t a real number greater or equal to 0 and smaller or equal to 1.
 
 Note that - for example in the WGS84 datum, the default Coordinate
-Reference System - this line may marketly differ from the geodesic path
+Reference System - this line may markedly differ from the geodesic path
 along the curved surface of the reference ellipsoid.
 
 The same applies to the optional height element with the proviso that
@@ -220,7 +220,7 @@ System.
 Note that, again, using the default WGS84 datum as a starting point,
 this does not mean that a surface with equal height follows, for
 example, the curvature of a body of water. Nor is a surface of equal
-height perpendicular to a plum line.
+height perpendicular to a plumb line.
 
 Examples of positions and geometries are provided in "Appendix A.
 Geometry Examples".
