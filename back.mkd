@@ -202,6 +202,9 @@ specification [GJ2008].
 * The values of a "bbox" array are `[%west%, %south%, %east%, %north%]`,
   not [%minx%, %miny%, %maxx%, %maxy%]` (see [](#bounding-box)).
 
+* A Feature object's "id" member is a string or number (see
+  [](#feature-object)).
+
 * Extensions MAY be used, but MUST NOT change the the semantics of
   GeoJSON members and types (see [](#extending-geojson)).
 
