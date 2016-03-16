@@ -199,7 +199,7 @@ elements is beyond the scope of this specification.
 
 A line between two positions is a straight Cartesian line, the shortest
 line between those two points in the Coordinate Reference System (see
-#[](#coordinate-reference-system)).
+[](#coordinate-reference-system)).
 
 In other words, every point on a line that does not cross the
 antimeridian between a point (lon0, lat0) and (lon1, lat1) can be
