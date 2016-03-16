@@ -177,7 +177,7 @@ specification [GJ2008].
   [](#position)).
 
 * The values of a "bbox" array are `[%west%, %south%, %east%, %north%]`,
-  not [%minx%, %miny%, %maxx%, %maxy%]` (see [](#bounding-box)).
+  not `[%minx%, %miny%, %maxx%, %maxy%]` (see [](#bounding-box)).
 
 * A Feature object's "id" member is a string or number (see
   [](#feature-object)).
