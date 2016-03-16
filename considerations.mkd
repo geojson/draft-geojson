@@ -96,9 +96,9 @@ represented as a MultiPolygon.
 ## Geometry Collections
 
 Geometry collections have a different syntax from single type geometry
-objects (points, line strings, and polygons) and homogeneously typed
-multipart geometry objects (multipoints, multiline strings, and
-multipolygons) but have no different semantics. Although a geometry
+objects (Point, LineString, and Polygon) and homogeneously typed
+multipart geometry objects (MultiPoint, MultiLineString, and
+MultiPolygon) but have no different semantics. Although a geometry
 collection object has no "coordinates" member, it does have coordinates:
 the coordinates of all its parts belong to the collection.  The
 "geometries" member of a geometry collection describes the parts of this
