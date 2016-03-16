@@ -15,8 +15,7 @@ coordinates, longitude, latitude for geographic coordinates):
 
 ## LineStrings
 
-Coordinates of LineString are an array of positions (see
-"2.1.1. Position"):
+Coordinates of LineString are an array of positions (see [](#position)):
 
       {
           "type": "LineString",
@@ -28,10 +27,9 @@ Coordinates of LineString are an array of positions (see
 
 ## Polygons
 
-Coordinates of a Polygon are an array of LinearRing (cf.
-"2.1.6 Polygon") coordinate arrays.
-The first element in the array represents the exterior ring. Any
-subsequent elements represent interior rings (or holes).
+Coordinates of a Polygon are an array of LinearRing (see [](#polygon))
+coordinate arrays. The first element in the array represents the exterior ring.
+Any subsequent elements represent interior rings (or holes).
 
 No holes:
 
