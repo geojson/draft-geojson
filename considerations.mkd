@@ -31,7 +31,7 @@ systems.  Implementations should consider the cost of using a greater
 precision than necessary.
 
 Furthermore the default WGS84 datum uses a relatively coarse geoid; with
-the WGS84 height varying by up to 5m (but generally between 2 and 
+the WGS84 height varying by up to 5m (but generally between 2 and
 3 meters) higher or lower relative to a surface parallel to Earth's mean
 sea level.
 
@@ -60,19 +60,38 @@ antimeridian. For example, a line extending from 45 degrees N, 170
 degrees E across the antimeridian to 45 degrees N, 170 degrees W SHOULD
 be cut in two and represented as a MultiLineString.
 
-    {"type": "MultiLineString", "coordinates": [
-      [[170.0, 45.0], [180.0, 45.0]],
-      [[-180.0, 45.0], [-170.0, 45.0]]]}
+    {
+        "type": "MultiLineString",
+        "coordinates": [
+            [
+                [170.0, 45.0], [180.0, 45.0]
+            ], [
+                [-180.0, 45.0], [-170.0, 45.0]
+            ]
+        ]
+    }
 
 A rectangle extending from 40 degrees N, 170 degrees E across the
 antimeridian to 50 degrees N, 170 degrees W SHOULD be cut in two and
 represented as a MultiPolygon.
 
-    {"type": "MultiPolygon", "coordinates": [
-      [[[180.0, 40.0], [180.0, 50.0], [170.0, 50.0], [170.0, 40.0],
-        [180.0, 40.0]]],
-      [[[-170.0, 40.0], [-170.0, 50.0], [-180.0, 50.0], [-180.0, 40.0],
-        [-170.0, 40.0]]]]}
+    {
+        "type": "MultiPolygon",
+        "coordinates": [
+            [
+                [
+                    [180.0, 40.0], [180.0, 50.0], [170.0, 50.0],
+                    [170.0, 40.0], [180.0, 40.0]
+                ]
+            ],
+            [
+                [
+                    [-170.0, 40.0], [-170.0, 50.0], [-180.0, 50.0],
+                    [-180.0, 40.0], [-170.0, 40.0]
+                ]
+            ]
+        ]
+    }
 
 ## Geometry Collections
 
