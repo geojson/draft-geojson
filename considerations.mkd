@@ -1,0 +1,112 @@
+# Security Considerations
+
+GeoJSON shares security issues common to all JSON content types.  See
+[RFC7159] Section 12 for additional information. GeoJSON does not
+provide executable content.
+
+As with other geographic data formats, e.g., [KMLv2.2], providing
+details about the locations of sensitive persons, animals, habitats, and
+facilities can expose them to unauthorized tracking or injury.  GeoJSON
+does not provide privacy or integrity services; if sensitive data
+requires privacy or integrity protection the service must be provided
+externally.
+
+# Interoperability Considerations
+
+## I-JSON
+
+GeoJSON texts SHOULD follow the constraints of I-JSON [RFC7493] for
+maximum interoperability.
+
+## Coordinate Precision
+
+The size of a GeoJSON text in bytes is a major interoperability
+consideration and precision of coordinate values has a large impact on
+the size of texts.  A GeoJSON text containing many detailed polygons can
+be inflated almost by a factor of two by increasing coordinate precision
+from 6 to 15 decimal places. For geographic coordinates with units of
+degrees, 6 decimal places (a default common in, e.g., sprintf) amounts
+to about 10 centimeters, a precision well within that of current GPS
+systems.  Implementations should consider the cost of using a greater
+precision than necessary.
+
+Furthermore the default WGS84 datum uses a relatively coarse geoid; with
+the WGS84 height varying by up to 5m (but generally between 2 and
+3 meters) higher or lower relative to a surface parallel to Earth's mean
+sea level.
+
+## Coordinate Order
+
+There are conflicting precedents among geographic data formats over
+whether latitude or longitude come first in a pair of numbers.
+Longitude comes first in GeoJSON coordinates as it does in [KMLv2.2].
+
+Some commonly-used CRS definitions specify coordinate ordering that is
+not longitude then latitude (for a geographic CRS) or easting then
+northing (for a projected CRS). The CRS historically known as
+"EPSG:4326" and more accurately identified by
+"http://www.opengis.net/def/crs/EPSG/0/4326" is a prime example.  Using
+such a CRS is NOT RECOMMENDED due to the potential disruption of
+interoperability. When such a CRS is encountered in GeoJSON, the
+document should be processed with caution.  Heuristics may be necessary
+to interpret the coordinates properly; they may not be in the required
+longitude, latitude order.
+
+## Antimeridian cutting
+
+In representing features that cross the antimeridian, interoperability
+is improved by cutting geometries so that no single part crosses the
+antimeridian. For example, a line extending from 45 degrees N, 170
+degrees E across the antimeridian to 45 degrees N, 170 degrees W SHOULD
+be cut in two and represented as a MultiLineString.
+
+    {
+        "type": "MultiLineString",
+        "coordinates": [
+            [
+                [170.0, 45.0], [180.0, 45.0]
+            ], [
+                [-180.0, 45.0], [-170.0, 45.0]
+            ]
+        ]
+    }
+
+A rectangle extending from 40 degrees N, 170 degrees E across the
+antimeridian to 50 degrees N, 170 degrees W SHOULD be cut in two and
+represented as a MultiPolygon.
+
+    {
+        "type": "MultiPolygon",
+        "coordinates": [
+            [
+                [
+                    [180.0, 40.0], [180.0, 50.0], [170.0, 50.0],
+                    [170.0, 40.0], [180.0, 40.0]
+                ]
+            ],
+            [
+                [
+                    [-170.0, 40.0], [-170.0, 50.0], [-180.0, 50.0],
+                    [-180.0, 40.0], [-170.0, 40.0]
+                ]
+            ]
+        ]
+    }
+
+## Geometry Collections
+
+Geometry collections have a different syntax from single type geometry
+objects (Point, LineString, and Polygon) and homogeneously typed
+multipart geometry objects (MultiPoint, MultiLineString, and
+MultiPolygon) but have no different semantics. Although a geometry
+collection object has no "coordinates" member, it does have coordinates:
+the coordinates of all its parts belong to the collection.  The
+"geometries" member of a geometry collection describes the parts of this
+composition. Implementations SHOULD NOT apply any additional semantics
+to the "geometries" array.
+
+To maximize interoperability implementations SHOULD avoid nested
+geometry collections. Furthermore, geometry collections composed of
+a single part or a number of parts of a single type SHOULD be avoided when
+that single part or a single object of multi-part type (MultiPoint,
+MultiLineString, or MultiPolygon) could be used instead.

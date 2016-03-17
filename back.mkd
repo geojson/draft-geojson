@@ -1,10 +1,9 @@
-
 # Geometry Examples
 
 Each of the examples below represents a valid and complete GeoJSON
 object.
 
-## Point
+## Points
 
 Point coordinates are in x, y order (easting, northing for projected
 coordinates, longitude, latitude for geographic coordinates):
@@ -14,10 +13,9 @@ coordinates, longitude, latitude for geographic coordinates):
           "coordinates": [100.0, 0.0]
       }
 
-## LineString
+## LineStrings
 
-Coordinates of LineString are an array of positions (see
-"2.1.1. Position"):
+Coordinates of LineString are an array of positions (see [](#position)):
 
       {
           "type": "LineString",
@@ -27,12 +25,11 @@ Coordinates of LineString are an array of positions (see
           ]
       }
 
-## Polygon
+## Polygons
 
-Coordinates of a Polygon are an array of LinearRing (cf.
-"2.1.6 Polygon") coordinate arrays.
-The first element in the array represents the exterior ring. Any
-subsequent elements represent interior rings (or holes).
+Coordinates of a Polygon are an array of LinearRing (see [](#polygon))
+coordinate arrays. The first element in the array represents the exterior ring.
+Any subsequent elements represent interior rings (or holes).
 
 No holes:
 
@@ -41,9 +38,9 @@ No holes:
           "coordinates": [
               [
                   [100.0, 0.0],
-                  [101.0, 0.0],
-                  [101.0, 1.0],
                   [100.0, 1.0],
+                  [101.0, 1.0],
+                  [101.0, 0.0],
                   [100.0, 0.0]
               ]
           ]
@@ -56,22 +53,22 @@ With holes:
           "coordinates": [
               [
                   [100.0, 0.0],
-                  [101.0, 0.0],
-                  [101.0, 1.0],
                   [100.0, 1.0],
+                  [101.0, 1.0],
+                  [101.0, 0.0],
                   [100.0, 0.0]
               ],
               [
-                  [100.2, 0.2],
-                  [100.8, 0.2],
                   [100.8, 0.8],
                   [100.2, 0.8],
-                  [100.2, 0.2]
+                  [100.2, 0.2],
+                  [100.8, 0.2],
+                  [100.8, 0.8]
               ]
           ]
       }
 
-## MultiPoint
+## MultiPoints
 
 Coordinates of a MultiPoint are an array of positions::
 
@@ -83,7 +80,7 @@ Coordinates of a MultiPoint are an array of positions::
           ]
       }
 
-## MultiLineString
+## MultiLineStrings
 
 Coordinates of a MultiLineString are an array of LineString coordinate
 arrays:
@@ -102,7 +99,7 @@ arrays:
           ]
       }
 
-## MultiPolygon
+## MultiPolygons
 
 Coordinates of a MultiPolygon are an array of Polygon coordinate
 arrays:
@@ -113,18 +110,18 @@ arrays:
               [
                   [
                       [102.0, 2.0],
-                      [103.0, 2.0],
-                      [103.0, 3.0],
                       [102.0, 3.0],
+                      [103.0, 3.0],
+                      [103.0, 2.0],
                       [102.0, 2.0]
                   ]
               ],
               [
                   [
                       [100.0, 0.0],
-                      [101.0, 0.0],
-                      [101.0, 1.0],
                       [100.0, 1.0],
+                      [101.0, 1.0],
+                      [101.0, 0.0],
                       [100.0, 0.0]
                   ],
                   [
@@ -138,7 +135,7 @@ arrays:
           ]
       }
 
-## GeometryCollection
+## GeometryCollections
 
 Each element in the geometries array of a GeometryCollection is one of
 the geometry objects described above:
@@ -157,16 +154,71 @@ the geometry objects described above:
           }]
       }
 
+# Changes from pre-IETF specification
+
+This appendix briefly summarizes non-editorial changes from the 2008
+specification [GJ2008].
+
+## Normative changes
+
+* Coordinate reference systems other than the default are NOT
+  RECOMMENDED (see [](#coordinate-reference-system)).
+
+* In the absence of elevation values, applications sensitive to height
+  or depth SHOULD interpret positions as being at local ground or sea
+  level (see [](#coordinate-reference-system)).
+
+* Implementations SHOULD NOT extend position arrays beyond 3 elements
+  (see [](#position)).
+
+* A line between two positions is a straight Cartesian line (see
+  [](#position)).
+
+* The values of a "bbox" array are `[%west%, %south%, %east%, %north%]`,
+  not `[%minx%, %miny%, %maxx%, %maxy%]` (see [](#bounding-box)).
+
+* A Feature object's "id" member is a string or number (see
+  [](#feature-object)).
+
+* Extensions MAY be used, but MUST NOT change the the semantics of
+  GeoJSON members and types (see [](#extending-geojson)).
+
+* GeoJSON objects MUST NOT contain the defining members of other types
+  (see [](#semantics-of-geojson-members-and-types-are-not-changeable)).
+
+* The media type for GeoJSON is application/geo+json.
+
+## Informative changes
+
+* The definition of a GeoJSON text has been added.
+
+* Rules for mapping 'geo' URIs have been added.
+
+* A recommendation of the I-JSON [RFC7493] constraints has been added.
+
+* Implementers are cautioned about the effect of excessive coordinate
+  precision on interoperability.
+
+* Right-hand rule orientation of polygon rings (counter-clockwise
+  external rings, clockwise internal rings) is recommended to improve
+  interoperability.
+
+* Interoperability concerns of geometry collections are noted. These
+  objects should be used sparingly (see [](#geometry-collections)).
+
+# GeoJSON Text Sequences
+
+All GeoJSON objects defined in this specification - FeatureCollection, Feature, and Geometry - consist of exactly one JSON object. However, there may be circumstances in which applications need to represent sets or sequences of these objects (over and above the grouping of Feature objects in a FeatureCollection), e.g. in order to efficiently "stream" large numbers of Feature objects. The definition of such sets or sequences is outside the scope of this specification.
+
+If such a representation is needed, a new media type is required that has the ability to represent these sets or sequences. When defining such a media type, it may be useful to base it on "JSON Text Sequences" [RFC7464], leaving the foundations of how to represent multiple JSON objects to that specification, and only defining how it applies to GeoJSON objects.
+
+
 # Contributors
 
-*  Howard Butler (Hobu Inc.),
-*  Martin Daly (Cadcorp),
-*  Allan Doyle (MIT),
-*  Sean Gillies (UNC-Chapel Hill),
-*  Tim Schaub (OpenGeo),
-*  Christopher Schmidt (MetaCarta)
+The GeoJSON format is the product of discussion on the GeoJSON mailing
+list, http://lists.geojson.org/listinfo.cgi/geojson-geojson.org, before
+October 2015 and the IETF's GeoJSON WG after October 2015.
 
-The GeoJSON format specification is the product of discussion on the
-GeoJSON list:
-
-http://lists.geojson.org/listinfo.cgi/geojson-geojson.org
+Comments are solicited and should be addressed to the GeoJSON mailing
+list at geojson@ietf.org or to the GeoJSON issue tracker at
+https://github.com/geojson/draft-geojson/issues.

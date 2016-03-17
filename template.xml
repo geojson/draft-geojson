@@ -1,54 +1,69 @@
 <?xml version="1.0" ?>
 <!DOCTYPE rfc SYSTEM 'rfc2629.dtd' [
 <!ENTITY pandocMiddle PUBLIC '' 'middle.xml'>
+<!ENTITY pandocConsiderations PUBLIC '' 'considerations.xml'>
 <!ENTITY pandocBack   PUBLIC '' 'back.xml'>
 
 <!ENTITY pandocRef2119  PUBLIC '' 'bib/reference.RFC.2119.xml'>
 <!ENTITY pandocRef2616  PUBLIC '' 'bib/reference.RFC.2616.xml'>
 <!ENTITY pandocRef2818  PUBLIC '' 'bib/reference.RFC.2818.xml'>
 <!ENTITY pandocRef3986  PUBLIC '' 'bib/reference.RFC.3986.xml'>
-<!ENTITY pandocRef4627  PUBLIC '' 'bib/reference.RFC.4627.xml'>
+<!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
 <!ENTITY pandocRef5165  PUBLIC '' 'bib/reference.RFC.5165.xml'>
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
+<!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
+<!ENTITY pandocRef6838  PUBLIC '' 'bib/reference.RFC.6838.xml'>
+<!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-sdrees-geojson-format-spec-01">
+<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-01">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
 <?rfc compact="yes" ?>    <!-- conserve vertical whitespace -->
 <?rfc subcompact="no" ?>  <!-- but keep a blank line between list items -->
  <front>
-        <title abbrev="GeoJSON Format Specification">The Geospatial JavaScript Object Notation (GeoJSON) Format Specification</title>
+        <title abbrev="GeoJSON">The GeoJSON Format</title>
 
         <author initials="H." surname="Butler"
                 fullname="H. Butler">
             <organization>Hobu Inc.</organization>
+            <address>
+                <email>howard@hobu.co</email>
+            </address>
         </author>
         <author initials="M." surname="Daly"
                 fullname="M. Daly">
             <organization>Cadcorp</organization>
+            <address>
+                <email>martin.daly@cadcorp.com</email>
+            </address>
         </author>
         <author initials="A." surname="Doyle"
                 fullname="A. Doyle">
             <organization>MIT</organization>
+            <address>
+                <email>adoyle@intl-interfaces.com</email>
+            </address>
         </author>
         <author initials="S." surname="Gillies"
                 fullname="S. Gillies">
-            <organization>New York University</organization>
+            <organization>Mapbox Inc.</organization>
+            <address>
+                <email>sean.gillies@gmail.com</email>
+                <uri>http://sgillies.net</uri>
+            </address>
+
         </author>
         <author initials="T." surname="Schaub"
                 fullname="T. Schaub">
-            <organization>OpenGeo</organization>
+            <organization>Planet Labs</organization>
+            <address>
+                <email>tim.schaub@gmail.com</email>
+            </address>
         </author>
-<!--        <author initials="C." surname="Schmidt"
-                fullname="C. Schmidt">
-            <organization>MetaCarta</organization>
-        </author>-->
-<!--        <author initials="S." surname="Drees"
-                fullname="S. Drees">
-            <organization>Editor</organization>
-
+        <author initials="S." surname="Hagen"
+                fullname="S. Hagen">
             <address>
                 <postal>
                     <street>Rheinaustr. 62</street>
@@ -59,15 +74,14 @@
                 </postal>
 
                 <phone></phone>
-                <email>stefan@drees.name</email>
-                <uri>http://sdre.es/</uri>
+                <email>stefan@hagen.link</email>
+                <uri>http://stefan-hagen.website/</uri>
             </address>
         </author>
--->
-        <date month="May" year="2013"/>
+        <date day="06" month="March" year="2016"/>
 
-        <area>General</area>
-        <workgroup>Independent</workgroup>
+        <area>Applications and Real-Time Area (art)</area>
+        <workgroup>GeoJSON</workgroup>
         <keyword>RFC</keyword>
         <keyword>Request for Comments</keyword>
         <keyword>I-D</keyword>
@@ -78,38 +92,133 @@
         <abstract>
             <t>
             GeoJSON is a geospatial data interchange format based on
-            JavaScript Object Notation (JSON).
+            JavaScript Object Notation (JSON). It defines several types of
+            JSON objects and the manner in which they are combined to
+            represent data about geographic features, their
+            properties, and their spatial extents.
+            This document recommends a single coordinate reference system
+            based on WGS 84. Other coordinate reference systems are not
+            recommended.
             </t>
         </abstract>
 </front>
 
 <middle>
 &pandocMiddle;
-   <section title="Security Considerations">
-       <t>This memo raises no security issues.</t>
-       <t>As GeoJSON directly builds on JSON, security considerations
-        of JSON also apply.</t>
-       <t>For JSON relevant security implications please cf. at least
-        the relevant subsections of [RFC4627] (inside
-        6. IANA Considerations without separate sectionin number) as
-        starting point.</t>
-   </section>
+&pandocConsiderations;
    <section title="IANA Considerations">
-       <t>This document has no actions for IANA.</t>
+       <t>
+       The media type for GeoJSON text is <spanx
+       style="verb">application/geo+json</spanx> and is registered in the
+       "Media Types" registry described in <xref target="RFC6838"/>.
+       The entry for <spanx style="verb">application/vnd.geo+json</spanx> in
+       the same registry should have its status
+       changed to be Obsolete with a pointer to the media type
+       <spanx style="verb">application/geo+json</spanx> and a reference added
+       to this RFC.
+
+       <list style="hanging">
+         <t hangText="Type name:">application</t>
+         <t hangText="Subtype name:">geo+json</t>
+         <t hangText="Required parameters:">n/a</t>
+         <t hangText="Optional parameters:">n/a</t>
+         <t hangText="Encoding considerations:">binary</t>
+         <t hangText="Security considerations:">See section 9 above</t>
+         <t hangText="Interoperability considerations:">See section 10 above</t>
+         <t hangText="Published specification:">[[This document]]</t>
+         <t hangText="Applications that use this media type:">various</t>
+         <t hangText="Additional information:">
+            <list style="hanging">
+              <t hangText="Magic number(s):">n/a</t>
+              <t hangText="File extension(s):">.json, .geojson</t>
+              <t hangText="Macintosh file type code:">n/a</t>
+              <t hangText="Object Identifiers:">n/a</t>
+              <t hangText="Windows clipboard name:">GeoJSON</t>
+              <t hangText="Macintosh uniform type identifier:">
+                public.geojson conforms to public.json
+              </t>
+            </list>
+          </t>
+          <t hangText="Person to contact for further information:">
+            Sean Gillies (sean.gillies@gmail.com)
+          </t>
+          <t hangText="Intended usage:">COMMON</t>
+          <t hangText="Restrictions on usage:">none</t>
+        </list>
+       </t>
    </section>
 </middle>
 
 <back>
     <references title="Normative References">
         &pandocRef2119;
-        &pandocRef2616;
-        &pandocRef2818;
-        &pandocRef3986;
-        &pandocRef4627;
-        &pandocRef5165;
+        &pandocRef6838;
+        &pandocRef7159;
+        &pandocRef7493;
+       <reference anchor="WGS84">
+           <front>
+               <title>Department of Defense World Geodetic System 1984, Third Edition</title>
+               <author>
+                  <organization abbrev="NIMA">National Imagery and Mapping Agency</organization>
+               </author>
+               <date year="1984" />
+           </front>
+       </reference>
     </references>
     <references title="Informative References">
-        &pandocRef5246;
+        &pandocRef7464;
+        <reference anchor="GJ2008">
+           <front>
+               <title>The GeoJSON Format Specification</title>
+               <author initials="H." surname="Butler" fullname="Howard Butler"></author>
+               <author initials="M." surname="Daly" fullname="Martin Daly"></author>
+               <author initials="A." surname="Doyle" fullname="Allan Doyle"></author>
+               <author initials="S." surname="Gillies" fullname="Sean Gillies"></author>
+               <author initials="T." surname="Schaub" fullname="Tim Schaub"></author>
+               <author initials="C." surname="Schmidt" fullname="Christopher Schmidt"></author>
+               <date month="June" year="2008" />
+           </front>
+        </reference>
+       <reference anchor="SFSQL">
+           <front>
+               <title>OpenGIS Simple Features Specification For SQL Revision 1.1</title>
+               <author>
+                   <organization abbrev="OGC">
+                   OpenGIS Consortium, Inc.
+                   </organization>
+               </author>
+               <date month="May" year="1999" />
+           </front>
+           <seriesInfo name="OGC" value="99-049" />
+       </reference>
+       <reference anchor="WFSv1">
+           <front>
+               <title>Web Feature Service Implementation Specification</title>
+               <author initials="P. A." surname="Vretanos" fullname="P. A. Vretanos">
+                   <organization abbrev="OGC">
+                   OpenGIS Consortium, Inc.
+                   </organization>
+               </author>
+               <date month="May" year="2002" />
+           </front>
+           <seriesInfo name="OGC" value="02-058" />
+       </reference>
+       <reference anchor="KMLv2.2">
+           <front>
+               <title>OGC KML</title>
+               <author initials="T." surname="Wilson"></author>
+               <date month="April" year="2008" />
+           </front>
+           <seriesInfo name="OGC" value="07-147r2" />
+       </reference>
+       <reference anchor="OGCURL">
+           <front>
+               <title>OGC-NA Name type specification - definitions: Part 1 - basic name</title>
+               <author initials="S.J.D." surname="Cox"></author>
+               <date month="March" year="2010" />
+           </front>
+           <seriesInfo name="OGC" value="09-048r3" />
+       </reference>
     </references>
     &pandocBack;
 </back>

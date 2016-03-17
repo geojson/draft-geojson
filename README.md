@@ -1,41 +1,39 @@
-geojson
-=======
+# GeoJSON
 
-Incubator for geojson spec rewrite and subsequent IETF RFC submission.
+[![Circle CI](https://circleci.com/gh/geojson/draft-geojson.svg?style=svg)](https://circleci.com/gh/geojson/draft-geojson)
 
-status
-------
+Incubator for GeoJSON spec rewrite and subsequent IETF RFC submission.
 
-Test and development. The idnits tool from IETF already reports 0 errors.
+## Status
 
-todo
-----
+An IETF WG has been chartered: https://tools.ietf.org/wg/geojson/ and has
+adopted `draft-butler-geojson`. The official draft is
+https://datatracker.ietf.org/doc/draft-ietf-geojson/.
 
-Some issues are to be resolved, others are not yet known:
+## Contributing
 
-* Is the migration from the crs object to a crs reference ok?
+Substantial discussion happens on the GeoJSON email list:
+https://www.ietf.org/mailman/listinfo/geojson. Specific edits to the draft
+are made via issues and pull requests in this GitHub repo.
 
-* Namespace or profile - howto enable optional hints (for consumers of GeoJSON objects) in a natrual way
+See https://github.com/geojson/draft-geojson/blob/master/CONTRIBUTING.md
 
-* Are the formal changes applied to the existing community spec at <http://geojson.org/geojson-spec.html> ok?
+## Generating Docs
 
-* Is there consensus, that the mostly editorial changes apllied are also an enhancement or where these have to be reversed or completed?
+This project uses the workflow described in
+http://tools.ietf.org/html/rfc7328.html to generate RFC text from Markdown
+files and an XML template.
 
-* Check with all authors of current version 1.0 spec, if they are willing to act as authors, or only appear in the contributors section
+### Dependencies
 
-* What about an ANTLR4 grammar as non-normative appendix B after the examples and before the contributors (which then would become Appendix C)?
+ * [`xml2rfc`](https://pypi.python.org/pypi/xml2rfc/)
+ * [`pandoc2rfc`](https://raw.github.com/miekg/pandoc2rfc/master/pandoc2rfc)
 
-* Surely no (A)BNF as GeoJSON is simply not describable through ABNF (case sensitivity is missing from literals in ABNF :-) ! ... right?
+### Transform Markdown to XML etc.
 
-* Another possible model would be: One person as Editor on frontpage with affiliation Editor (or geojson.org like the KSON RFC) and all others in the contributor section?
+Inside the working copy of the repo run the build script to manifest the draft
+as HTML, nroff, XML, and plain text.
 
-* There is also an Acknowledgments section possible in addition to (or replacing) a contributor section, where the former is mor for lengthy thanks, which might not fit so well with the approx 15 pages total of the to be submitted paginated text RFC draft ...
-
-hints on synch'ing the derived formats
---------------------------------------
-
-Inside the working copy of the repo perform (current practice):
-
-$> bash pandoc2rfc -R -t template.xml -x transform.xsl back.mkd middle.mkd && mv draft.txt draft-unpaginated.txt && for i in H N T X; do bash pandoc2rfc -$i -t template.xml -x transform.xsl back.mkd middle.mkd; done
-
-
+```bash
+$ make
+```

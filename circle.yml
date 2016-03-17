@@ -1,0 +1,19 @@
+machine:
+  python:
+    version: 2.7.10
+
+dependencies:
+  pre:
+    - sudo apt-get update; sudo apt-get install pandoc
+    - pip install -U pip
+    - pip install xml2rfc
+
+test:
+  override:
+    - make
+    - head draft.txt
+
+general:
+  artifacts:
+    - draft.txt
+    - draft.html
