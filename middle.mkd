@@ -182,9 +182,9 @@ member of a geometry object is composed of either:
 
 * one position (in the case of a Point geometry),
 
-* an array of positions (LineString or MultiPoint geometries),
+* an array of positions (LineString or MultiPoint),
 
-* an array of arrays of positions (Polygons, MultiLineStrings),
+* an array of arrays of positions (Polygon or MultiLineString),
 
 * or a multidimensional array of positions (MultiPolygon).
 
