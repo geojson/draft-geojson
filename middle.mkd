@@ -481,7 +481,7 @@ For example, in the (abridged) feature object shown below
         "id": "f1",
         "geometry": {...},
         "properties": {...},
-        "title": "Example Feature",
+        "title": "Example Feature"
     }
 
 the name/value pair of "title": "Example Feature" is a foreign member.
@@ -503,7 +503,7 @@ feature object below
                 [-170, 10],
                 [170, 11]
             ]
-        },
+        }
     }
 
 the "centerline" member is not a GeoJSON geometry object.
