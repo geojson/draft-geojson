@@ -184,8 +184,8 @@ member of a geometry object is composed of either:
 
 * an array of positions in the case of a LineString or MultiPoint geometry,
 
-* an array of LinearRing or LineString coordinates in the case of a Polygon or
-  MultiLineString geometry,
+* an array of LineString or linear ring (see [](#polygon)) coordinates in the
+  case of a Polygon or MultiLineString geometry,
 
 * or an array of Polygon coordinates in the case of a MultiPolygon geometry.
 
