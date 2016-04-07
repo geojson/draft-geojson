@@ -180,13 +180,14 @@ space.
 A position is the fundamental geometry construct. The "coordinates"
 member of a geometry object is composed of either:
 
-* one position (in the case of a Point geometry),
+* one position in the case of a Point geometry,
 
-* an array of positions (LineString or MultiPoint),
+* an array of positions in the case of a LineString or MultiPoint geometry,
 
-* an array of arrays of positions (Polygon or MultiLineString),
+* an array of LineString or linear ring (see [](#polygon)) coordinates in the
+  case of a Polygon or MultiLineString geometry,
 
-* or a multidimensional array of positions (MultiPolygon).
+* or an array of Polygon coordinates in the case of a MultiPolygon geometry.
 
 A position is an array of numbers. There MUST be two or
 more elements. The first two elements are longitude and latitude,
