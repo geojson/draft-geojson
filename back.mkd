@@ -154,12 +154,12 @@ the geometry objects described above:
           }]
       }
 
-# Changes from pre-IETF specification
+# Changes from pre-IETF Specification
 
 This appendix briefly summarizes non-editorial changes from the 2008
 specification [GJ2008].
 
-## Normative changes
+## Normative Changes
 
 * Coordinate reference systems other than the default are NOT
   RECOMMENDED (see [](#coordinate-reference-system)).
@@ -188,7 +188,7 @@ specification [GJ2008].
 
 * The media type for GeoJSON is application/geo+json.
 
-## Informative changes
+## Informative Changes
 
 * The definition of a GeoJSON text has been added.
 

@@ -52,7 +52,7 @@ document should be processed with caution.  Heuristics may be necessary
 to interpret the coordinates properly; they may not be in the required
 longitude, latitude order.
 
-## Antimeridian cutting
+## Antimeridian Cutting
 
 In representing features that cross the antimeridian, interoperability
 is improved by cutting geometries so that no single part crosses the

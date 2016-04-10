@@ -393,7 +393,7 @@ Example of a 3D bbox member with a depth of 100 meters:
         ]
     }
 
-## The connecting lines
+## The Connecting Lines
 
 The 4 lines of the bounding box are defined fully within the coordinate
 reference system; i.e. every point on the northernmost line can be
@@ -466,7 +466,7 @@ an extent that is not a spherical cap.
 
 # Extending GeoJSON
 
-## Foreign members
+## Foreign Members
 
 Members not described in this specification ("foreign members") MAY be
 used in a GeoJSON document. Note that support for foreign members can
@@ -509,13 +509,13 @@ feature object below
 
 the "centerline" member is not a GeoJSON geometry object.
 
-## GeoJSON types are not extensible
+#IGeoJSON Types are not Extensible
 
 Implementations MUST NOT extend the fixed set of GeoJSON types:
 FeatureCollection, Feature, Point, LineString, MultiPoint, Polygon,
 MultiLineString, MultiPolygon, and GeometryCollection.
 
-## Semantics of GeoJSON members and types are not changeable
+## Semantics of GeoJSON Members and Types are not Changeable
 
 Implementations MUST NOT change the the semantics of GeoJSON members and
 types.
