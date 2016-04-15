@@ -204,7 +204,7 @@ specification [GJ2008].
   interoperability.
 
 * Interoperability concerns of geometry collections are noted. These
-  objects should be used sparingly (see [](#geometry-collections)).
+  objects should be used sparingly (see [](#geometry-collection)).
 
 # GeoJSON Text Sequences
 
