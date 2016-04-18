@@ -298,10 +298,10 @@ known for "Point", "MultiPoint", "LineString", or "MultiLineString"
 geometry types.
 
 Applications such as PIDF-LO that are sensitive to location uncertainty
-and confidence may treat geometry objects of type "Polygon",
-"MultiPolygon", and "GeometryCollection" as representation of a 95%
-confidence surface. In probabilistic terms 95 percent of the location's
-point set is contained within the GeoJSON geojson geometry.
+and confidence may treat a geometry object of type "Polygon",
+"MultiPolygon", and "GeometryCollection" as a representation of a 95%
+confidence surface. In probabilistic terms: 95 percent of the location's
+point set is contained within the GeoJSON geometry.
 
 As in [RFC5870] the number of digits of the values in coordinate
 positions MUST NOT be interpreted as an indication to the level of
