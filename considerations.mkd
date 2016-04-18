@@ -35,23 +35,6 @@ geoid; with the WGS 84 [WGS84] height varying by up to 5m (but generally
 between 2 and 3 meters) higher or lower relative to a surface parallel
 to Earth's mean sea level.
 
-## Coordinate Order
-
-There are conflicting precedents among geographic data formats over
-whether latitude or longitude come first in a pair of numbers.
-Longitude comes first in GeoJSON coordinates as it does in [KMLv2.2].
-
-Some commonly-used CRS definitions specify coordinate ordering that is
-not longitude then latitude (for a geographic CRS) or easting then
-northing (for a projected CRS). The CRS historically known as
-"EPSG:4326" and more accurately identified by
-"http://www.opengis.net/def/crs/EPSG/0/4326" is a prime example.  Using
-such a CRS is NOT RECOMMENDED due to the potential disruption of
-interoperability. When such a CRS is encountered in GeoJSON, the
-document should be processed with caution.  Heuristics may be necessary
-to interpret the coordinates properly; they may not be in the required
-longitude, latitude order.
-
 ## Antimeridian Cutting
 
 In representing features that cross the antimeridian, interoperability
