@@ -332,7 +332,7 @@ absence of elevation values, applications sensitive to height or depth
 SHOULD interpret positions as being at local ground or sea level.
 
 Other coordinate reference systems are NOT RECOMMENDED. GeoJSON
-processing software SHALL NOT be expected to have access to coordinate
+processing software cannot be expected to have access to coordinate
 reference system databases or be expected to parse and interpret the CRS
 objects described in [GJ2008]. Furthermore, to prevent coordinate order
 confusion for parsers that do not have a CRS database, GeoJSON
