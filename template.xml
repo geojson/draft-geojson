@@ -26,59 +26,19 @@
  <front>
         <title abbrev="GeoJSON">The GeoJSON Format</title>
 
-        <author initials="H." surname="Butler"
-                fullname="H. Butler">
-            <organization>Hobu Inc.</organization>
-            <address>
-                <email>howard@hobu.co</email>
-            </address>
-        </author>
-        <author initials="M." surname="Daly"
-                fullname="M. Daly">
-            <organization>Cadcorp</organization>
-            <address>
-                <email>martin.daly@cadcorp.com</email>
-            </address>
-        </author>
-        <author initials="A." surname="Doyle"
-                fullname="A. Doyle">
-            <organization>MIT</organization>
-            <address>
-                <email>adoyle@intl-interfaces.com</email>
-            </address>
-        </author>
         <author initials="S." surname="Gillies"
-                fullname="S. Gillies">
-            <organization>Mapbox Inc.</organization>
+                fullname="Sean Gillies, Editor">
+            <organization>Mapbox</organization>
             <address>
+                <postal>
+                    <street>1714 14th St NW, Rear Entrance</street>
+                    <city>Washington</city><region>DC</region><code>20009</code>
+                </postal>
                 <email>sean.gillies@gmail.com</email>
                 <uri>http://sgillies.net</uri>
             </address>
+        </author>
 
-        </author>
-        <author initials="T." surname="Schaub"
-                fullname="T. Schaub">
-            <organization>Planet Labs</organization>
-            <address>
-                <email>tim.schaub@gmail.com</email>
-            </address>
-        </author>
-        <author initials="S." surname="Hagen"
-                fullname="S. Hagen">
-            <address>
-                <postal>
-                    <street>Rheinaustr. 62</street>
-                    <street></street>
-                    <city>Bonn</city> <region></region>
-                    <code>53225</code>
-                    <country>DE</country>
-                </postal>
-
-                <phone></phone>
-                <email>stefan@hagen.link</email>
-                <uri>http://stefan-hagen.website/</uri>
-            </address>
-        </author>
         <date day="06" month="March" year="2016"/>
 
         <area>Applications and Real-Time Area (art)</area>
@@ -107,6 +67,7 @@
 <middle>
 &pandocMiddle;
 &pandocConsiderations;
+
    <section title="IANA Considerations">
        <t>
        The media type for GeoJSON text is <spanx
@@ -148,6 +109,26 @@
         </list>
        </t>
    </section>
+
+  <section title="Contributors">
+  <t>The GeoJSON draft is primarily the work of the following individuals.</t>
+  
+  <t>Howard Butler<vspace/>Hobu Inc.<vspace blankLines="1"/>Email: howard@hobu.co<vspace blankLines="1"/></t>
+  <t>Martin Daly<vspace/>Cadcorp<vspace blankLines="1"/>Email: martin.daly@cadcorp.com<vspace blankLines="1"/></t>
+  <t>Allan Doyle<vspace/>MIT<vspace blankLines="1"/>Email: adoyle@intl-interfaces.com<vspace blankLines="1"/></t>
+  <t>Tim Schaub<vspace/>Planet Labs<vspace blankLines="1"/>Email: tim.schaub@gmail.com<vspace blankLines="1"/></t>
+  <t>Stefan Hagen<vspace/>Rheinaustr. 62<vspace/>Bonn 53225<vspace/>DE<vspace/><vspace blankLines="1"/>Email: stefan@hagen.link<vspace/>URI: http://stefan-hagen.website/<vspace blankLines="1"/></t>
+
+  </section>
+  <section title="Acknowledgements">
+  <t>The GeoJSON format is the product of discussion on the GeoJSON mailing
+list, http://lists.geojson.org/listinfo.cgi/geojson-geojson.org, before
+October 2015 and the IETF's GeoJSON WG after October 2015.</t>
+  <t>Comments are solicited and should be addressed to the GeoJSON mailing
+list at geojson@ietf.org or to the GeoJSON issue tracker at
+https://github.com/geojson/draft-geojson/issues.</t>
+  </section>
+
 </middle>
 
 <back>
