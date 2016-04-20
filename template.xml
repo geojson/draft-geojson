@@ -126,7 +126,6 @@
   <t>The GeoJSON format is the product of discussion on the GeoJSON mailing
 list, http://lists.geojson.org/listinfo.cgi/geojson-geojson.org, before
 October 2015 and the IETF's GeoJSON WG after October 2015.</t>
-
   <t>Material in this document was adapted with changes from http://geojson.org/geojson-spec.html [GJ2008] which is licensed under http://creativecommons.org/licenses/by/3.0/us/.</t>
   </section>
 
