@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference  anchor='RFC7459' target='http://www.rfc-editor.org/info/rfc7459'>
+<front>
+<title>Representation of Uncertainty and Confidence in the Presence Information Data Format Location Object (PIDF-LO)</title>
+<author initials='M.' surname='Thomson' fullname='M. Thomson'><organization /></author>
+<author initials='J.' surname='Winterbottom' fullname='J. Winterbottom'><organization /></author>
+<date year='2015' month='February' />
+<abstract><t>This document defines key concepts of uncertainty and confidence as they pertain to location information.  Methods for the manipulation of location estimates that include uncertainty information are outlined.</t><t>This document normatively updates the definition of location information representations defined in RFCs 4119 and 5491.  It also deprecates related terminology defined in RFC 3693.</t></abstract>
+</front>
+<seriesInfo name='RFC' value='7459'/>
+<seriesInfo name='DOI' value='10.17487/RFC7459'/>
+</reference>

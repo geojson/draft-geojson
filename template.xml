@@ -13,6 +13,7 @@
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
 <!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
 <!ENTITY pandocRef6838  PUBLIC '' 'bib/reference.RFC.6838.xml'>
+<!ENTITY pandocRef7459  PUBLIC '' 'bib/reference.RFC.7459.xml'>
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
@@ -166,6 +167,7 @@
        </reference>
     </references>
     <references title="Informative References">
+        &pandocRef7459;
         &pandocRef7464;
         <reference anchor="GJ2008">
            <front>
