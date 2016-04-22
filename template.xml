@@ -111,7 +111,7 @@
    </section>
 
   <section title="Contributors">
-  <t>The GeoJSON draft is primarily the work of the following individuals:</t>
+  <t>The GeoJSON draft is primarily the work of the following individuals:
 
   <list style="none">
   <t>Howard Butler<vspace/>Hobu Inc.<vspace blankLines="1"/>Email: howard@hobu.co<vspace blankLines="1"/></t>
@@ -120,6 +120,7 @@
   <t>Tim Schaub<vspace/>Planet Labs<vspace blankLines="1"/>Email: tim.schaub@gmail.com<vspace blankLines="1"/></t>
   <t>Stefan Hagen<vspace/>Rheinaustr. 62<vspace/>Bonn 53225<vspace/>DE<vspace/><vspace blankLines="1"/>Email: stefan@hagen.link<vspace/>URI: http://stefan-hagen.website/<vspace blankLines="1"/></t>
   </list>
+  </t>
 
   </section>
   <section title="Acknowledgements">
