@@ -315,10 +315,13 @@ MultiLineString, or MultiPolygon) could be used instead.
 ### Antimeridian Cutting
 
 In representing features that cross the antimeridian, interoperability
-is improved by cutting geometries so that no single part crosses the
-antimeridian. For example, a line extending from 45 degrees N, 170
-degrees E across the antimeridian to 45 degrees N, 170 degrees W SHOULD
-be cut in two and represented as a MultiLineString.
+is improved by modifying their geometry. Any geometry that crosses the
+antimeridian SHOULD be represented by cutting it in two such that
+neither part's representation crosses the antimeridian.
+
+For example, a line extending from 45 degrees N, 170 degrees E across
+the antimeridian to 45 degrees N, 170 degrees W should be cut in two and
+represented as a MultiLineString.
 
     {
         "type": "MultiLineString",
@@ -332,7 +335,7 @@ be cut in two and represented as a MultiLineString.
     }
 
 A rectangle extending from 40 degrees N, 170 degrees E across the
-antimeridian to 50 degrees N, 170 degrees W SHOULD be cut in two and
+antimeridian to 50 degrees N, 170 degrees W should be cut in two and
 represented as a MultiPolygon.
 
     {
