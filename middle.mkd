@@ -352,14 +352,17 @@ height in meters above or below the WGS 84 reference ellipsoid. In the
 absence of elevation values, applications sensitive to height or depth
 SHOULD interpret positions as being at local ground or sea level.
 
-Other coordinate reference systems, including ones described by CRS
-objects of the kind defined in [GJ2008] are NOT RECOMMENDED. GeoJSON
-processing software SHALL NOT be expected to have access to coordinate
-reference systems databases. Applications requiring a CRS other than the
-default MUST assume all responsibility for CRS identification,
-coordinate accuracy, and interpretation of missing elevation values.
-Furthermore, GeoJSON coordinates MUST NOT under any circumstances use
-latitude, longitude order.
+Other coordinate reference systems are NOT RECOMMENDED. GeoJSON
+processing software cannot be expected to have access to coordinate
+reference system databases or be expected to parse and interpret the CRS
+objects described in [GJ2008]. Furthermore, to prevent coordinate order
+confusion for parsers that do not have a CRS database, GeoJSON
+coordinates MUST NOT under any circumstances use latitude, longitude
+order. For example, GeoJSON data using a coordinate reference system
+equivalent to "http://www.opengis.net/def/crs/EPSG/0/4326" [OGCURL]
+cannot be reliably distinguished from data using the default CRS and is
+not allowed. Applications using a CRS other than the default for
+specific purposes should contain this data as much as possible.
 
 # Bounding Box
 
