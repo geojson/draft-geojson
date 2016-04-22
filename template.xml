@@ -17,7 +17,7 @@
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
-<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-01">
+<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-03">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -26,8 +26,8 @@
  <front>
         <title abbrev="GeoJSON">The GeoJSON Format</title>
 
-        <author initials="S." surname="Gillies"
-                fullname="Sean Gillies, Editor">
+        <author initials="S." surname="Gillies" fullname="Sean Gillies"
+                role="editor">
             <organization>Mapbox</organization>
             <address>
                 <postal>
@@ -111,22 +111,23 @@
    </section>
 
   <section title="Contributors">
-  <t>The GeoJSON draft is primarily the work of the following individuals.</t>
-  
+  <t>The GeoJSON draft is primarily the work of the following individuals:</t>
+
+  <list style="none">
   <t>Howard Butler<vspace/>Hobu Inc.<vspace blankLines="1"/>Email: howard@hobu.co<vspace blankLines="1"/></t>
   <t>Martin Daly<vspace/>Cadcorp<vspace blankLines="1"/>Email: martin.daly@cadcorp.com<vspace blankLines="1"/></t>
-  <t>Allan Doyle<vspace/>MIT<vspace blankLines="1"/>Email: adoyle@intl-interfaces.com<vspace blankLines="1"/></t>
+  <t>Allan Doyle<vspace blankLines="1"/>Email: adoyle@intl-interfaces.com<vspace blankLines="1"/></t>
   <t>Tim Schaub<vspace/>Planet Labs<vspace blankLines="1"/>Email: tim.schaub@gmail.com<vspace blankLines="1"/></t>
   <t>Stefan Hagen<vspace/>Rheinaustr. 62<vspace/>Bonn 53225<vspace/>DE<vspace/><vspace blankLines="1"/>Email: stefan@hagen.link<vspace/>URI: http://stefan-hagen.website/<vspace blankLines="1"/></t>
+  </list>
 
   </section>
   <section title="Acknowledgements">
   <t>The GeoJSON format is the product of discussion on the GeoJSON mailing
 list, http://lists.geojson.org/listinfo.cgi/geojson-geojson.org, before
 October 2015 and the IETF's GeoJSON WG after October 2015.</t>
-  <t>Comments are solicited and should be addressed to the GeoJSON mailing
-list at geojson@ietf.org or to the GeoJSON issue tracker at
-https://github.com/geojson/draft-geojson/issues.</t>
+
+  <t>Material in this document was adapted with changes from http://geojson.org/geojson-spec.html [GJ2008] which is licensed under http://creativecommons.org/licenses/by/3.0/us/.</t>
   </section>
 
 </middle>
