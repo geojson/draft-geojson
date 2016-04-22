@@ -15,7 +15,7 @@ externally.
 
 ## I-JSON
 
-GeoJSON texts SHOULD follow the constraints of I-JSON [RFC7493] for
+GeoJSON texts should follow the constraints of I-JSON [RFC7493] for
 maximum interoperability.
 
 ## Coordinate Precision
