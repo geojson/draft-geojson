@@ -17,7 +17,7 @@
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
-<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-01">
+<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-02">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -49,7 +49,7 @@
         </author>
         <author initials="S." surname="Gillies"
                 fullname="S. Gillies">
-            <organization>Mapbox Inc.</organization>
+            <organization>Mapbox</organization>
             <address>
                 <email>sean.gillies@gmail.com</email>
                 <uri>http://sgillies.net</uri>
@@ -79,7 +79,7 @@
                 <uri>http://stefan-hagen.website/</uri>
             </address>
         </author>
-        <date day="06" month="March" year="2016"/>
+        <date day="07" month="April" year="2016"/>
 
         <area>Applications and Real-Time Area (art)</area>
         <workgroup>GeoJSON</workgroup>

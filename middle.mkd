@@ -296,6 +296,66 @@ a geometry collection can be a heterogeneous composition of smaller
 geometry objects. For example, a geometry object in the shape of
 a lowercase roman "i" can be composed of one point and one line string.
 
+Geometry collections have a different syntax from single type geometry
+objects (Point, LineString, and Polygon) and homogeneously typed
+multipart geometry objects (MultiPoint, MultiLineString, and
+MultiPolygon) but have no different semantics. Although a geometry
+collection object has no "coordinates" member, it does have coordinates:
+the coordinates of all its parts belong to the collection.  The
+"geometries" member of a geometry collection describes the parts of this
+composition. Implementations SHOULD NOT apply any additional semantics
+to the "geometries" array.
+
+To maximize interoperability implementations SHOULD avoid nested
+geometry collections. Furthermore, geometry collections composed of
+a single part or a number of parts of a single type SHOULD be avoided when
+that single part or a single object of multi-part type (MultiPoint,
+MultiLineString, or MultiPolygon) could be used instead.
+
+### Antimeridian Cutting
+
+In representing features that cross the antimeridian, interoperability
+is improved by modifying their geometry. Any geometry that crosses the
+antimeridian SHOULD be represented by cutting it in two such that
+neither part's representation crosses the antimeridian.
+
+For example, a line extending from 45 degrees N, 170 degrees E across
+the antimeridian to 45 degrees N, 170 degrees W should be cut in two and
+represented as a MultiLineString.
+
+    {
+        "type": "MultiLineString",
+        "coordinates": [
+            [
+                [170.0, 45.0], [180.0, 45.0]
+            ], [
+                [-180.0, 45.0], [-170.0, 45.0]
+            ]
+        ]
+    }
+
+A rectangle extending from 40 degrees N, 170 degrees E across the
+antimeridian to 50 degrees N, 170 degrees W should be cut in two and
+represented as a MultiPolygon.
+
+    {
+        "type": "MultiPolygon",
+        "coordinates": [
+            [
+                [
+                    [180.0, 40.0], [180.0, 50.0], [170.0, 50.0],
+                    [170.0, 40.0], [180.0, 40.0]
+                ]
+            ],
+            [
+                [
+                    [-170.0, 40.0], [-170.0, 50.0], [-180.0, 50.0],
+                    [-180.0, 40.0], [-170.0, 40.0]
+                ]
+            ]
+        ]
+    }
+
 ### Uncertainty and Confidence
 
 As per [RFC7459] no measure of location uncertainty or confidence can be
