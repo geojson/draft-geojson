@@ -590,7 +590,7 @@ feature object below
 
 the "centerline" member is not a GeoJSON geometry object.
 
-#IGeoJSON Types are not Extensible
+# GeoJSON Types are not Extensible
 
 Implementations MUST NOT extend the fixed set of GeoJSON types:
 FeatureCollection, Feature, Point, LineString, MultiPoint, Polygon,
