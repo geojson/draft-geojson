@@ -398,7 +398,7 @@ possible for this array to be empty.
 
 # Coordinate Reference System
 
-The coordinate reference system for all GeoJSON coordinates SHALL be
+The coordinate reference system for all GeoJSON coordinates is
 a geographic coordinate reference system, using the WGS 84 [WGS84]
 datum, and with longitude and latitude units of decimal degrees. This
 coordinate reference system is equivalent to the OGC's
