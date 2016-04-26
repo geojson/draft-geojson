@@ -28,14 +28,12 @@
 
         <author initials="H." surname="Butler"
                 fullname="H. Butler">
-            <organization>Hobu Inc.</organization>
             <address>
                 <email>howard@hobu.co</email>
             </address>
         </author>
         <author initials="M." surname="Daly"
                 fullname="M. Daly">
-            <organization>Cadcorp</organization>
             <address>
                 <email>martin.daly@cadcorp.com</email>
             </address>
@@ -48,7 +46,6 @@
         </author>
         <author initials="S." surname="Gillies"
                 fullname="S. Gillies">
-            <organization>Mapbox</organization>
             <address>
                 <email>sean.gillies@gmail.com</email>
                 <uri>http://sgillies.net</uri>
