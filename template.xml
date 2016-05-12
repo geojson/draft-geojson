@@ -17,7 +17,7 @@
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
-<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-02">
+<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-03">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -28,39 +28,27 @@
 
         <author initials="H." surname="Butler"
                 fullname="H. Butler">
-            <organization>Hobu Inc.</organization>
             <address>
                 <email>howard@hobu.co</email>
             </address>
         </author>
         <author initials="M." surname="Daly"
                 fullname="M. Daly">
-            <organization>Cadcorp</organization>
             <address>
                 <email>martin.daly@cadcorp.com</email>
             </address>
         </author>
         <author initials="A." surname="Doyle"
                 fullname="A. Doyle">
-            <organization>MIT</organization>
             <address>
                 <email>adoyle@intl-interfaces.com</email>
             </address>
         </author>
         <author initials="S." surname="Gillies"
                 fullname="S. Gillies">
-            <organization>Mapbox</organization>
             <address>
                 <email>sean.gillies@gmail.com</email>
                 <uri>http://sgillies.net</uri>
-            </address>
-
-        </author>
-        <author initials="T." surname="Schaub"
-                fullname="T. Schaub">
-            <organization>Planet Labs</organization>
-            <address>
-                <email>tim.schaub@gmail.com</email>
             </address>
         </author>
         <author initials="S." surname="Hagen"
@@ -73,13 +61,17 @@
                     <code>53225</code>
                     <country>DE</country>
                 </postal>
-
-                <phone></phone>
                 <email>stefan@hagen.link</email>
                 <uri>http://stefan-hagen.website/</uri>
             </address>
         </author>
-        <date day="07" month="April" year="2016"/>
+        <author initials="T." surname="Schaub"
+                fullname="T. Schaub">
+            <address>
+                <email>tim.schaub@gmail.com</email>
+            </address>
+        </author>
+        <date day="25" month="April" year="2016"/>
 
         <area>Applications and Real-Time Area (art)</area>
         <workgroup>GeoJSON</workgroup>
@@ -148,6 +140,17 @@
         </list>
        </t>
    </section>
+
+   <section title="Acknowledgements">
+   <t>The GeoJSON format is the product of discussion on the GeoJSON mailing
+   list, http://lists.geojson.org/listinfo.cgi/geojson-geojson.org, before
+   October 2015 and the IETF's GeoJSON WG after October 2015.</t>
+
+   <t>Material in this document was adapted with changes from 
+   http://geojson.org/geojson-spec.html [GJ2008] which is licensed under 
+   http://creativecommons.org/licenses/by/3.0/us/.</t>
+   </section>
+
 </middle>
 
 <back>
