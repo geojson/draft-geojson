@@ -161,8 +161,8 @@ specification [GJ2008].
 
 ## Normative Changes
 
-* Coordinate reference systems other than the default are NOT
-  RECOMMENDED (see [](#coordinate-reference-system)).
+* Specification of coordinate reference systems has been removed, i.e.,
+  the "crs" member of [GJ2008] is no longer used.
 
 * In the absence of elevation values, applications sensitive to height
   or depth SHOULD interpret positions as being at local ground or sea
