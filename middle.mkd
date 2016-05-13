@@ -409,13 +409,15 @@ applications sensitive to height or depth SHOULD interpret positions as
 being at local ground or sea level.
 
 Note: the use of alternative coordinate reference systems was specified
-in [GJ2008], but has been removed from the present version of the
+in [GJ2008], but has been removed from this version of the
 specification because the use of different coordinate reference systems
-has proven to have interoperability issues. In general, GeoJSON
-processing software cannot be expected to have access to coordinate
-reference systems databases. However, where all involved parties have
-a prior arrangement, alternative coordinate reference systems can be
-used without risk of data being misinterpreted.
+-- especially in the manner specified in [GJ2008] -- has proven to have
+interoperability issues. In general, GeoJSON processing software is not
+expected to have access to coordinate reference systems databases or
+to to have network access to coordinate reference system transformation
+parameters. However, where all involved parties have a prior
+arrangement, alternative coordinate reference systems can be used
+without risk of data being misinterpreted.
 
 # Bounding Box
 
