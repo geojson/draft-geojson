@@ -120,8 +120,8 @@
          <t hangText="Required parameters:">n/a</t>
          <t hangText="Optional parameters:">n/a</t>
          <t hangText="Encoding considerations:">binary</t>
-         <t hangText="Security considerations:">See section 9 above</t>
-         <t hangText="Interoperability considerations:">See section 10 above</t>
+         <t hangText="Security considerations:">See <xref target="security-considerations" pageno="false" format="default"/> above</t>
+         <t hangText="Interoperability considerations:">See <xref target="interoperability-considerations" pageno="false" format="default"/> above</t>
          <t hangText="Published specification:">[[This document]]</t>
          <t hangText="Applications that use this media type:">various</t>
          <t hangText="Additional information:">
