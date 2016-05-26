@@ -43,7 +43,7 @@ application/vnd.google-earth.kml+xml, providing details about the locations of
 sensitive persons, animals, habitats, and facilities can expose them to
 unauthorized tracking or injury. vnd.geo+json does not provide privacy or
 integrity services; if sensitive data requires privacy or integrity protection
-the service must be provided externally.
+those must be provided by the transport, for example TLS or HTTPS.
 
 ##Interoperability considerations
 
