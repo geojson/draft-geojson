@@ -8,9 +8,9 @@ As with other geographic data formats, e.g., [KMLv2.2], providing
 details about the locations of sensitive persons, animals, habitats, and
 facilities can expose them to unauthorized tracking or injury.  GeoJSON
 does not provide privacy or integrity services.  If sensitive data requires
-privacy or integrity protection in flight, those must be provided by the
-transport, for example TLS or HTTPS. If privacy or integrity protection at
-rest is required, those must be provided by the storage system.
+privacy or integrity protection, those must be provided by the transport — for
+example TLS or HTTPS. There will be cases in which stored data need protection,
+which is out of scope for this document.
 
 # Interoperability Considerations
 
