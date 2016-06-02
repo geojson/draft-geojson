@@ -647,4 +647,4 @@ GeoJSON:
   {"type": "Point", "coordinates": [%lon%, %lat%, %alt%]}
 
 GeoJSON has no concept of uncertainty; imprecise or uncertain 'geo' URIs thus
-can not be mapped to GeoJSON geometries.
+cannot be mapped to GeoJSON geometries.
