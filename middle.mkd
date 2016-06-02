@@ -358,11 +358,11 @@ As per [RFC7459] no measure of location uncertainty or confidence can be
 known for "Point", "MultiPoint", "LineString", or "MultiLineString"
 geometry types.
 
-Applications such as PIDF-LO that are sensitive to location uncertainty
-and confidence might treat a geometry object of type "Polygon",
-"MultiPolygon", and "GeometryCollection" as a representation of a 95%
-confidence surface. In probabilistic terms: 95 percent of the location's
-point set is contained within the GeoJSON geometry.
+Applications such as Presence Information Data Format Location Object (PIDF-LO)
+[RFC5139] that are sensitive to location uncertainty and confidence might treat
+a geometry object of type "Polygon", "MultiPolygon", and "GeometryCollection"
+as a representation of a 95% confidence surface. In probabilistic terms: 95
+percent of the location's point set is contained within the GeoJSON geometry.
 
 As in [RFC5870] the number of digits of the values in coordinate
 positions MUST NOT be interpreted as an indication to the level of
