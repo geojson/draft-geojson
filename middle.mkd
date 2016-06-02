@@ -260,9 +260,13 @@ the concept of a linear ring:
 * A linear ring is the boundary of a surface or the boundary of a hole in
   a surface.
 
-* A linear ring SHOULD follow the right-hand rule with respect to the area
+* A linear ring MUST follow the right-hand rule with respect to the area
   it bounds (i.e., exterior rings are counter-clockwise, holes are
-  clockwise)
+  clockwise).
+
+Note: the [GJ2008] specification did not discuss linear ring winding order.
+For backwards compatibility, parsers SHOULD NOT reject polygons that do not
+follow the right-hand rule.
 
 Though a linear ring is not explicitly represented as a GeoJSON geometry
 type, it leads to a canonical formulation of the Polygon geometry type
