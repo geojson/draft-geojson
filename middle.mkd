@@ -376,7 +376,7 @@ A Feature object represents a spatially-bounded thing.
 
 * A feature object MUST have a member with the name "geometry". The
   value of the geometry member SHALL be either a geometry object as
-  defined above or, in the the case that the feature is unlocated,
+  defined above or, in the case that the feature is unlocated,
   a JSON null value.
 
 * A feature object MUST have a member with the name "properties". The
@@ -590,7 +590,7 @@ MultiLineString, MultiPolygon, and GeometryCollection.
 
 ## Semantics of GeoJSON Members and Types are not Changeable
 
-Implementations MUST NOT change the the semantics of GeoJSON members and
+Implementations MUST NOT change the semantics of GeoJSON members and
 types.
 
 The GeoJSON "coordinates" and "geometries" members define Geometry

@@ -180,7 +180,7 @@ specification [GJ2008].
 * A Feature object's "id" member is a string or number (see
   [](#feature-object)).
 
-* Extensions MAY be used, but MUST NOT change the the semantics of
+* Extensions MAY be used, but MUST NOT change the semantics of
   GeoJSON members and types (see [](#extending-geojson)).
 
 * GeoJSON objects MUST NOT contain the defining members of other types
