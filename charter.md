@@ -6,7 +6,7 @@ GeoJSON
 
 GeoJSON is a format for encoding data about geographic features using
 JavaScript Object Notation (JSON) [RFC7159]. Geographic features need not be
-physical things; any thing with properties that are bounded in space may be
+physical things; anything with properties that are bounded in space may be
 considered a feature. GeoJSON provides a means of representing both the
 properties and spatial extent of features.
 
