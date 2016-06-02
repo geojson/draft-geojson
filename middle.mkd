@@ -29,11 +29,10 @@ objects in GeoJSON contain a geometry object with one of the above
 geometry types and additional members. A FeatureCollection object
 contains an array of feature objects. This structure is analogous to
 that of the Web Feature Service (WFS) response to GetFeatures requests
-specified in [WFSv1] or to a KML Folder of Placemarks [KMLv2.2]. Some
-implementations of the WFS specification also provide GeoJSON formatted
-responses to GetFeature requests, but there is no particular service
-model or feature type ontology implied in the GeoJSON format
-specification.
+specified in [WFSv1] or to a Keyhole Markup Language (KML) Folder of Placemarks
+[KMLv2.2]. Some implementations of the WFS specification also provide GeoJSON
+formatted responses to GetFeature requests, but there is no particular service
+model or feature type ontology implied in the GeoJSON format specification.
 
 Since its initial publication in 2008 [GJ2008], the GeoJSON format
 specification has steadily grown in popularity. It is widely used in
