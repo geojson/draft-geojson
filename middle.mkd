@@ -400,12 +400,11 @@ possible for this array to be empty.
 The coordinate reference system for all GeoJSON coordinates is
 a geographic coordinate reference system, using the WGS 84 [WGS84]
 datum, and with longitude and latitude units of decimal degrees. This
-coordinate reference system is equivalent to the OGC's
-"http://www.opengis.net/def/crs/OGC/1.3/CRS84" [OGCURL]. An OPTIONAL
-third position element SHALL be the height in meters above or below the
-WGS 84 reference ellipsoid. In the absence of elevation values,
-applications sensitive to height or depth SHOULD interpret positions as
-being at local ground or sea level.
+is equivalent to the coordinate reference system identified by the OGC
+URN urn:ogc:def:crs:OGC::CRS84. An OPTIONAL third position element SHALL
+be the height in meters above or below the WGS 84 reference ellipsoid.
+In the absence of elevation values, applications sensitive to height or
+depth SHOULD interpret positions as being at local ground or sea level.
 
 Note: the use of alternative coordinate reference systems was specified
 in [GJ2008], but has been removed from this version of the
