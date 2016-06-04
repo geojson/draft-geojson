@@ -13,7 +13,6 @@
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
 <!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
 <!ENTITY pandocRef6838  PUBLIC '' 'bib/reference.RFC.6838.xml'>
-<!ENTITY pandocRef7459  PUBLIC '' 'bib/reference.RFC.7459.xml'>
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
@@ -150,8 +149,8 @@
    list, http://lists.geojson.org/listinfo.cgi/geojson-geojson.org, before
    October 2015 and the IETF's GeoJSON WG after October 2015.</t>
 
-   <t>Material in this document was adapted with changes from 
-   http://geojson.org/geojson-spec.html [GJ2008] which is licensed under 
+   <t>Material in this document was adapted with changes from
+   http://geojson.org/geojson-spec.html [GJ2008] which is licensed under
    http://creativecommons.org/licenses/by/3.0/us/.</t>
    </section>
 
@@ -174,7 +173,6 @@
        </reference>
     </references>
     <references title="Informative References">
-        &pandocRef7459;
         &pandocRef7464;
         <reference anchor="GJ2008">
            <front>
