@@ -218,14 +218,6 @@
            </front>
            <seriesInfo name="OGC" value="07-147r2" />
        </reference>
-       <reference anchor="OGCURL">
-           <front>
-               <title>OGC-NA Name type specification - definitions: Part 1 - basic name</title>
-               <author initials="S.J.D." surname="Cox"></author>
-               <date month="March" year="2010" />
-           </front>
-           <seriesInfo name="OGC" value="09-048r3" />
-       </reference>
     </references>
     &pandocBack;
 </back>
