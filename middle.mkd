@@ -150,7 +150,7 @@ features.
 
 * A GeoJSON object is a JSON object.
 
-* A GeoJSON object MUST have a member with the name "type". The value
+* A GeoJSON object has a member with the name "type". The value
   of the member MUST be one of the GeoJSON types.
 
 * A GeoJSON object MAY have a "bbox" member, the value of which MUST be
@@ -168,8 +168,8 @@ space.
   seven geometry types (see [](#definitions)).
 
 * A GeoJSON geometry object of any type other than "GeometryCollection"
-  MUST have a member with the name "coordinates". The value of the
-  coordinates member is always an array. The structure of the elements
+  has a member with the name "coordinates". The value of the
+  coordinates member is an array. The structure of the elements
   in this array is determined by the type of geometry. GeoJSON
   processors MAY interpret geometry objects with empty coordinates
   arrays as null objects.
@@ -229,21 +229,21 @@ Geometry Examples".
 
 ### Point
 
-For type "Point", the "coordinates" member MUST be a single position.
+For type "Point", the "coordinates" member is a single position.
 
 ### MultiPoint
 
-For type "MultiPoint", the "coordinates" member MUST be an array of
+For type "MultiPoint", the "coordinates" member is an array of
 positions.
 
 ### LineString
 
-For type "LineString", the "coordinates" member MUST be an array of two
+For type "LineString", the "coordinates" member is an array of two
 or more positions.
 
 ### MultiLineString
 
-For type "MultiLineString", the "coordinates" member MUST be an array of
+For type "MultiLineString", the "coordinates" member is an array of
 LineString coordinate arrays.
 
 ### Polygon
@@ -281,13 +281,13 @@ definition as follows:
 
 ### MultiPolygon
 
-For type "MultiPolygon", the "coordinates" member MUST be an array of
+For type "MultiPolygon", the "coordinates" member is an array of
 Polygon coordinate arrays.
 
 ### Geometry Collection
 
 A GeoJSON object with type "GeometryCollection" is a geometry object.
-A geometry collection MUST have a member with the name "geometries". The
+A geometry collection has a member with the name "geometries". The
 value of "geometries" is an array. Each element of this array is a GeoJSON
 geometry object. It is possible for this array to be empty.
 
@@ -366,14 +366,14 @@ uncertainty.
 
 A Feature object represents a spatially-bounded thing.
 
-* A feature object MUST have a "type" member with the value "Feature".
+* A feature object has a "type" member with the value "Feature".
 
-* A feature object MUST have a member with the name "geometry". The
+* A feature object has a member with the name "geometry". The
   value of the geometry member SHALL be either a geometry object as
   defined above or, in the case that the feature is unlocated,
   a JSON null value.
 
-* A feature object MUST have a member with the name "properties". The
+* A feature object has a member with the name "properties". The
   value of the properties member is an object (any JSON object or a
   JSON null value).
 
@@ -384,7 +384,7 @@ A Feature object represents a spatially-bounded thing.
 ## Feature Collection Object
 
 A GeoJSON object with the type "FeatureCollection" is a feature
-collection object. A feature collection object MUST have a member with
+collection object. A feature collection object has a member with
 the name "features". The value of "features" is a JSON array. Each
 element of the array is a feature object as defined above. It is
 possible for this array to be empty.
