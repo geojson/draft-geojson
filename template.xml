@@ -91,10 +91,9 @@
             JavaScript Object Notation (JSON). It defines several types of
             JSON objects and the manner in which they are combined to
             represent data about geographic features, their
-            properties, and their spatial extents.
-            This document recommends a single coordinate reference system
-            based on WGS 84. Other coordinate reference systems are not
-            recommended.
+            properties, and their spatial extents. GeoJSON uses a geographic
+            coordinate reference system, the WGS 84 [WGS84] datum, and units
+            of decimal degrees.
             </t>
         </abstract>
 </front>
