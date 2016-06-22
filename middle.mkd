@@ -63,7 +63,7 @@ is not significant in JSON.
 
 ## Specification of GeoJSON
 
-This document updates the original GeoJSON format specification
+This document supersedes the original GeoJSON format specification
 [GJ2008].
 
 ## Definitions
