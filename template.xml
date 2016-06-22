@@ -122,7 +122,7 @@
          <t hangText="Security considerations:">See <xref target="security-considerations" pageno="false" format="default"/> above</t>
          <t hangText="Interoperability considerations:">See <xref target="interoperability-considerations" pageno="false" format="default"/> above</t>
          <t hangText="Published specification:">[[This document]]</t>
-         <t hangText="Applications that use this media type:">various</t>
+         <t hangText="Applications that use this media type:">No known applications currently use this media type. This media type is intended for GeoJSON applications currently using the "application/vnd.geo+json" or "application/json" media types, of which there are several categories: Web mapping (D3, Leaflet, OpenLayers), geospatial databases (PostGIS), geographic data processing APIs (C/C++, C#, Go, Haskell, Java, Javascript, Python, Rust), data analysis and storage services (Esri, Google, many others), and data dissemination (GitHub, others).</t>
          <t hangText="Additional information:">
             <list style="hanging">
               <t hangText="Magic number(s):">n/a</t>
