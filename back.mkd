@@ -177,8 +177,8 @@ specification [GJ2008].
 * Polygon rings MUST follow the right-hand rule for orientation
   (counter-clockwise external rings, clockwise internal rings).
 
-* The values of a "bbox" array are `[%west%, %south%, %east%, %north%]`,
-  not `[%minx%, %miny%, %maxx%, %maxy%]` (see [](#bounding-box)).
+* The values of a "bbox" array are "[west, south, east, north]",
+  not "[minx, miny, maxx, maxy]" (see [](#bounding-box)).
 
 * A Feature object's "id" member is a string or number (see
   [](#feature-object)).
