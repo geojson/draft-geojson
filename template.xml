@@ -140,6 +140,9 @@
           </t>
           <t hangText="Intended usage:">COMMON</t>
           <t hangText="Restrictions on usage:">none</t>
+          <t hangText="Restrictions on usage:">none</t>
+          <t hangText="Author:">see "Authors' Addresses" section of [[This document]].</t>
+          <t hangText="Change controller:">Internet Engineering Task Force</t>
         </list>
        </t>
    </section>
