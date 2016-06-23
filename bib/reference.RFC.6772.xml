@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference  anchor='RFC6772' target='http://www.rfc-editor.org/info/rfc6772'>
+<front>
+<title>Geolocation Policy: A Document Format for Expressing Privacy Preferences for Location Information</title>
+<author initials='H.' surname='Schulzrinne' fullname='H. Schulzrinne' role='editor'><organization /></author>
+<author initials='H.' surname='Tschofenig' fullname='H. Tschofenig' role='editor'><organization /></author>
+<author initials='J.' surname='Cuellar' fullname='J. Cuellar'><organization /></author>
+<author initials='J.' surname='Polk' fullname='J. Polk'><organization /></author>
+<author initials='J.' surname='Morris' fullname='J. Morris'><organization /></author>
+<author initials='M.' surname='Thomson' fullname='M. Thomson'><organization /></author>
+<date year='2013' month='January' />
+<abstract><t>This document defines an authorization policy language for controlling access to location information.  It extends the Common Policy authorization framework to provide location-specific access control.  More specifically, this document defines condition elements specific to location information in order to restrict access to data based on the current location of the Target.</t><t>Furthermore, this document defines two algorithms for reducing the granularity of returned location information.  The first algorithm is defined for usage with civic location information, whereas the other one applies to geodetic location information.  Both algorithms come with limitations.  There are circumstances where the amount of location obfuscation provided is less than what is desired.  These algorithms might not be appropriate for all application domains. [STANDARDS-TRACK]</t></abstract>
+</front>
+<seriesInfo name='RFC' value='6772'/>
+<seriesInfo name='DOI' value='10.17487/RFC6772'/>
+</reference>

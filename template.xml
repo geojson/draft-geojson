@@ -8,11 +8,12 @@
 <!ENTITY pandocRef2616  PUBLIC '' 'bib/reference.RFC.2616.xml'>
 <!ENTITY pandocRef2818  PUBLIC '' 'bib/reference.RFC.2818.xml'>
 <!ENTITY pandocRef3986  PUBLIC '' 'bib/reference.RFC.3986.xml'>
-<!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
 <!ENTITY pandocRef5165  PUBLIC '' 'bib/reference.RFC.5165.xml'>
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
-<!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
+<!ENTITY pandocRef6772  PUBLIC '' 'bib/reference.RFC.6772.xml'>
 <!ENTITY pandocRef6838  PUBLIC '' 'bib/reference.RFC.6838.xml'>
+<!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
+<!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
@@ -176,6 +177,7 @@
        </reference>
     </references>
     <references title="Informative References">
+        &pandocRef6772;
         &pandocRef7464;
         <reference anchor="GJ2008">
            <front>
@@ -220,6 +222,14 @@
                <date month="April" year="2008" />
            </front>
            <seriesInfo name="OGC" value="07-147r2" />
+       </reference>
+       <reference anchor="Sweeney">
+           <front>
+               <title>k-anonymity: a model for protecting privacy</title>
+               <author initials="L." surname="Sweeney"></author>
+               <date year="2002" />
+           </front>
+           <seriesInfo name="International Journal on Uncertainty, Fuzziness and Knowledge-based Systems" value="10 (5), 2002; 557-570" />
        </reference>
     </references>
     &pandocBack;
