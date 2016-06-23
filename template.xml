@@ -17,7 +17,7 @@
 <!ENTITY pandocRef7493  PUBLIC '' 'bib/reference.RFC.7493.xml'>
 ]>
 
-<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-03">
+<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-04">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -75,7 +75,7 @@
                 <email>tim.schaub@gmail.com</email>
             </address>
         </author>
-        <date day="13" month="May" year="2016"/>
+        <date day="23" month="June" year="2016"/>
 
         <area>Applications and Real-Time Area (art)</area>
         <workgroup>GeoJSON</workgroup>
