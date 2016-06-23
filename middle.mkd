@@ -404,7 +404,7 @@ depth SHOULD interpret positions as being at local ground or sea level.
 Note: the use of alternative coordinate reference systems was specified
 in [GJ2008], but has been removed from this version of the
 specification because the use of different coordinate reference systems
--- especially in the manner specified in [GJ2008] -- has proven to have
+— especially in the manner specified in [GJ2008] — has proven to have
 interoperability issues. In general, GeoJSON processing software is not
 expected to have access to coordinate reference systems databases or
 to have network access to coordinate reference system transformation
