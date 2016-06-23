@@ -9,12 +9,14 @@ data requires privacy or integrity protection, those must be provided by
 the transport — for example TLS or HTTPS. There will be cases in which
 stored data need protection, which is out of scope for this document.
 
-As with other geographic data formats, e.g., [KMLv2.2], providing
-details about the locations of sensitive persons, animals, habitats, and
-facilities can expose them to unauthorized tracking or injury. Data
-providers should recognize the risk of inadvertantly identifying
-individuals in anonymized datasets by inadequately skewing or fuzzing
-locations [Sweeney].
+As with other geographic data formats, e.g., [KMLv2.2], providing details about
+the locations of sensitive persons, animals, habitats, and facilities can
+expose them to unauthorized tracking or injury. Data providers should recognize
+the risk of inadvertantly identifying individuals if locations in anonymized
+datasets are not adequately skewed or not sufficiently fuzzed [Sweeney] and
+recognize that the effectiveness of location obscuration is limited by a number
+of factors and is unlikely to be an effective defense against a determined
+attack [RFC6772].
 
 # Interoperability Considerations
 
