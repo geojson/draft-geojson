@@ -260,8 +260,8 @@ the concept of a linear ring:
   a surface.
 
 * A linear ring MUST follow the right-hand rule with respect to the area
-  it bounds (i.e., exterior rings are counter-clockwise, holes are
-  clockwise).
+  it bounds, i.e., exterior rings are counter-clockwise, holes are
+  clockwise.
 
 Note: the [GJ2008] specification did not discuss linear ring winding order.
 For backwards compatibility, parsers SHOULD NOT reject polygons that do not
@@ -467,7 +467,7 @@ Example of a 3D bbox member with a depth of 100 meters:
 ## The Connecting Lines
 
 The 4 lines of the bounding box are defined fully within the coordinate
-reference system; i.e. for a box bounded by the values "west", "south",
+reference system, i.e., for a box bounded by the values "west", "south",
 "east", and "north" every point on the northernmost line can be
 expressed as
 
